@@ -74,6 +74,28 @@ try {
     await page.locator('h2').waitFor();
     await page.getByRole('button', { name: 'Back to home' }).click();
 
+    // Play: a full lesson (answer until it ends either way), then a lightning round with the clock sped up.
+    await page.getByRole('button', { name: 'play' }).click();
+    await shot('play-menu'); await overflow('play');
+    await page.getByRole('button', { name: /^Lesson/ }).click();
+    for (let i = 0; i < 40; i++) {
+      if (await page.getByRole('button', { name: 'Play again' }).isVisible()) break;
+      await page.locator('button.read').first().click();
+      if (i === 0) { await page.waitForTimeout(400); await shot('lesson-panel'); await overflow('lesson'); }
+      await page.getByRole('button', { name: 'Continue' }).click();
+    }
+    await shot('lesson-end');
+    await page.getByRole('button', { name: 'Done' }).click();
+    await page.clock.install();
+    await page.getByRole('button', { name: /^Lightning/ }).click();
+    await page.locator('button.read').first().click();
+    await page.clock.runFor(61_000);
+    await page.getByText(/right in 60 seconds/).waitFor();
+    await shot('lightning-end');
+    await page.getByRole('button', { name: 'Done' }).click();
+    await shot('play-menu-after');
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
     // Cram and To finish.
     await page.getByRole('button', { name: 'cram' }).click();
     await page.getByRole('button', { name: /CTR: file within/ }).click();
@@ -91,4 +113,4 @@ if (problems.length) {
   console.error(problems.join('\n'));
   process.exit(1);
 }
-console.log('e2e OK: Study, Cards, Test, Cram, To finish in light and dark at 390x844');
+console.log('e2e OK: Study, Cards, Test, Play, Cram, To finish in light and dark at 390x844');

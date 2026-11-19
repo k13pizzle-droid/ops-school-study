@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Cards } from './Cards';
 import { Cram } from './Cram';
 import { Home } from './Home';
+import { Play } from './Play';
 import { Study } from './Study';
 import { Test } from './Test';
 import { ToFinish } from './ToFinish';
@@ -10,7 +11,7 @@ import { useUpdate } from './updates';
 type Screen =
   | { name: 'home' }
   | { name: 'study'; topic?: string | undefined; focus?: string[] | undefined }
-  | { name: 'cards' | 'test' | 'cram' | 'finish' };
+  | { name: 'cards' | 'test' | 'cram' | 'play' | 'finish' };
 
 export function App() {
   const [screen, setScreen] = useState<Screen>({ name: 'home' });
@@ -40,6 +41,7 @@ export function App() {
       {screen.name === 'study' && <Study key={key} topic={screen.topic} focus={screen.focus} onBack={home} />}
       {screen.name === 'cards' && <Cards onBack={home} />}
       {screen.name === 'test' && <Test onBack={home} onStudyMisses={(ids) => (setScreen({ name: 'study', focus: ids }), setKey((k) => k + 1))} />}
+      {screen.name === 'play' && <Play onBack={home} />}
       {screen.name === 'cram' && <Cram onBack={home} />}
       {screen.name === 'finish' && <ToFinish onBack={home} />}
       {update && (
