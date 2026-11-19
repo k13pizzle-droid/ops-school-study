@@ -69,8 +69,8 @@ if (!process.env.CI && !process.env.WORKERS_CI) try {
 }
 if (before) {
   const gone = [...before].filter((id) => !ids.has(id));
-  if (gone.length && !process.argv.includes('--allow-delete'))
-    r.errors.push(`ids on origin/main are missing here: ${gone.join(', ')}. Progress is keyed to ids, so don't renumber or drop them. If the deletion is deliberate, run with --allow-delete.`);
+  if (gone.length && !process.argv.includes('--allow-delete') && !process.env.ALLOW_DELETE)
+    r.errors.push(`ids on origin/main are missing here: ${gone.join(', ')}. Progress is keyed to ids, so don't renumber or drop them. If the deletion is deliberate, run with --allow-delete (or ALLOW_DELETE=1 npm run build).`);
   const added = all.filter((q) => !before!.has(q.id));
   if (added.length) {
     console.log(`\n${added.length} new since origin/main. Read each keyed answer:\n`);

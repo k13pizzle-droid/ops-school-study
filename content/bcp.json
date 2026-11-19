@@ -69,7 +69,7 @@
     "type": "mc",
     "stem": "How often should you monitor and provide training?",
     "options": [
-      "Quarterly meetings with ongoing monitoring",
+      "Ongoing",
       "Twice a year",
       "Only after a disaster occurs",
       "Every five years"
@@ -82,8 +82,8 @@
     "status": "ready",
     "flashcard": {
       "front": "How often should you monitor and provide training?",
-      "back": "Quarterly meetings with ongoing monitoring"
+      "back": "Ongoing"
     },
-    "keyFact": "BCP monitoring and training: quarterly meetings, ongoing monitoring"
+    "keyFact": "BCP monitoring and training: ongoing"
   }
 ]
