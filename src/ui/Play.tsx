@@ -8,6 +8,7 @@ import { answerText, isQuizzable } from '../lib/types';
 import { Btn, QuestionMeta, TopBar } from './common';
 import { OptionList } from './OptionList';
 import { useTwoTap } from './useTwoTap';
+import { Slides } from './Slide';
 
 // Play: the game side. Lessons (10 questions, 3 hearts, XP and combos) and a 60-second Lightning
 // round. Lesson answers count toward Study progress; Lightning's fast guesses don't.
@@ -139,10 +140,11 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
         <div className="mb-1 h-6 text-[15px] font-bold text-[var(--tag)]">{combo >= 3 ? `🔥 ${combo} in a row` : ''}</div>
         <QuestionMeta q={q} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
+        <Slides q={q} at="stem" />
         <OptionList shown={shown} chosen={chosen} reveal={reveal} onPick={pick} />
       </div>
       {reveal && (
-        <button onClick={next} className="fixed inset-0 z-20 flex items-end text-left" aria-label="Continue">
+        <div role="button" tabIndex={0} onClick={next} className="fixed inset-0 z-20 flex items-end text-left" aria-label="Continue">
           <div
             className="reveal-panel slide-up safe-bottom w-full px-5 pt-4"
             style={{ background: correct ? 'var(--right-bg)' : 'var(--wrong-bg)', color: correct ? 'var(--right)' : 'var(--wrong)' }}
@@ -154,9 +156,10 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
               <div className="read text-[18px]">Answer: {answerText(q)}</div>
             )}
             {q.why && <div className="read mt-1 text-[17px] leading-snug">{q.why}</div>}
+            <Slides q={q} at="answer" />
             <div className="mt-3 min-h-12 rounded-xl bg-[var(--accent)] py-3 text-center text-[16px] font-bold text-[var(--on-accent)]">Continue</div>
           </div>
-        </button>
+        </div>
       )}
     </div>
   );

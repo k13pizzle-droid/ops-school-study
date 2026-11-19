@@ -167,3 +167,14 @@ describe('day streak', () => {
     expect(liveStreak(g('2026-11-19', 5), d('2026-11-20'))).toBe(5);
   });
 });
+
+describe('slide images', () => {
+  const bad = (im: unknown) => validateBank(topics, { t: [{ ...q('a'), images: [im] }] }).errors.join('\n');
+  it('accepts a well-formed image and rejects broken ones', () => {
+    expect(bad({ src: 'slides/bsa-14.webp', alt: 'Slide 14', at: 'answer', mark: { x: 5, y: 40, w: 60, h: 12 } })).toBe('');
+    expect(bad({ src: 'bsa-14.webp', alt: 'x', at: 'answer' })).toMatch(/slides\/name/);
+    expect(bad({ src: 'slides/a.webp', at: 'answer' })).toMatch(/alt text/);
+    expect(bad({ src: 'slides/a.webp', alt: 'x', at: 'why' })).toMatch(/"at"/);
+    expect(bad({ src: 'slides/a.webp', alt: 'x', at: 'stem', mark: { x: 80, y: 0, w: 40, h: 10 } })).toMatch(/inside the image/);
+  });
+});

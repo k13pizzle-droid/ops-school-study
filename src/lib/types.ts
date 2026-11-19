@@ -2,6 +2,17 @@
 export type Status = 'ready' | 'needs-answer' | 'needs-options' | 'verify';
 export type Origin = 'review' | 'slides' | 'authored';
 
+/**
+ * A slide screenshot on a question. `mark` draws a highlight box over the part that matters, in
+ * percent of the image (0-100), so the image file itself is never edited.
+ */
+export type SlideImage = {
+  src: string; // "slides/<file>.webp", a file in public/slides/
+  alt: string; // what the slide shows, for screen readers and if the image fails to load
+  at: 'stem' | 'answer'; // with the question, or in the answer panel / card back
+  mark?: { x: number; y: number; w: number; h: number };
+};
+
 export type Question = {
   id: string; // stable forever, e.g. "bsa-003". Progress is keyed to it. Never renumber.
   topic: string;
@@ -16,6 +27,7 @@ export type Question = {
   status: Status;
   flashcard?: { front: string; back: string };
   keyFact?: string;
+  images?: SlideImage[]; // at most 2
 };
 
 export type Topic = { slug: string; name: string };

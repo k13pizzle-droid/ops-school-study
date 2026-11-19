@@ -3,7 +3,7 @@ import type { Question, Topic } from './types';
 
 const STATUSES = ['ready', 'needs-answer', 'needs-options', 'verify'];
 const ORIGINS = ['review', 'slides', 'authored'];
-const KEYS = new Set(['id', 'topic', 'type', 'stem', 'options', 'shuffle', 'answer', 'why', 'source', 'optionsFrom', 'status', 'flashcard', 'keyFact']);
+const KEYS = new Set(['id', 'topic', 'type', 'stem', 'options', 'shuffle', 'answer', 'why', 'source', 'optionsFrom', 'status', 'flashcard', 'keyFact', 'images']);
 const SOURCE_KEYS = new Set(['origin', 'ref']);
 // Options that point at other options by letter ("A & D", "Both B and C") need shuffle: false.
 const LETTER_REF = /\b[A-G]\s*(&|and|or)\s*[A-G]\b/;
@@ -83,6 +83,21 @@ export function validateBank(topicsRaw: unknown, files: Record<string, unknown>)
       if (q.flashcard !== undefined && (!q.flashcard || !str(q.flashcard.front) || !str(q.flashcard.back)))
         err('flashcard needs non-empty front and back');
       if (q.shuffle !== undefined && typeof q.shuffle !== 'boolean') err('shuffle must be true or false, not a string');
+      if (q.images !== undefined) {
+        if (!Array.isArray(q.images) || q.images.length < 1 || q.images.length > 2) err('images must be a list of 1 or 2');
+        else
+          for (const im of q.images) {
+            if (!im || !str(im.src) || !/^slides\/[\w.-]+\.(webp|png|jpe?g)$/.test(im.src)) err(`image src must look like "slides/name.webp"`);
+            if (!im || !str(im.alt)) err('image needs alt text describing the slide');
+            if (!im || (im.at !== 'stem' && im.at !== 'answer')) err('image "at" must be "stem" or "answer"');
+            if (im?.mark) {
+              const { x, y, w, h } = im.mark;
+              const ok = [x, y, w, h].every((n) => typeof n === 'number' && n >= 0 && n <= 100) && x + w <= 100.5 && y + h <= 100.5 && w > 0 && h > 0;
+              if (!ok) err('image mark needs x, y, w, h in percent (0-100) that stay inside the image');
+            }
+            for (const k of Object.keys(im ?? {})) if (!['src', 'alt', 'at', 'mark'].includes(k)) err(`unknown image field "${k}"`);
+          }
+      }
 
       const playable = q.status === 'ready' || q.status === 'verify';
       if (q.type === 'tf') {

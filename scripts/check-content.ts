@@ -7,7 +7,7 @@
 //   before pushing (the usual mistake is a 1-based answer).
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { validateBank } from '../src/lib/validate';
 import { answerText, type Question } from '../src/lib/types';
@@ -35,6 +35,14 @@ console.log(`\nQuestion bank: ${r.total} questions · bank ${hash.digest('hex').
 for (const t of topics as { slug: string; name: string }[]) console.log(`  ${String(r.byTopic[t.slug] ?? 0).padStart(4)}  ${t.name}`);
 console.log('');
 for (const [s, n] of Object.entries(r.byStatus).sort()) console.log(`  ${String(n).padStart(4)}  ${s}`);
+
+// Slide images: the file must exist in public/slides/, and stay small (it ships to every phone).
+for (const q of Object.values(files).flat() as Question[])
+  for (const im of q.images ?? []) {
+    const p = join(root, 'public', im.src ?? '');
+    if (!existsSync(p)) r.errors.push(`${q.id}: image ${im.src} not found in public/`);
+    else if (statSync(p).size > 250_000) r.errors.push(`${q.id}: image ${im.src} is ${Math.round(statSync(p).size / 1000)} KB; keep it under 250 KB (webp, about 1200px wide)`);
+  }
 
 // Compare with what's deployed.
 const all = Object.values(files).flat() as Question[];
