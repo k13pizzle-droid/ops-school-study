@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "id": "customer-service-001",
+    "topic": "customer-service",
+    "type": "tf",
+    "stem": "Your work space is part of customer service.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "customer-service-002",
+    "topic": "customer-service",
+    "type": "tf",
+    "stem": "AI and human customer service can co-exist.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "customer-service-003",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "What are the five points that customers evaluate?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "customer-service-004",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "How do customers evaluate quality service? What do they consider?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  }
+]

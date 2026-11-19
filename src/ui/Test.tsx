@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { byId, questions, topicName } from '../lib/bank';
 import { sampleExam } from '../lib/exam';
 import { showOptions, type Shown } from '../lib/options';
@@ -9,7 +9,10 @@ import { OptionList } from './OptionList';
 import { useTwoTap } from './useTwoTap';
 import { Slides } from './Slide';
 
-type Run = { qs: Question[]; shown: Shown[]; picks: (number | null)[]; started: number; timer: boolean };
+type Run = { qs: Question[]; shown: Shown[]; picks: (number | null)[]; started: number; timer: boolean; exam?: boolean };
+
+// The real exam, per the instructors: 89 questions, one hour, closed book, 60% to pass.
+const EXAM = { size: 89, minutes: 60, pass: 0.6 };
 
 /**
  * A test saved mid-way. Questions that have left the bank since are dropped. Each remaining
@@ -44,7 +47,7 @@ function loadSaved(): (Run & { idx: number; dropped: number }) | null {
     });
     if (!qs.length) throw new Error('nothing left');
     const idx = Math.min(Math.max(0, Number(s.idx) || 0), qs.length - 1);
-    return { qs, shown, picks, started: Number(s.started) || Date.now(), timer: !!s.timer, idx, dropped: s.ids.length - qs.length };
+    return { qs, shown, picks, started: Number(s.started) || Date.now(), timer: !!s.timer, exam: !!s.exam, idx, dropped: s.ids.length - qs.length };
   } catch {
     savedRun.clear();
     return null;
@@ -63,20 +66,22 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   const [result, setResult] = useState<TestResult | null>(null);
   const [review, setReview] = useState(false);
   const [saved, setSaved] = useState(loadSaved);
-  const startNew = () => {
+  const [examMode, setExamMode] = useState(false);
+  const begin = (exam: boolean) => {
     savedRun.clear();
     setSaved(null);
-    const qs = sampleExam(pool, size, Math.random);
-    setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer });
+    const qs = sampleExam(pool, exam ? EXAM.size : size, Math.random);
+    setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer: exam || timer, exam });
     setIdx(0);
   };
+  const startNew = () => begin(examMode);
   // With a saved test waiting, starting over takes two taps so one stray tap can't wipe it.
   const [newArmed, tapNew] = useTwoTap(startNew);
 
   // Save after every answer and every move, so leaving (back swipe, update, iOS closing the app)
   // never loses a test. Cleared when the test is finished.
   useEffect(() => {
-    if (run && !result) savedRun.save({ ids: run.qs.map((q) => q.id), shown: run.shown, picks: run.picks, idx, started: run.started, timer: run.timer });
+    if (run && !result) savedRun.save({ ids: run.qs.map((q) => q.id), shown: run.shown, picks: run.picks, idx, started: run.started, timer: run.timer, exam: !!run.exam });
   }, [run, idx, result]);
 
   const answered = run ? run.picks.filter((p) => p !== null).length : 0;
@@ -93,7 +98,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
       else missed.push(qq.id);
       if (run.picks[i] !== null) results.push([qq.id, ok]);
     });
-    const r: TestResult = { at: Date.now(), score: run.qs.length - missed.length, total: run.qs.length, byTopic, missed };
+    const r: TestResult = { at: Date.now(), score: run.qs.length - missed.length, total: run.qs.length, byTopic, missed, exam: !!run.exam };
     actions.answerMany(results);
     actions.saveTest(r);
     savedRun.clear();
@@ -113,8 +118,19 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
       <div className="mx-auto min-h-dvh max-w-xl">
         <TopBar title="Mock test" onBack={onBack} />
         <div className="safe-bottom flex flex-col gap-5 px-4 pt-5">
-          <div>
-            <div className="mb-2 text-[14px] font-semibold text-[var(--muted)]">How many questions</div>
+          <button
+            onClick={() => (saved ? (setExamMode(true), tapNew()) : begin(true))}
+            className="rounded-2xl bg-[var(--accent)] px-5 py-4 text-left text-[var(--on-accent)]"
+          >
+            <div className="display text-[22px]">{saved && newArmed && examMode ? 'Tap again to discard the saved test' : 'Exam rehearsal'}</div>
+            <div className="text-[14px] opacity-90">
+              Like the real one: {EXAM.size} questions, {EXAM.minutes} minutes, {Math.round(EXAM.pass * 100)}% to pass. It ends itself when time runs out.
+            </div>
+          </button>
+          {pool.length < EXAM.size && <p className="-mt-3 text-[13px] text-[var(--muted)]">{pool.length} questions are ready so far, so a rehearsal uses all of them.</p>}
+          <div className="mt-2 text-[14px] font-semibold text-[var(--muted)]">Or a practice test</div>
+          <div className="-mt-3">
+            <div className="mb-2 text-[14px] text-[var(--muted)]">How many questions</div>
             <div className="grid grid-cols-3 gap-2">
               {[50, 100, 150].map((n) => (
                 <button
@@ -151,8 +167,8 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
               {saved.dropped} question{saved.dropped === 1 ? ' was' : 's were'} removed in an update, so the saved test has {saved.qs.length}.
             </p>
           )}
-          <Btn primary={!saved} onClick={saved ? tapNew : startNew}>
-            {saved ? (newArmed ? 'Tap again to discard the saved test' : 'Start a new test') : 'Start test'}
+          <Btn primary={!saved} onClick={() => (setExamMode(false), saved ? tapNew() : begin(false))}>
+            {saved ? (newArmed && !examMode ? 'Tap again to discard the saved test' : 'Start a new practice test') : 'Start practice test'}
           </Btn>
           {tests.length > 0 && (
             <div>
@@ -179,7 +195,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
       <TopBar
         title={`${idx + 1} of ${run.qs.length}`}
         onBack={onBack /* the test is saved; Test offers Resume next time */}
-        right={run.timer ? <Clock from={run.started} /> : undefined}
+        right={run.timer ? <Clock from={run.started} limitMin={run.exam ? EXAM.minutes : undefined} onExpire={finish} /> : undefined}
       />
       {grid ? (
         <div className="flex-1 px-4 pt-3">
@@ -229,14 +245,30 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   );
 }
 
-function Clock({ from }: { from: number }) {
+/** Elapsed time, or with limitMin a countdown that finishes the test when it reaches zero. */
+function Clock({ from, limitMin, onExpire }: { from: number; limitMin?: number | undefined; onExpire?: () => void }) {
   const [now, setNow] = useState(Date.now());
+  const expire = useRef(onExpire);
+  expire.current = onExpire;
+  const fired = useRef(false);
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
-  const s = Math.floor((now - from) / 1000);
-  return <span className="pr-2 text-[15px] tabular-nums opacity-80">{`${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`}</span>;
+  const elapsed = Math.floor((now - from) / 1000);
+  const s = limitMin ? Math.max(0, limitMin * 60 - elapsed) : elapsed;
+  useEffect(() => {
+    if (limitMin && s === 0 && !fired.current) {
+      fired.current = true;
+      expire.current?.();
+    }
+  }, [limitMin, s]);
+  const low = !!limitMin && s < 300;
+  return (
+    <span className={`pr-2 text-[15px] font-semibold tabular-nums ${low ? 'text-[#fca5a5]' : 'opacity-80'}`}>
+      {`${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`}
+    </span>
+  );
 }
 
 function Results({ r, onBack, onReview, onStudyMisses }: { r: TestResult; onBack: () => void; onReview: () => void; onStudyMisses: () => void }) {
@@ -250,6 +282,11 @@ function Results({ r, onBack, onReview, onStudyMisses }: { r: TestResult; onBack
           <div className="text-[16px] text-[var(--muted)]">
             {r.score} of {r.total} right
           </div>
+          {r.exam && (
+            <div className="mt-2 text-[17px] font-bold" style={{ color: r.score / r.total >= EXAM.pass ? 'var(--right)' : 'var(--wrong)' }}>
+              {r.score / r.total >= EXAM.pass ? 'Pass' : 'Below the 60% pass mark'}
+            </div>
+          )}
         </div>
         <div className="mt-5 flex flex-col gap-2">
           {r.missed.length > 0 && (

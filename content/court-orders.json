@@ -1,1 +1,65 @@
-[]
+[
+  {
+    "id": "court-orders-001",
+    "topic": "court-orders",
+    "type": "tf",
+    "stem": "A guardian has a fiduciary duty to the ward.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "court-orders-002",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "When are banks legally obligated to follow valid court orders?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "court-orders-003",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "When can a guardianship end?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "court-orders-004",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "When can you release funds in a minor settlement account?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "court-orders-005",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "If you receive a levy, you should",
+    "options": [
+      "Determine whether the issuer drove a Chevy",
+      "Determine whether or not it was dry",
+      "File a SAR",
+      "Determine if the party has jurisdiction over the bank"
+    ],
+    "answer": 3,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Receive a levy: determine if the party has jurisdiction over the bank"
+  }
+]
