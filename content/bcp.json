@@ -1,0 +1,87 @@
+[
+  {
+    "id": "bcp-001",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "Pandemic planning should be part of your BCP.",
+    "answer": true,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Should pandemic planning be part of your BCP?",
+      "back": "Yes"
+    }
+  },
+  {
+    "id": "bcp-002",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "When might you need a business continuity plan?",
+    "options": [
+      "Natural disasters",
+      "Cyber attack",
+      "Core outage",
+      "All of the above"
+    ],
+    "answer": 3,
+    "why": "The list: natural disasters, pandemic, cyber attack, and core outage.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "When might you need a business continuity plan?",
+      "back": "Natural disasters, pandemic, cyber attack, core outage"
+    }
+  },
+  {
+    "id": "bcp-003",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Who should be trained about your BCP?",
+    "options": [
+      "Everyone",
+      "Only senior management",
+      "Only the IT department",
+      "Only the BCP coordinator"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Who should be trained about your BCP?",
+      "back": "Everyone"
+    },
+    "keyFact": "BCP training: everyone"
+  },
+  {
+    "id": "bcp-004",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "How often should you monitor and provide training?",
+    "options": [
+      "Quarterly meetings with ongoing monitoring",
+      "Once a year",
+      "Only after a disaster occurs",
+      "Every five years"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "How often should you monitor and provide training?",
+      "back": "Quarterly meetings with ongoing monitoring"
+    },
+    "keyFact": "BCP monitoring and training: quarterly meetings, ongoing monitoring"
+  }
+]

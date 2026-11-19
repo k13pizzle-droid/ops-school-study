@@ -1,0 +1,163 @@
+[
+  {
+    "id": "bsa-001",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "What is the beneficial ownership percentage threshold?",
+    "options": [
+      "At least 25%",
+      "At least 10%",
+      "At least 50%",
+      "At least 20%"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is the beneficial ownership percentage threshold?",
+      "back": "At least 25%"
+    },
+    "keyFact": "Beneficial ownership: at least 25%"
+  },
+  {
+    "id": "bsa-002",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "How many calendar days do you have to file a CTR?",
+    "options": [
+      "15 calendar days",
+      "30 calendar days",
+      "10 calendar days",
+      "60 calendar days"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "How many calendar days do you have to file a CTR?",
+      "back": "15 calendar days"
+    },
+    "keyFact": "CTR: file within 15 calendar days"
+  },
+  {
+    "id": "bsa-003",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "When was the Bank Secrecy Act (BSA) created?",
+    "options": [
+      "1970",
+      "1986",
+      "1964",
+      "1992"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "When was the BSA Act created?",
+      "back": "1970"
+    },
+    "keyFact": "BSA created: 1970"
+  },
+  {
+    "id": "bsa-004",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "When was the USA PATRIOT Act created?",
+    "options": [
+      "2001",
+      "1999",
+      "2003",
+      "2008"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "When was the USA PATRIOT Act created?",
+      "back": "2001"
+    },
+    "keyFact": "USA PATRIOT Act: 2001"
+  },
+  {
+    "id": "bsa-005",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "What is the SAR filing threshold for a known suspect?",
+    "options": [
+      "$5,000",
+      "$2,000",
+      "$10,000",
+      "$25,000"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is the SAR filing threshold for a known suspect?",
+      "back": "$5,000"
+    },
+    "keyFact": "SAR, known suspect: $5,000"
+  },
+  {
+    "id": "bsa-006",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "How long do you need to keep CTR records?",
+    "options": [
+      "5 years",
+      "3 years",
+      "7 years",
+      "10 years"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "How long do you need to keep CTR records?",
+      "back": "5 years"
+    },
+    "keyFact": "CTR record retention: 5 years"
+  },
+  {
+    "id": "bsa-007",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "What is structuring?",
+    "options": [
+      "Breaking down large amounts of cash into multiple small deposits that fall under reporting thresholds to avoid triggering bank alerts",
+      "Splitting one large loan into several smaller loans to stay under a lending limit",
+      "Setting up a business entity to hide who really owns an account",
+      "Moving money through several accounts to disguise where it came from"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is structuring?",
+      "back": "Breaking down large amounts of cash into multiple small deposits that fall under reporting thresholds to avoid triggering bank alerts"
+    },
+    "keyFact": "Structuring: breaking large cash into small deposits under reporting thresholds to avoid bank alerts"
+  }
+]

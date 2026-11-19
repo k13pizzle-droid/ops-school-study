@@ -1,0 +1,94 @@
+[
+  {
+    "id": "tech-001",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "What is a strong warning sign of a business email compromise?",
+    "options": [
+      "A request to change payment or wire instructions",
+      "An email that includes the company logo",
+      "A message sent during business hours",
+      "A routine monthly statement from a known vendor"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is a strong warning sign of a business email compromise?",
+      "back": "A request to change payment or wire instructions"
+    },
+    "keyFact": "BEC warning sign: request to change payment or wire instructions"
+  },
+  {
+    "id": "tech-002",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "If you think you might have a fraudulent wire, when should you report it?",
+    "options": [
+      "Immediately",
+      "Within 24 hours",
+      "By the end of the business week",
+      "After the customer confirms the loss"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "If you think you might have a fraudulent wire, when should you report it?",
+      "back": "Immediately"
+    },
+    "keyFact": "Suspected fraudulent wire: report immediately"
+  },
+  {
+    "id": "tech-003",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Why do you have multi-factor authentication (MFA) and what does it do?",
+    "options": [
+      "It's a second layer of protection that requires two or more separate proofs of identity before granting access",
+      "It encrypts every email the bank sends",
+      "It lets one password work across all systems",
+      "It blocks every login from outside the bank's network"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Why do you have multi-factor authentication (MFA) and what does it do?",
+      "back": "A second layer of protection. MFA requires two or more separate proofs of identity before granting access"
+    },
+    "keyFact": "MFA: second layer of protection, two or more separate proofs of identity"
+  },
+  {
+    "id": "tech-004",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "If you're wanting to verify wire instructions, who should you call?",
+    "options": [
+      "The customer on the account, using the contact info in our system",
+      "The phone number listed in the email that requested the change",
+      "The sender of the instructions, by replying to their email",
+      "The receiving bank's general customer service line"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "If you're wanting to verify wire instructions, who should you call?",
+      "back": "The customer on the account, using the contact info in our system"
+    },
+    "keyFact": "Verify wire instructions: call the customer using contact info in our system"
+  }
+]

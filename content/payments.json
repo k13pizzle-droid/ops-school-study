@@ -1,0 +1,99 @@
+[
+  {
+    "id": "payments-001",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Who operates FedNow?",
+    "options": [
+      "The Federal Reserve",
+      "The Clearing House",
+      "The U.S. Treasury",
+      "The FDIC"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Who operates FedNow?",
+      "back": "The Federal Reserve"
+    },
+    "keyFact": "FedNow operator: the Federal Reserve"
+  },
+  {
+    "id": "payments-002",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "What payment method moves the most dollar value of non-cash payments?",
+    "options": [
+      "ACH",
+      "Checks",
+      "Credit cards",
+      "Debit cards"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What payment method moves the most dollar value of non-cash payments?",
+      "back": "ACH"
+    },
+    "keyFact": "Most dollar value of non-cash payments: ACH"
+  },
+  {
+    "id": "payments-003",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "Under the GENIUS Act, a payment stablecoin issuer can pay interest.",
+    "answer": false,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Under the GENIUS Act, can a payment stablecoin issuer pay interest?",
+      "back": "No"
+    },
+    "keyFact": "GENIUS Act: stablecoin issuers can't pay interest"
+  },
+  {
+    "id": "payments-004",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "What happens when a Venmo user pays a friend inside the app?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "payments-005",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "In very general terms, what is a tokenized deposit?",
+    "options": [
+      "Deposits represented as blockchain-based tokens",
+      "A stablecoin issued by a non-bank company",
+      "A check deposited by taking a photo in a mobile app",
+      "A prepaid card loaded with cash"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "In very general terms, what is a tokenized deposit?",
+      "back": "Deposits represented as blockchain-based tokens"
+    },
+    "keyFact": "Tokenized deposit: deposits represented as blockchain-based tokens"
+  }
+]

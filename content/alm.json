@@ -1,0 +1,87 @@
+[
+  {
+    "id": "alm-001",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "What is the purpose of asset liability management?",
+    "options": [
+      "Management of the bank's balance sheet to maintain a mix of loans and deposits for long-term growth and risk management",
+      "Setting employee pay and benefits across the bank",
+      "Tracking branch buildings and equipment",
+      "Deciding which customers qualify for overdraft protection"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is the purpose of asset liability management?",
+      "back": "Management of the bank's balance sheet to maintain a mix of loans and deposits for long-term growth and risk management"
+    },
+    "keyFact": "ALM: managing the balance sheet's mix of loans and deposits for long-term growth and risk management"
+  },
+  {
+    "id": "alm-002",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "What is a yield curve?",
+    "options": [
+      "A graph that plots the interest rates (yields) at different maturities",
+      "A graph of a bank's loan growth over time",
+      "A chart of the deposit rates competitors offer",
+      "A graph of how a stock's price moves during the day"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is a yield curve?",
+      "back": "A graph that plots the interest rates (yields) at different maturities"
+    },
+    "keyFact": "Yield curve: graph of interest rates (yields) at different maturities"
+  },
+  {
+    "id": "alm-003",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "Most of the time, the yield curve is flat.",
+    "answer": false,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "True/False: Most of the time, the yield curve is flat.",
+      "back": "False"
+    },
+    "keyFact": "Yield curve is usually flat? False"
+  },
+  {
+    "id": "alm-004",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Which of these is an example of interest rate risk (IRR)?",
+    "options": [
+      "Bonds with longer duration",
+      "CDs with floating rates",
+      "Loans with variable rates",
+      "All of the above"
+    ],
+    "answer": 3,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What are some examples of interest rate risk (IRR)?",
+      "back": "Bonds with longer duration, CDs (with floating rates), loans (with variable rates)"
+    }
+  }
+]

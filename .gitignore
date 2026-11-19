@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+e2e-output/
+.wrangler/
+# Scanned slide decks and study guides. School material, never committed.
+source/

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "poa-trust-001",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "Powers of Attorney must be signed by principal, dated, signed, and notarized.",
+    "answer": false,
+    "why": "The Uniform Power of Attorney Act took this away.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "POA must be signed, dated, notarized? False (UPOAA took this away)"
+  },
+  {
+    "id": "poa-trust-002",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Who can remove an agent from authority of a power of attorney?",
+    "options": [
+      "Principal",
+      "Guardian",
+      "A trustee",
+      "A judge",
+      "A & B",
+      "A & D",
+      "C & D"
+    ],
+    "shuffle": false,
+    "answer": 5,
+    "why": "A & D: the principal and a judge.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Who can remove a POA agent: principal and a judge"
+  },
+  {
+    "id": "poa-trust-003",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "If there are 3 or more agents appointed under the same power of attorney, they can act",
+    "options": [
+      "By majority",
+      "Unanimous consent",
+      "Individually unless otherwise provided by POA"
+    ],
+    "answer": 2,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "3+ agents on one POA: act individually unless the POA says otherwise"
+  },
+  {
+    "id": "poa-trust-004",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Under the Uniform Power of Attorney Act, a power of attorney executed after Nov 1st, 2021 and absent any instruction of the document is presumed to be",
+    "options": [
+      "Durable",
+      "Non-durable"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "POA executed after Nov 1, 2021, no instruction: presumed durable"
+  },
+  {
+    "id": "poa-trust-005",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "Principal can execute a power of attorney even if they cannot physically provide a wet ink signature.",
+    "answer": true,
+    "why": "Someone can sign at their direction (incapacitated, blinking, etc.).",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-006",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Which is NOT a fiduciary duty of a trustee?",
+    "options": [
+      "Manage the person's money and property carefully and separately from their own",
+      "Exercise care and good faith of the person's finances",
+      "Be ethical",
+      "Do not use the funds under any circumstances"
+    ],
+    "answer": 3,
+    "why": "It is not a fiduciary duty to not use funds under any circumstances.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-007",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Which of these is an action that might be taken after the death of the grantor on a revocable living trust?",
+    "options": [
+      "Obtain a TIN",
+      "Visit with the funeral home without expenses",
+      "Change the income beneficiaries",
+      "Amend the powers of the trustee"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "After grantor's death, revocable living trust: obtain a TIN"
+  },
+  {
+    "id": "poa-trust-008",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "A trustee can always delegate routine tasks.",
+    "answer": false,
+    "why": "Only when the trust (or power of attorney) says so.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Trustee can always delegate routine tasks? False, only when the trust says so"
+  },
+  {
+    "id": "poa-trust-009",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "A grantor surrenders ownership, authority, and control over the trust and the trust property and income in which of the following?",
+    "options": [
+      "Last will and testament",
+      "Revocable trust",
+      "Irrevocable trust",
+      "Testamentary trust"
+    ],
+    "answer": 2,
+    "why": "In an irrevocable trust the grantor doesn't have authority, ownership, or control.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Irrevocable trust: grantor gives up ownership, authority, and control"
+  },
+  {
+    "id": "poa-trust-010",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "A trust agreement establishes which of the following?",
+    "options": [
+      "Limitations on the powers of the trustee",
+      "Revocability of the trust",
+      "Successorship of trustees",
+      "Delegations of the trustee's authority",
+      "All of the above"
+    ],
+    "answer": 4,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Trust agreement establishes: trustee limits, revocability, successorship, delegation (all of the above)"
+  }
+]

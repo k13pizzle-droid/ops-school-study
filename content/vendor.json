@@ -1,0 +1,40 @@
+[
+  {
+    "id": "vendor-001",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "How important is documentation in performing vendor management?",
+    "options": [
+      "It's key",
+      "Nice to have, but not necessary",
+      "Only needed when a vendor fails",
+      "Only needed for the annual audit"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "How important is documentation in performing vendor management?",
+      "back": "It's key"
+    }
+  },
+  {
+    "id": "vendor-002",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "You are required to do a review of all vendors and rank them.",
+    "answer": true,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "verify",
+    "flashcard": {
+      "front": "True/False: You are required to do a review of all vendors and rank them.",
+      "back": "True"
+    }
+  }
+]

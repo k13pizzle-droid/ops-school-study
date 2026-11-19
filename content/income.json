@@ -1,0 +1,68 @@
+[
+  {
+    "id": "income-001",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Why should you periodically review your service charges?",
+    "options": [
+      "To see if they compare with market competition",
+      "Because regulators require a new fee every year",
+      "To make sure every account pays the same fee",
+      "So you can raise them at every review"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Why should you periodically review your service charges?",
+      "back": "To see if they compare with market competition"
+    }
+  },
+  {
+    "id": "income-002",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which of these should you consider when monitoring your CD program?",
+    "options": [
+      "Exception rates",
+      "Early withdrawal penalty waivers",
+      "Current market rates for your locations",
+      "All of the above"
+    ],
+    "answer": 3,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What are some things to consider when monitoring your CD program?",
+      "back": "Exception rates, early withdrawal penalty waivers, current market rates for your locations"
+    }
+  },
+  {
+    "id": "income-003",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Why do you review your deposit program?",
+    "options": [
+      "To see how it compares with market competition, whether it's priced within or outside of market scope, and its fees",
+      "To decide which branches to close",
+      "To set loan approval limits",
+      "To count how many accounts each employee opened"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Why do you review your deposit program?",
+      "back": "To see if they compare with market competition, priced within or outside of market scope, fees"
+    }
+  }
+]

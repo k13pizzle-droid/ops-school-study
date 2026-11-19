@@ -1,0 +1,130 @@
+[
+  {
+    "id": "financial-001",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "Accounting tells a story of what already occurred.",
+    "answer": true,
+    "why": "Accounting is the scoreboard, not the quarterback.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Accounting: tells what already occurred (the scoreboard, not the quarterback)"
+  },
+  {
+    "id": "financial-002",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "What is the accounting equation?",
+    "options": [
+      "Assets = Liabilities + Equity",
+      "Assets + Liabilities = Equity",
+      "Liabilities = Assets + Equity",
+      "Equity = Assets + Liabilities"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Accounting equation: Assets = Liabilities + Equity"
+  },
+  {
+    "id": "financial-003",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which of the following is NOT considered a liability?",
+    "options": [
+      "Deposits",
+      "Accrued interest payable",
+      "Accrued interest receivable",
+      "Borrowed funds"
+    ],
+    "answer": 2,
+    "why": "Accrued interest receivable is something we will be paid, so it's an asset.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Accrued interest receivable: an asset, not a liability"
+  },
+  {
+    "id": "financial-004",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "How do you calculate return on equity?",
+    "options": [
+      "Net income ÷ Equity",
+      "Net income ÷ Total assets",
+      "Equity ÷ Net income",
+      "Net income ÷ Total loans"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "ROE = Net income ÷ Equity"
+  },
+  {
+    "id": "financial-005",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which of the following is a risk/capital ratio?",
+    "options": [
+      "Loans to total assets",
+      "Return on assets",
+      "Return on equity",
+      "Fully loaded cost of funds"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Risk/capital ratio: loans to total assets"
+  },
+  {
+    "id": "financial-006",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "Tier 1 Capital Ratio is calculated by dividing your tier 1 capital by average total loans.",
+    "answer": false,
+    "why": "It's Tier 1 Capital ÷ Average Total Assets.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "exam",
+    "status": "ready",
+    "keyFact": "Tier 1 Capital Ratio = Tier 1 Capital ÷ Average Total Assets"
+  },
+  {
+    "id": "financial-007",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "What is the ultimate goal of any business?",
+    "options": [
+      "Create value for stakeholders",
+      "Maximize the number of customers",
+      "Minimize all expenses",
+      "Grow total assets every year"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What is the ultimate goal of any business?",
+      "back": "Create value for stakeholders"
+    },
+    "keyFact": "Ultimate goal of any business: create value for stakeholders"
+  }
+]

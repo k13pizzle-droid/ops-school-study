@@ -1,0 +1,88 @@
+[
+  {
+    "id": "communication-001",
+    "topic": "communication",
+    "type": "tf",
+    "stem": "According to Jeremy, more words are better when writing.",
+    "answer": false,
+    "why": "Jeremy's rule is fewer words.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "According to Jeremy (the instructor), should you have more words or less when writing?",
+      "back": "Less. \"More words are better when writing\" is False."
+    },
+    "keyFact": "Writing: fewer words (more words are better = False)"
+  },
+  {
+    "id": "communication-002",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "Why is it important to use correct grammar?",
+    "options": [
+      "It enhances clarity and precision in writing and speech",
+      "It makes writing longer and more formal",
+      "It's only required in legal documents",
+      "It lets you skip proofreading"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "Why is it important to use correct grammar?",
+      "back": "It enhances clarity and precision in writing and speech"
+    }
+  },
+  {
+    "id": "communication-003",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "What do professional journalists and mass communicators use as a guideline for writing?",
+    "options": [
+      "AP Style",
+      "Chicago Manual of Style",
+      "MLA Style",
+      "APA Style"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What do professional journalists and mass communicators use as a guideline for writing?",
+      "back": "AP Style"
+    },
+    "keyFact": "Journalists' writing guideline: AP Style"
+  },
+  {
+    "id": "communication-004",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "What type of pyramid do journalists and mass communicators use as a writing guideline?",
+    "options": [
+      "The inverted pyramid",
+      "The upright pyramid",
+      "The step pyramid",
+      "The hierarchy pyramid"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What type of pyramid, in particular, do journalists use as a guideline for writing?",
+      "back": "The inverted pyramid"
+    },
+    "keyFact": "Journalists' pyramid: inverted pyramid"
+  }
+]

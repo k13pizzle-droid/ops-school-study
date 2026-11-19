@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "bsa",
+    "name": "BSA"
+  },
+  {
+    "slug": "security",
+    "name": "Security Fraud/Controls"
+  },
+  {
+    "slug": "alm",
+    "name": "Asset Liability/Investments"
+  },
+  {
+    "slug": "income",
+    "name": "Income/Expenses"
+  },
+  {
+    "slug": "communication",
+    "name": "Communication"
+  },
+  {
+    "slug": "tech",
+    "name": "Technology Information/Security"
+  },
+  {
+    "slug": "poa-trust",
+    "name": "POA/Trust"
+  },
+  {
+    "slug": "financial",
+    "name": "Bank Financial Analysis"
+  },
+  {
+    "slug": "vendor",
+    "name": "Vendor Management"
+  },
+  {
+    "slug": "payments",
+    "name": "Faster Payments: Rails, Research, Risk, & the Road Ahead"
+  },
+  {
+    "slug": "bcp",
+    "name": "Business Continuity Planning"
+  },
+  {
+    "slug": "ops-law",
+    "name": "Bank Operations Law"
+  },
+  {
+    "slug": "court-orders",
+    "name": "Court Orders"
+  },
+  {
+    "slug": "ops-compliance",
+    "name": "Operations Compliance"
+  },
+  {
+    "slug": "hr",
+    "name": "Human Resources"
+  },
+  {
+    "slug": "customer-service",
+    "name": "Customer Service"
+  }
+]

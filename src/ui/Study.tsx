@@ -1,0 +1,121 @@
+import { useMemo, useState } from 'react';
+import { byId, questions, topicName } from '../lib/bank';
+import { showOptions } from '../lib/options';
+import { requeue, studyOrder } from '../lib/study';
+import { answerText, isQuizzable } from '../lib/types';
+import { actions, useStore } from '../lib/store';
+import { Btn, SourceLine, Star, TopBar, Unconfirmed } from './common';
+import { OptionList } from './OptionList';
+
+const ROUND = 10;
+
+export function Study({ topic, focus, onBack }: { topic?: string | undefined; focus?: string[] | undefined; onBack: () => void }) {
+  const { progress, stars } = useStore();
+  const pool = useMemo(() => questions.filter((q) => isQuizzable(q) && (!topic || q.topic === topic)), [topic]);
+  const [queue, setQueue] = useState(() => studyOrder(pool, progress, Math.random, focus));
+  const [pos, setPos] = useState(0);
+  const [chosen, setChosen] = useState<number | null>(null);
+  const [round, setRound] = useState({ answered: 0, right: 0, missed: 0 });
+  const [between, setBetween] = useState(false);
+  const [total, setTotal] = useState({ answered: 0, right: 0 });
+
+  const q = byId.get(queue[pos] ?? '');
+  // Fresh shuffle for each position, so a question that comes back isn't in the same order.
+  const shown = useMemo(() => (q ? showOptions(q, Math.random) : null), [q, pos]);
+  const title = topic ? topicName(topic) : 'Study';
+
+  if (!pool.length)
+    return (
+      <Screen title={title} onBack={onBack}>
+        <p className="read mt-10 text-center text-[19px] text-[var(--muted)]">No questions yet in this topic.</p>
+      </Screen>
+    );
+
+  const restart = () => {
+    setQueue(studyOrder(pool, progress, Math.random));
+    setPos(0);
+    setRound({ answered: 0, right: 0, missed: 0 });
+    setTotal({ answered: 0, right: 0 });
+    setBetween(false);
+  };
+
+  if (between || !q || !shown) {
+    const done = !q;
+    const r = done && !between ? total : round;
+    return (
+      <Screen title={title} onBack={onBack}>
+        <div className="mt-16 flex flex-col items-center gap-6 px-6 text-center">
+          <p className="display text-[30px]">
+            {r.right} of {r.answered}.
+          </p>
+          {!done && round.missed > 0 && <p className="text-[17px] text-[var(--muted)]">{round.missed} coming back.</p>}
+          {done && <p className="text-[17px] text-[var(--muted)]">That's every question{topic ? ' in this topic' : ''}.</p>}
+          <Btn primary className="w-full max-w-xs" onClick={done ? restart : () => (setBetween(false), setRound({ answered: 0, right: 0, missed: 0 }))}>
+            {done ? 'Go again' : 'Keep going'}
+          </Btn>
+          <Btn className="w-full max-w-xs" onClick={onBack}>
+            Done for now
+          </Btn>
+        </div>
+      </Screen>
+    );
+  }
+
+  const reveal = chosen !== null;
+  const correct = reveal && chosen === shown.answer;
+
+  const pick = (i: number) => {
+    if (reveal) return;
+    setChosen(i);
+    const ok = i === shown.answer;
+    actions.answer(q.id, ok);
+    if (!ok) setQueue((qq) => requeue(qq, pos));
+    setRound((r) => ({ answered: r.answered + 1, right: r.right + (ok ? 1 : 0), missed: r.missed + (ok ? 0 : 1) }));
+    setTotal((t) => ({ answered: t.answered + 1, right: t.right + (ok ? 1 : 0) }));
+  };
+  const next = () => {
+    setChosen(null);
+    setPos((p) => p + 1);
+    if (round.answered >= ROUND) setBetween(true);
+  };
+
+  return (
+    <Screen title={title} onBack={onBack} right={<Star on={!!stars[q.id]} onClick={() => actions.toggleStar(q.id)} />}>
+      <div className="px-4 pb-48 pt-4">
+        <div className="mb-3 flex items-center gap-2 text-[13px] text-[var(--muted)]">
+          <span>
+            {Math.min(round.answered + (reveal ? 0 : 1), ROUND)} / {ROUND}
+          </span>
+          {q.type === 'tf' && <span>· True or false</span>}
+          {q.status === 'verify' && <Unconfirmed />}
+        </div>
+        <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
+        <OptionList shown={shown} chosen={chosen} reveal={reveal} onPick={pick} />
+      </div>
+      {reveal && (
+        <button onClick={next} className="fixed inset-0 z-20 flex items-end bg-transparent text-left" aria-label="Continue">
+          <div className="slide-up safe-bottom w-full rounded-t-2xl border-t-4 bg-[var(--surface)] px-5 pt-4 shadow-[0_-8px_24px_rgba(0,0,0,0.18)]" style={{ borderColor: correct ? 'var(--right)' : 'var(--wrong)' }}>
+            <div className="text-[17px] font-bold" style={{ color: correct ? 'var(--right)' : 'var(--wrong)' }}>
+              {correct ? 'Correct' : 'Not quite'}
+            </div>
+            {!correct && <div className="read mt-1 text-[19px]">Answer: {answerText(q)}</div>}
+            {q.why && <div className="read mt-2 text-[18px] leading-snug">{q.why}</div>}
+            <div className="mt-3">
+              <SourceLine q={q} />
+            </div>
+            <div className="mt-3 pb-1 text-center text-[13px] text-[var(--muted)]">Tap anywhere to continue</div>
+          </div>
+        </button>
+      )}
+    </Screen>
+  );
+}
+
+function Screen({ title, onBack, right, children }: { title: string; onBack: () => void; right?: React.ReactNode; children: React.ReactNode }) {
+  return (
+    <div className="mx-auto min-h-dvh max-w-xl">
+      <TopBar title={title} onBack={onBack} right={right} />
+      {children}
+    </div>
+  );
+}
