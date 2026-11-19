@@ -26,6 +26,22 @@ Home Screen before starting, because Safari and the Home Screen app keep separat
 
 A mock test in progress is saved on every answer, so leaving the app doesn't lose it.
 
+Questions from the instructors' review sheet carry an "! Exam review" badge. Questions can show
+slide screenshots with a highlight box over the part that matters (see
+[docs/ADDING-QUESTIONS.md](docs/ADDING-QUESTIONS.md)).
+
+## Screens
+
+- **Phone, upright**: the default layout.
+- **Phone, sideways** (under 520px tall, at least 600px wide): Home in two columns; in Study and
+  Lesson the answer panel sits in a right-hand column; Test and Lightning show options in two
+  columns. Content clears the notch.
+- **Tablet** (at least 768 by 600, either orientation): wider column and bigger type, Home in two
+  columns, the answer panel as a centered card, Cram in two columns. iPad split view narrower
+  than 768px uses the phone layout.
+
+The breakpoints live in `src/index.css`.
+
 ## Run it
 
 ```bash
@@ -41,7 +57,8 @@ npm run e2e        # after build: clicks through every mode at 390x844, light an
 
 `wrangler.jsonc` serves `./dist` as static assets. In the Cloudflare dashboard: Workers & Pages,
 Create, Import a repository, pick `ops-school-study`, build command `npm run build`, deploy
-command `npx wrangler deploy`. Every push to `main` redeploys. The app checks for a new version
+command `npx wrangler deploy`. Every push to `main` redeploys. Pull requests get a Cloudflare preview
+build (`npx wrangler preview`), which needs the empty `"previews": {}` block in `wrangler.jsonc`. The app checks for a new version
 when it opens, when it comes back to the foreground, and every two minutes, then shows "New
 questions available, tap to update".
 
