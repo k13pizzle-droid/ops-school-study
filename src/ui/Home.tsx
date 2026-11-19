@@ -3,7 +3,7 @@ import { isMastered } from '../lib/progress';
 import { actions, useStore } from '../lib/store';
 import { isQuizzable } from '../lib/types';
 
-export type Go = (s: { name: 'study'; topic?: string } | { name: 'cards' | 'test' | 'cram' | 'finish' }) => void;
+export type Go = (s: { name: 'study'; topic?: string } | { name: 'cards' | 'test' | 'cram' | 'play' | 'finish' }) => void;
 
 export function Home({ go }: { go: Go }) {
   const { progress } = useStore();
@@ -32,9 +32,9 @@ export function Home({ go }: { go: Go }) {
         <button onClick={() => go({ name: 'study' })} className="display mt-5 min-h-16 w-full rounded-2xl bg-[var(--accent)] text-[24px] text-[var(--on-accent)]">
           Study
         </button>
-        <div className="mt-3 grid grid-cols-3 gap-3">
-          {(['cards', 'test', 'cram'] as const).map((n) => (
-            <button key={n} onClick={() => go({ name: n })} className="min-h-12 rounded-xl border border-[var(--line)] bg-[var(--surface)] text-[16px] font-semibold capitalize">
+        <div className="mt-3 grid grid-cols-4 gap-2">
+          {(['play', 'cards', 'test', 'cram'] as const).map((n) => (
+            <button key={n} onClick={() => go({ name: n })} className="min-h-12 rounded-xl border border-[var(--line)] bg-[var(--surface)] text-[15px] font-semibold capitalize">
               {n}
             </button>
           ))}

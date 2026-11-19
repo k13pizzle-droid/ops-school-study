@@ -123,3 +123,17 @@ describe('study order and the missed list', () => {
     expect(prune({ a: 1, gone: 2 }, new Set(['a']))).toEqual({ a: 1 });
   });
 });
+
+import { dayStreak, liveStreak } from '../src/lib/store';
+describe('day streak', () => {
+  const d = (s: string) => new Date(`${s}T12:00:00`);
+  const g = (lastDay: string, streak: number) => ({ xp: 0, bestLightning: 0, lastDay, streak });
+  it('counts consecutive days and restarts after a gap', () => {
+    expect(dayStreak(g('', 0), d('2026-11-19'))).toEqual({ streak: 1, lastDay: '2026-11-19' });
+    expect(dayStreak(g('2026-11-19', 1), d('2026-11-20'))).toEqual({ streak: 2, lastDay: '2026-11-20' });
+    expect(dayStreak(g('2026-11-20', 2), d('2026-11-20'))).toEqual({ streak: 2, lastDay: '2026-11-20' });
+    expect(dayStreak(g('2026-11-17', 5), d('2026-11-20'))).toEqual({ streak: 1, lastDay: '2026-11-20' });
+    expect(liveStreak(g('2026-11-17', 5), d('2026-11-20'))).toBe(0);
+    expect(liveStreak(g('2026-11-19', 5), d('2026-11-20'))).toBe(5);
+  });
+});
