@@ -11,7 +11,11 @@
     },
     "optionsFrom": "exam",
     "status": "ready",
-    "keyFact": "POA must be signed, dated, notarized? False (UPOAA took this away)"
+    "flashcard": {
+      "front": "Powers of Attorney must be signed by principal, dated, signed, and notarized. True/False",
+      "back": "False. The Uniform Power of Attorney Act took this away."
+    },
+    "keyFact": "POA must be signed, dated, and notarized: False, the UPOAA took this away"
   },
   {
     "id": "poa-trust-002",
@@ -35,6 +39,10 @@
     },
     "optionsFrom": "exam",
     "status": "ready",
+    "flashcard": {
+      "front": "Who can remove an agent from authority of a power of attorney?",
+      "back": "The principal and a judge (A & D)"
+    },
     "keyFact": "Who can remove a POA agent: principal and a judge"
   },
   {
@@ -134,8 +142,12 @@
       "origin": "review"
     },
     "optionsFrom": "exam",
-    "status": "ready",
-    "keyFact": "Trustee can always delegate routine tasks? False, only when the trust says so"
+    "status": "verify",
+    "flashcard": {
+      "front": "A trustee can always delegate routine tasks. True/False",
+      "back": "False. Only when the trust (or power of attorney) says so."
+    },
+    "keyFact": "Trustee delegating routine tasks: only when the trust says so"
   },
   {
     "id": "poa-trust-009",

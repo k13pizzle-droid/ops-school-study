@@ -2,6 +2,9 @@ import { bankVersion, buildTime, questions, topics } from '../lib/bank';
 import { isMastered } from '../lib/progress';
 import { actions, useStore } from '../lib/store';
 import { isQuizzable } from '../lib/types';
+import { useState } from 'react';
+import { checkNow, reloadFresh, useUpdate } from './updates';
+import { useTwoTap } from './useTwoTap';
 
 export type Go = (s: { name: 'study'; topic?: string } | { name: 'cards' | 'test' | 'cram' | 'play' | 'finish' }) => void;
 
@@ -10,6 +13,9 @@ export function Home({ go }: { go: Go }) {
   const quiz = questions.filter(isQuizzable);
   const mastered = quiz.filter((q) => isMastered(progress[q.id])).length;
   const toFinish = questions.filter((q) => q.status !== 'ready').length;
+  const update = useUpdate();
+  const [check, setCheck] = useState<'' | 'checking' | 'updating' | 'current' | 'offline'>('');
+  const [resetArmed, reset] = useTwoTap(actions.reset);
 
   return (
     <div className="mx-auto min-h-dvh max-w-xl">
@@ -18,6 +24,12 @@ export function Home({ go }: { go: Go }) {
         <h1 className="display text-[26px] leading-tight">Ops School</h1>
       </header>
 
+      {/* Only on Home, in normal flow, so it never sits on top of a control mid-question. */}
+      {update && (
+        <button onClick={update} className="w-full bg-[var(--tag-bg)] px-4 py-3 text-center text-[15px] font-semibold text-[var(--tag)]">
+          New questions available, tap to update
+        </button>
+      )}
       <div className="px-4 pt-5">
         <div className="flex items-center gap-5">
           <Ring done={mastered} total={quiz.length} />
@@ -75,9 +87,33 @@ export function Home({ go }: { go: Go }) {
             <button onClick={() => go({ name: 'finish' })} className="min-h-11 px-2 underline">
               To finish ({toFinish})
             </button>
-            <button onClick={() => confirm('Reset all progress, stars, and test results on this phone?') && actions.reset()} className="min-h-11 px-2 underline">
-              Reset progress
+            <button onClick={reset} className={`min-h-11 px-2 underline ${resetArmed ? 'font-semibold text-[var(--wrong)]' : ''}`}>
+              {resetArmed ? 'Tap again to erase all progress' : 'Reset progress'}
             </button>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-4">
+            <button
+              onClick={async () => {
+                setCheck('checking');
+                setCheck(await checkNow());
+              }}
+              className="min-h-11 px-2 underline"
+            >
+              {check === 'checking'
+                ? 'Checking…'
+                : check === 'updating'
+                  ? 'Updating…'
+                  : check === 'current'
+                    ? `Up to date (Bank ${bankVersion})`
+                    : check === 'offline'
+                      ? "Offline, can't check"
+                      : 'Check for updates'}
+            </button>
+            {check === 'current' && (
+              <button onClick={() => void reloadFresh()} className="min-h-11 px-2 underline">
+                Still old? Reload fresh
+              </button>
+            )}
           </div>
         </footer>
       </div>

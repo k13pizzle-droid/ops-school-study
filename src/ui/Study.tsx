@@ -4,7 +4,7 @@ import { showOptions } from '../lib/options';
 import { requeue, studyOrder } from '../lib/study';
 import { answerText, isQuizzable } from '../lib/types';
 import { actions, useStore } from '../lib/store';
-import { Btn, SourceLine, Star, TopBar, Unconfirmed } from './common';
+import { BELOW_TOP_BAR, Btn, QuestionMeta, SourceLine, Star, TopBar } from './common';
 import { OptionList } from './OptionList';
 
 const ROUND = 10;
@@ -15,7 +15,9 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
   const [queue, setQueue] = useState(() => studyOrder(pool, progress, Math.random, focus));
   const [pos, setPos] = useState(0);
   const [chosen, setChosen] = useState<number | null>(null);
-  const [round, setRound] = useState({ answered: 0, right: 0, missed: 0 });
+  const [round, setRound] = useState({ answered: 0, right: 0 });
+  // Misses not yet answered right on their way back: the "N coming back" count.
+  const [pending, setPending] = useState<Set<string>>(new Set());
   const [between, setBetween] = useState(false);
   const [total, setTotal] = useState({ answered: 0, right: 0 });
 
@@ -34,7 +36,8 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
   const restart = () => {
     setQueue(studyOrder(pool, progress, Math.random));
     setPos(0);
-    setRound({ answered: 0, right: 0, missed: 0 });
+    setRound({ answered: 0, right: 0 });
+    setPending(new Set());
     setTotal({ answered: 0, right: 0 });
     setBetween(false);
   };
@@ -48,9 +51,9 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
           <p className="display text-[30px]">
             {r.right} of {r.answered}.
           </p>
-          {!done && round.missed > 0 && <p className="text-[17px] text-[var(--muted)]">{round.missed} coming back.</p>}
+          {!done && pending.size > 0 && <p className="text-[17px] text-[var(--muted)]">{pending.size} coming back.</p>}
           {done && <p className="text-[17px] text-[var(--muted)]">That's every question{topic ? ' in this topic' : ''}.</p>}
-          <Btn primary className="w-full max-w-xs" onClick={done ? restart : () => (setBetween(false), setRound({ answered: 0, right: 0, missed: 0 }))}>
+          <Btn primary className="w-full max-w-xs" onClick={done ? restart : () => (setBetween(false), setRound({ answered: 0, right: 0 }))}>
             {done ? 'Go again' : 'Keep going'}
           </Btn>
           <Btn className="w-full max-w-xs" onClick={onBack}>
@@ -70,7 +73,13 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
     const ok = i === shown.answer;
     actions.answer(q.id, ok);
     if (!ok) setQueue((qq) => requeue(qq, pos));
-    setRound((r) => ({ answered: r.answered + 1, right: r.right + (ok ? 1 : 0), missed: r.missed + (ok ? 0 : 1) }));
+    setPending((s) => {
+      const n = new Set(s);
+      if (ok) n.delete(q.id);
+      else n.add(q.id);
+      return n;
+    });
+    setRound((r) => ({ answered: r.answered + 1, right: r.right + (ok ? 1 : 0) }));
     setTotal((t) => ({ answered: t.answered + 1, right: t.right + (ok ? 1 : 0) }));
   };
   const next = () => {
@@ -82,18 +91,12 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
   return (
     <Screen title={title} onBack={onBack} right={<Star on={!!stars[q.id]} onClick={() => actions.toggleStar(q.id)} />}>
       <div className="px-4 pb-48 pt-4">
-        <div className="mb-3 flex items-center gap-2 text-[13px] text-[var(--muted)]">
-          <span>
-            {Math.min(round.answered + (reveal ? 0 : 1), ROUND)} / {ROUND}
-          </span>
-          {q.type === 'tf' && <span>· True or false</span>}
-          {q.status === 'verify' && <Unconfirmed />}
-        </div>
+        <QuestionMeta q={q} lead={`${Math.min(round.answered + (reveal ? 0 : 1), ROUND)} / ${ROUND}`} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
         <OptionList shown={shown} chosen={chosen} reveal={reveal} onPick={pick} />
       </div>
       {reveal && (
-        <button onClick={next} className="fixed inset-0 z-20 flex items-end bg-transparent text-left" aria-label="Continue">
+        <button onClick={next} className="fixed inset-x-0 bottom-0 z-20 flex items-end bg-transparent text-left" style={{ top: BELOW_TOP_BAR }} aria-label="Continue">
           <div className="slide-up safe-bottom w-full rounded-t-2xl border-t-4 bg-[var(--surface)] px-5 pt-4 shadow-[0_-8px_24px_rgba(0,0,0,0.18)]" style={{ borderColor: correct ? 'var(--right)' : 'var(--wrong)' }}>
             <div className="text-[17px] font-bold" style={{ color: correct ? 'var(--right)' : 'var(--wrong)' }}>
               {correct ? 'Correct' : 'Not quite'}

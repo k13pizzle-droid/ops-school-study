@@ -6,7 +6,6 @@ import { Play } from './Play';
 import { Study } from './Study';
 import { Test } from './Test';
 import { ToFinish } from './ToFinish';
-import { useUpdate } from './updates';
 
 type Screen =
   | { name: 'home' }
@@ -16,7 +15,6 @@ type Screen =
 export function App() {
   const [screen, setScreen] = useState<Screen>({ name: 'home' });
   const [key, setKey] = useState(0);
-  const update = useUpdate();
 
   const go = (s: Screen) => {
     if (screen.name === 'home' && s.name !== 'home') history.pushState({ ops: 1 }, '');
@@ -44,14 +42,6 @@ export function App() {
       {screen.name === 'play' && <Play onBack={home} />}
       {screen.name === 'cram' && <Cram onBack={home} />}
       {screen.name === 'finish' && <ToFinish onBack={home} />}
-      {update && (
-        <button
-          onClick={update}
-          className="safe-bottom fixed inset-x-0 bottom-0 z-50 bg-[var(--tag-bg)] px-4 pt-3 text-center text-[15px] font-semibold text-[var(--tag)] shadow-[0_-4px_12px_rgba(0,0,0,0.15)]"
-        >
-          New questions available, tap to update
-        </button>
-      )}
     </>
   );
 }

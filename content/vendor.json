@@ -19,7 +19,8 @@
     "flashcard": {
       "front": "How important is documentation in performing vendor management?",
       "back": "It's key"
-    }
+    },
+    "keyFact": "Documentation in vendor management: it's key"
   },
   {
     "id": "vendor-002",

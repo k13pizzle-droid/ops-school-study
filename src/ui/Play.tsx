@@ -5,11 +5,12 @@ import { shuffled } from '../lib/random';
 import { studyOrder } from '../lib/study';
 import { actions, liveStreak, useStore } from '../lib/store';
 import { answerText, isQuizzable } from '../lib/types';
-import { Btn, TopBar } from './common';
+import { Btn, QuestionMeta, TopBar } from './common';
 import { OptionList } from './OptionList';
+import { useTwoTap } from './useTwoTap';
 
 // Play: the game side. Lessons (10 questions, 3 hearts, XP and combos) and a 60-second Lightning
-// round. Everything answered here still counts toward Study progress.
+// round. Lesson answers count toward Study progress; Lightning's fast guesses don't.
 const LESSON = 10;
 const HEARTS = 3;
 const LIGHTNING_SECONDS = 60;
@@ -65,6 +66,7 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
   const [bestCombo, setBestCombo] = useState(0);
   const [xp, setXp] = useState(0);
   const [banked, setBanked] = useState(false);
+  const [quitArmed, quit] = useTwoTap(onExit);
 
   const goal = Math.min(LESSON, queue.length);
   const q = byId.get(queue[pos] ?? '');
@@ -121,20 +123,21 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
-      <div className="safe-top flex items-center gap-3 px-3 pb-2">
-        <button onClick={() => confirm('Quit this lesson?') && onExit()} className="min-h-11 min-w-11 text-[22px] text-[var(--muted)]" aria-label="Quit lesson">
-          ✕
+      <div className="safe-top flex items-center gap-3 bg-[var(--color-navy)] px-3 pb-2 text-[var(--color-lavender)]">
+        <button onClick={quit} className={`min-h-11 min-w-11 ${quitArmed ? 'text-[13px] font-semibold' : 'text-[22px]'}`} aria-label="Quit lesson">
+          {quitArmed ? 'Quit?' : '✕'}
         </button>
-        <div className="h-3.5 flex-1 overflow-hidden rounded-full bg-[var(--soft)]" role="progressbar" aria-valuenow={right} aria-valuemax={goal}>
+        <div className="h-3.5 flex-1 overflow-hidden rounded-full bg-white/20" role="progressbar" aria-valuenow={right} aria-valuemax={goal}>
           <div className="h-full rounded-full bg-[var(--right)] transition-[width] duration-300" style={{ width: `${(100 * right) / goal}%` }} />
         </div>
-        <div className="min-w-14 text-right text-[17px] font-bold text-[var(--wrong)]" aria-label={`${hearts} hearts`}>
+        <div className="min-w-14 text-right text-[17px] font-bold text-[#fca5a5]" aria-label={`${hearts} hearts`}>
           {'♥'.repeat(hearts)}
           <span className="opacity-25">{'♥'.repeat(HEARTS - hearts)}</span>
         </div>
       </div>
       <div className="px-4 pb-48 pt-3">
-        <div className="mb-3 h-6 text-[15px] font-bold text-[var(--tag)]">{combo >= 3 ? `🔥 ${combo} in a row` : ''}</div>
+        <div className="mb-1 h-6 text-[15px] font-bold text-[var(--tag)]">{combo >= 3 ? `🔥 ${combo} in a row` : ''}</div>
+        <QuestionMeta q={q} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
         <OptionList shown={shown} chosen={chosen} reveal={reveal} onPick={pick} />
       </div>
@@ -203,7 +206,6 @@ function Lightning({ onExit, onAgain }: { onExit: () => void; onAgain: () => voi
   const pick = (i: number) => {
     if (flash) return;
     const ok = i === shown.answer;
-    actions.answer(q.id, ok);
     if (ok) setScore((s) => s + 1);
     setFlash({ i, ok });
     setTimeout(() => (setFlash(null), setPos((p) => p + 1)), ok ? 350 : 900);
@@ -211,14 +213,15 @@ function Lightning({ onExit, onAgain }: { onExit: () => void; onAgain: () => voi
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
-      <div className="safe-top flex items-center justify-between px-4 pb-2">
-        <button onClick={onExit} className="min-h-11 min-w-11 text-left text-[22px] text-[var(--muted)]" aria-label="Quit">
+      <div className="safe-top flex items-center justify-between bg-[var(--color-navy)] px-4 pb-2 text-[var(--color-lavender)]">
+        <button onClick={onExit} className="min-h-11 min-w-11 text-left text-[22px]" aria-label="Quit">
           ✕
         </button>
-        <div className={`text-[28px] font-bold tabular-nums ${left <= 10 ? 'text-[var(--wrong)]' : ''}`}>0:{String(left).padStart(2, '0')}</div>
+        <div className={`text-[28px] font-bold tabular-nums ${left <= 10 ? 'text-[#fca5a5]' : ''}`}>0:{String(left).padStart(2, '0')}</div>
         <div className="min-w-11 text-right text-[22px] font-bold tabular-nums">⚡{score}</div>
       </div>
       <div className="px-4 pt-3">
+        <QuestionMeta q={q} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
         <OptionList shown={shown} chosen={flash?.i ?? null} reveal={!!flash} onPick={pick} />
       </div>

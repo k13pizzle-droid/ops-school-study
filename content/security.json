@@ -20,7 +20,8 @@
     "flashcard": {
       "front": "What are some things/issues that cause bank losses?",
       "back": "Identity theft, card fraud, organized check fraud, loan fraud, wire fraud, customer loss from scams"
-    }
+    },
+    "keyFact": "Causes of bank losses: identity theft, card fraud, organized check fraud, loan fraud, wire fraud, customer losses from scams"
   },
   {
     "id": "security-002",
@@ -29,9 +30,9 @@
     "stem": "What are the reasons for internal controls?",
     "options": [
       "Monitor operations, manage risk, and help the organization run smoothly and efficiently",
-      "Reduce the number of employees the bank needs",
-      "Guarantee that no fraud can ever occur",
-      "Shift liability for losses onto customers"
+      "Reduce the number of employees the bank needs by automating approvals",
+      "Guarantee that no fraud or error can ever occur anywhere in the bank",
+      "Shift liability for losses onto customers and outside vendors instead of the bank"
     ],
     "answer": 0,
     "source": {
@@ -42,7 +43,8 @@
     "flashcard": {
       "front": "What are the reasons for internal controls?",
       "back": "Monitor operations, manage risk, and help the organization run smoothly and efficiently"
-    }
+    },
+    "keyFact": "Internal controls: monitor operations, manage risk, help the organization run smoothly and efficiently"
   },
   {
     "id": "security-003",
@@ -59,7 +61,8 @@
     "flashcard": {
       "front": "Over the last 10 years or so, have bank robberies increased or decreased?",
       "back": "Decreased"
-    }
+    },
+    "keyFact": "Bank robberies, last 10 years or so: decreased"
   },
   {
     "id": "security-004",
@@ -81,6 +84,7 @@
     "flashcard": {
       "front": "When should you have dual controls?",
       "back": "When completing sensitive tasks"
-    }
+    },
+    "keyFact": "Dual controls: when completing sensitive tasks"
   }
 ]

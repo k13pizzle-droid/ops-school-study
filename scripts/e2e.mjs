@@ -61,13 +61,18 @@ try {
     await page.getByRole('button', { name: 'Start test' }).click();
     await shot('test-q'); await overflow('test');
     await page.locator('button.read').nth(1).click();
+    // Leaving mid-test keeps it: Test offers Resume.
+    await page.getByRole('button', { name: 'Back to home' }).click();
+    await page.getByRole('button', { name: 'test' }).click();
+    await page.getByRole('button', { name: /Resume test \(1 of/ }).click();
     await page.getByRole('button', { name: 'Next ›' }).click();
     await page.getByRole('button', { name: 'All' }).click();
     await shot('test-grid');
     const n = await page.locator('.grid-cols-6 button').count();
     await page.locator('.grid-cols-6 button').nth(n - 1).click();
-    page.once('dialog', (d) => d.accept());
+    // Unanswered questions: the first tap arms, the second finishes.
     await page.getByRole('button', { name: 'Finish' }).click();
+    await page.getByRole('button', { name: /blank\. Tap again/ }).click();
     await page.getByText('By topic, weakest first').waitFor();
     await shot('test-results'); await overflow('results');
     await page.getByRole('button', { name: /Study my misses/ }).click();

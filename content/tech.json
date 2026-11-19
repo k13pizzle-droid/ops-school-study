@@ -52,9 +52,9 @@
     "stem": "Why do you have multi-factor authentication (MFA) and what does it do?",
     "options": [
       "It's a second layer of protection that requires two or more separate proofs of identity before granting access",
-      "It encrypts every email the bank sends",
-      "It lets one password work across all systems",
-      "It blocks every login from outside the bank's network"
+      "It encrypts every email and file the bank sends so outsiders can't read them",
+      "It lets one strong password work across all of the bank's systems at once",
+      "It blocks every login attempt that comes from outside the bank's own network"
     ],
     "answer": 0,
     "source": {

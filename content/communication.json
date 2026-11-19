@@ -13,9 +13,9 @@
     "status": "ready",
     "flashcard": {
       "front": "According to Jeremy (the instructor), should you have more words or less when writing?",
-      "back": "Less. \"More words are better when writing\" is False."
+      "back": "Less"
     },
-    "keyFact": "Writing: fewer words (more words are better = False)"
+    "keyFact": "More words are better when writing: False, use fewer"
   },
   {
     "id": "communication-002",
@@ -37,7 +37,8 @@
     "flashcard": {
       "front": "Why is it important to use correct grammar?",
       "back": "It enhances clarity and precision in writing and speech"
-    }
+    },
+    "keyFact": "Correct grammar: enhances clarity and precision in writing and speech"
   },
   {
     "id": "communication-003",

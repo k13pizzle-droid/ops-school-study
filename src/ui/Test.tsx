@@ -1,13 +1,23 @@
 import { useEffect, useState } from 'react';
-import { questions, topicName } from '../lib/bank';
+import { byId, questions, topicName } from '../lib/bank';
 import { sampleExam } from '../lib/exam';
 import { showOptions, type Shown } from '../lib/options';
-import { actions, useStore, type TestResult } from '../lib/store';
+import { actions, savedRun, useStore, type TestResult } from '../lib/store';
 import { isQuizzable, type Question } from '../lib/types';
-import { Btn, SourceLine, TopBar, Unconfirmed } from './common';
+import { Btn, QuestionMeta, SourceLine, TopBar } from './common';
 import { OptionList } from './OptionList';
+import { useTwoTap } from './useTwoTap';
 
 type Run = { qs: Question[]; shown: Shown[]; picks: (number | null)[]; started: number; timer: boolean };
+
+/** A test saved mid-way, if every question in it is still in the bank. */
+function loadSaved(): (Run & { idx: number }) | null {
+  const s = savedRun.load();
+  if (!s) return null;
+  const qs = s.ids.map((id) => byId.get(id));
+  if (qs.some((q) => !q) || s.shown.length !== qs.length) return null;
+  return { qs: qs as Question[], shown: s.shown, picks: s.picks, started: s.started, timer: s.timer, idx: s.idx };
+}
 
 /** Mock exam: no feedback until the end, any answer can be changed before finishing. */
 export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMisses: (ids: string[]) => void }) {
@@ -20,6 +30,35 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   const [grid, setGrid] = useState(false);
   const [result, setResult] = useState<TestResult | null>(null);
   const [review, setReview] = useState(false);
+  const [saved, setSaved] = useState(loadSaved);
+
+  // Save after every answer and every move, so leaving (back swipe, update, iOS closing the app)
+  // never loses a test. Cleared when the test is finished.
+  useEffect(() => {
+    if (run && !result) savedRun.save({ ids: run.qs.map((q) => q.id), shown: run.shown, picks: run.picks, idx, started: run.started, timer: run.timer });
+  }, [run, idx, result]);
+
+  const answered = run ? run.picks.filter((p) => p !== null).length : 0;
+  const finish = () => {
+    if (!run) return;
+    const byTopic: Record<string, [number, number]> = {};
+    const missed: string[] = [];
+    const results: [string, boolean][] = [];
+    run.qs.forEach((qq, i) => {
+      const ok = run.picks[i] === run.shown[i]!.answer;
+      const t = (byTopic[qq.topic] ??= [0, 0]);
+      t[1]++;
+      if (ok) t[0]++;
+      else missed.push(qq.id);
+      if (run.picks[i] !== null) results.push([qq.id, ok]);
+    });
+    const r: TestResult = { at: Date.now(), score: run.qs.length - missed.length, total: run.qs.length, byTopic, missed };
+    actions.answerMany(results);
+    actions.saveTest(r);
+    savedRun.clear();
+    setResult(r);
+  };
+  const [finishArmed, tapFinish] = useTwoTap(finish);
 
   if (result && run)
     return review ? (
@@ -54,15 +93,29 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
             <span className="text-[16px] font-semibold">Show a timer</span>
             <input type="checkbox" checked={timer} onChange={(e) => setTimer(e.target.checked)} className="h-6 w-6 accent-[var(--accent)]" />
           </label>
+          {saved && (
+            <Btn
+              primary
+              onClick={() => {
+                const { idx: i, ...r } = saved;
+                setRun(r);
+                setIdx(i);
+              }}
+            >
+              Resume test ({saved.picks.filter((p) => p !== null).length} of {saved.qs.length} answered)
+            </Btn>
+          )}
           <Btn
-            primary
+            primary={!saved}
             onClick={() => {
+              savedRun.clear();
+              setSaved(null);
               const qs = sampleExam(pool, size, Math.random);
               setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer });
               setIdx(0);
             }}
           >
-            Start test
+            {saved ? 'Start a new test' : 'Start test'}
           </Btn>
           {tests.length > 0 && (
             <div>
@@ -82,38 +135,19 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
     );
 
   const q = run.qs[idx]!;
-  const answered = run.picks.filter((p) => p !== null).length;
-  const finish = () => {
-    const left = run.qs.length - answered;
-    if (left && !confirm(`${left} unanswered. Finish anyway?`)) return;
-    const byTopic: Record<string, [number, number]> = {};
-    const missed: string[] = [];
-    const results: [string, boolean][] = [];
-    run.qs.forEach((qq, i) => {
-      const ok = run.picks[i] === run.shown[i]!.answer;
-      const t = (byTopic[qq.topic] ??= [0, 0]);
-      t[1]++;
-      if (ok) t[0]++;
-      else missed.push(qq.id);
-      if (run.picks[i] !== null) results.push([qq.id, ok]);
-    });
-    const r: TestResult = { at: Date.now(), score: run.qs.length - missed.length, total: run.qs.length, byTopic, missed };
-    actions.answerMany(results);
-    actions.saveTest(r);
-    setResult(r);
-  };
+  const left = run.qs.length - answered;
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
       <TopBar
         title={`${idx + 1} of ${run.qs.length}`}
-        onBack={() => confirm('Leave the test? Answers so far are lost.') && onBack()}
+        onBack={onBack /* the test is saved; Test offers Resume next time */}
         right={run.timer ? <Clock from={run.started} /> : undefined}
       />
       {grid ? (
         <div className="flex-1 px-4 pt-3">
           <div className="mb-2 text-[13px] text-[var(--muted)]">
-            {answered} of {run.qs.length} answered. Tap a number to jump.
+            {answered} of {run.qs.length} answered. Tap a number to jump, or finish from the last question.
           </div>
           <div className="grid grid-cols-6 gap-2">
             {run.qs.map((_, i) => (
@@ -129,10 +163,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
         </div>
       ) : (
         <div className="flex-1 px-4 pb-6 pt-4">
-          <div className="mb-3 flex gap-2 text-[13px] text-[var(--muted)]">
-            {q.type === 'tf' && <span>True or false</span>}
-            {q.status === 'verify' && <Unconfirmed />}
-          </div>
+          <QuestionMeta q={q} />
           <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
           <OptionList
             shown={run.shown[idx]!}
@@ -150,8 +181,8 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
             Next ›
           </Btn>
         ) : (
-          <Btn primary onClick={finish}>
-            Finish
+          <Btn primary onClick={left ? tapFinish : finish} className={finishArmed ? 'text-[14px] leading-tight' : ''}>
+            {finishArmed ? `${left} blank. Tap again` : 'Finish'}
           </Btn>
         )}
       </div>

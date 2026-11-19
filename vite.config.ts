@@ -24,7 +24,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      // Prompt mode: the app shows "New questions available, tap to update" (src/ui/UpdateBar.tsx).
+      // Prompt mode: the app shows "New questions available, tap to update" (src/ui/updates.ts, shown on Home).
       registerType: 'prompt',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {

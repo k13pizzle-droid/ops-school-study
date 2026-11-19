@@ -19,7 +19,8 @@
     "flashcard": {
       "front": "Why should you periodically review your service charges?",
       "back": "To see if they compare with market competition"
-    }
+    },
+    "keyFact": "Review service charges: to compare with market competition"
   },
   {
     "id": "income-002",
@@ -41,7 +42,8 @@
     "flashcard": {
       "front": "What are some things to consider when monitoring your CD program?",
       "back": "Exception rates, early withdrawal penalty waivers, current market rates for your locations"
-    }
+    },
+    "keyFact": "CD program, watch: exception rates, early withdrawal penalty waivers, current market rates for your locations"
   },
   {
     "id": "income-003",
@@ -50,9 +52,9 @@
     "stem": "Why do you review your deposit program?",
     "options": [
       "To see how it compares with market competition, whether it's priced within or outside of market scope, and its fees",
-      "To decide which branches to close",
-      "To set loan approval limits",
-      "To count how many accounts each employee opened"
+      "To decide which branches to close based on how many deposit accounts each one holds",
+      "To set loan approval limits for each lender based on the deposits they bring in",
+      "To count how many accounts each employee opened for incentive pay"
     ],
     "answer": 0,
     "source": {
@@ -63,6 +65,7 @@
     "flashcard": {
       "front": "Why do you review your deposit program?",
       "back": "To see if they compare with market competition, priced within or outside of market scope, fees"
-    }
+    },
+    "keyFact": "Review deposit program: compare with competition, priced within or outside market scope, fees"
   }
 ]

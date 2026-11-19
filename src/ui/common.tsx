@@ -4,8 +4,9 @@ import type { Question } from '../lib/types';
 
 export function TopBar({ title, onBack, right }: { title: string; onBack: () => void; right?: ReactNode }) {
   return (
-    <div className="safe-top sticky top-0 z-10 flex items-center gap-2 border-b border-[var(--line)] bg-[var(--bg)] px-2 pb-2">
-      <button onClick={onBack} className="min-h-11 min-w-11 rounded-lg px-2 text-left text-[15px] font-medium text-[var(--muted)]" aria-label="Back to home">
+    // Navy in both themes: the iPhone status bar draws white text over the top of the page.
+    <div className="safe-top sticky top-0 z-30 flex items-center gap-2 bg-[var(--color-navy)] px-2 pb-2 text-[var(--color-lavender)]">
+      <button onClick={onBack} className="min-h-11 min-w-11 rounded-lg px-2 text-left text-[15px] font-medium opacity-90" aria-label="Back to home">
         ‹ Home
       </button>
       <div className="min-w-0 flex-1 truncate text-center text-[15px] font-semibold">{title}</div>
@@ -31,7 +32,7 @@ export const Unconfirmed = () => (
 export function Star({ on, onClick }: { on: boolean; onClick: () => void }) {
   return (
     <button onClick={onClick} aria-label={on ? 'Unstar' : 'Star'} aria-pressed={on} className="min-h-11 min-w-11 text-2xl leading-none">
-      <span className={on ? 'text-[var(--tag)]' : 'text-[var(--muted)] opacity-60'}>{on ? '★' : '☆'}</span>
+      <span className={on ? 'text-[#fcd34d]' : 'opacity-70'}>{on ? '★' : '☆'}</span>
     </button>
   );
 }
@@ -45,4 +46,19 @@ export const Btn = ({ children, onClick, primary, className = '' }: { children: 
   </button>
 );
 
-export const letter = (i: number) => String.fromCharCode(97 + i);
+export const letter = (i: number) => String.fromCharCode(65 + i);
+
+/** Height of TopBar, so overlays can start below it and leave the star tappable. */
+export const BELOW_TOP_BAR = 'calc(max(env(safe-area-inset-top), 12px) + 52px)';
+
+/** The small line above a question: topic, type, unconfirmed tag. */
+export function QuestionMeta({ q, lead }: { q: Question; lead?: string }) {
+  return (
+    <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-[var(--muted)]">
+      {lead && <span>{lead} ·</span>}
+      <span>{topicName(q.topic)}</span>
+      {q.type === 'tf' && <span>· True or false</span>}
+      {q.status === 'verify' && <Unconfirmed />}
+    </div>
+  );
+}

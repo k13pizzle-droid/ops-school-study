@@ -8,13 +8,15 @@ import { Btn, SourceLine, Star, TopBar, Unconfirmed } from './common';
 
 type Filter = 'all' | 'missed' | 'starred';
 const front = (q: Question) => q.flashcard?.front ?? q.stem;
-// "All of the above" on its own makes a useless card back, so list what "all" is.
+// A card back should teach something: "All of the above" lists what "all" is, and a bare
+// "False" or "A & D" gets the explanation underneath.
 const back = (q: Question) => {
   if (q.flashcard) return q.flashcard.back;
   const a = answerText(q);
   if (a && /^all of the above/i.test(a)) return `All of the above: ${q.options!.filter((o) => o !== a).join('; ')}`;
   return a;
 };
+const backNote = (q: Question) => (!q.flashcard && (q.type === 'tf' || q.shuffle === false) ? (q.why ?? q.keyFact) : undefined);
 
 /** Flashcards. Any question with an answer, even ones not ready for the quiz yet. */
 export function Cards({ onBack }: { onBack: () => void }) {
@@ -69,7 +71,7 @@ export function Cards({ onBack }: { onBack: () => void }) {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`min-h-10 rounded-full px-4 text-[14px] font-semibold capitalize ${filter === f ? 'bg-[var(--accent)] text-[var(--on-accent)]' : 'border border-[var(--line)] bg-[var(--surface)]'}`}
+            className={`min-h-11 rounded-full px-4 text-[14px] font-semibold capitalize ${filter === f ? 'bg-[var(--accent)] text-[var(--on-accent)]' : 'border border-[var(--line)] bg-[var(--surface)]'}`}
           >
             {f}
           </button>
@@ -92,7 +94,8 @@ export function Cards({ onBack }: { onBack: () => void }) {
           <div className="px-4 pt-3 text-[13px] text-[var(--muted)]">
             {got} of {deck.length} got · {order.length - i} left
           </div>
-          <div className="flex flex-1 flex-col px-4 py-3">
+          {/* Wider side margins keep a swipe clear of the iPhone's edge back-gesture. */}
+          <div className="flex flex-1 flex-col px-7 py-3">
             <div
               role="button"
               tabIndex={0}
@@ -101,8 +104,9 @@ export function Cards({ onBack }: { onBack: () => void }) {
                 (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
               }}
               onPointerMove={(e) => start.current !== null && setDx(e.clientX - start.current)}
-              onPointerUp={() => {
-                const d = dx;
+              onPointerUp={(e) => {
+                // Measure from the event itself: the dx state can lag a fast flick by a frame.
+                const d = start.current === null ? 0 : e.clientX - start.current;
                 start.current = null;
                 if (d > 80) go(true);
                 else if (d < -80) go(false);
@@ -123,6 +127,7 @@ export function Cards({ onBack }: { onBack: () => void }) {
                 {flipped ? 'Answer' : 'Question'} {q.status === 'verify' && <Unconfirmed />}
               </div>
               <div className={`read leading-snug ${flipped ? 'text-[24px] font-semibold' : 'text-[22px]'}`}>{flipped ? back(q) : front(q)}</div>
+              {flipped && backNote(q) && <div className="read mt-3 text-[18px] leading-snug">{backNote(q)}</div>}
               {flipped && (
                 <div className="mt-4">
                   <SourceLine q={q} />
