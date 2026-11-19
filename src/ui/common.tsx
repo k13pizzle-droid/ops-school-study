@@ -16,7 +16,7 @@ export function TopBar({ title, onBack, right }: { title: string; onBack: () => 
 }
 
 export function SourceLine({ q }: { q: Question }) {
-  const origin = q.source.origin === 'review' ? 'Review sheet' : q.source.origin === 'slides' ? 'Slides' : 'Practice';
+  const origin = q.source.origin === 'review' ? 'From the exam review' : q.source.origin === 'slides' ? 'Slides' : 'Practice';
   return (
     <div className="text-[13px] text-[var(--muted)]">
       {origin} · {topicName(q.topic)}
@@ -24,6 +24,16 @@ export function SourceLine({ q }: { q: Question }) {
     </div>
   );
 }
+
+/** Marks the instructors' review questions: the best predictor of what's on the exam. */
+export const ExamReview = () => (
+  <span className="inline-flex items-center gap-1 rounded-full bg-[var(--accent)] px-2 py-0.5 text-[12px] font-semibold normal-case tracking-normal text-[var(--on-accent)]">
+    <span className="display text-[14px] leading-none" aria-hidden>
+      !
+    </span>
+    Exam review
+  </span>
+);
 
 export const Unconfirmed = () => (
   <span className="rounded bg-[var(--tag-bg)] px-1.5 py-0.5 text-[12px] font-semibold text-[var(--tag)]">unconfirmed</span>
@@ -55,6 +65,7 @@ export const BELOW_TOP_BAR = 'calc(max(env(safe-area-inset-top), 12px) + 52px)';
 export function QuestionMeta({ q, lead }: { q: Question; lead?: string }) {
   return (
     <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-[var(--muted)]">
+      {q.source.origin === 'review' && <ExamReview />}
       {lead && <span>{lead} ·</span>}
       <span>{topicName(q.topic)}</span>
       {q.type === 'tf' && <span>· True or false</span>}
