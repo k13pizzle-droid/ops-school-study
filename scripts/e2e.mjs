@@ -66,7 +66,7 @@ try {
     await page.getByRole('button', { name: 'test' }).click();
     await page.getByRole('button', { name: /Resume test \(1 of/ }).click();
     await page.getByRole('button', { name: 'Next ›' }).click();
-    await page.getByRole('button', { name: 'All' }).click();
+    await page.getByRole('button', { name: 'All', exact: true }).click();
     await shot('test-grid');
     const n = await page.locator('.grid-cols-6 button').count();
     await page.locator('.grid-cols-6 button').nth(n - 1).click();

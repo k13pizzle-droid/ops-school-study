@@ -5,7 +5,7 @@ import type { Question } from '../lib/types';
 export function TopBar({ title, onBack, right }: { title: string; onBack: () => void; right?: ReactNode }) {
   return (
     // Navy in both themes: the iPhone status bar draws white text over the top of the page.
-    <div className="safe-top sticky top-0 z-30 flex items-center gap-2 bg-[var(--color-navy)] px-2 pb-2 text-[var(--color-lavender)]">
+    <div className="topbar safe-top sticky top-0 z-30 flex items-center gap-2 bg-[var(--color-navy)] px-2 pb-2 text-[var(--color-lavender)]">
       <button onClick={onBack} className="min-h-11 min-w-11 rounded-lg px-2 text-left text-[15px] font-medium opacity-90" aria-label="Back to home">
         ‹ Home
       </button>
