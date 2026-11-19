@@ -5,6 +5,7 @@ import { isQuizzable } from '../lib/types';
 import { useState } from 'react';
 import { checkNow, reloadFresh, useUpdate } from './updates';
 import { useTwoTap } from './useTwoTap';
+import { InstallHint } from './InstallHint';
 
 export type Go = (s: { name: 'study'; topic?: string } | { name: 'cards' | 'test' | 'cram' | 'play' | 'finish' }) => void;
 
@@ -30,6 +31,7 @@ export function Home({ go }: { go: Go }) {
           New questions available, tap to update
         </button>
       )}
+      <InstallHint />
       <div className="px-4 pt-5">
         <div className="flex items-center gap-5">
           <Ring done={mastered} total={quiz.length} />

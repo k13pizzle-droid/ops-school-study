@@ -6,8 +6,8 @@
     "stem": "What is a strong warning sign of a business email compromise?",
     "options": [
       "A request to change payment or wire instructions",
-      "An email that includes the company logo",
-      "A message sent during business hours",
+      "An email asking you to confirm a meeting time",
+      "An invoice sent on the vendor's usual billing date",
       "A routine monthly statement from a known vendor"
     ],
     "answer": 0,

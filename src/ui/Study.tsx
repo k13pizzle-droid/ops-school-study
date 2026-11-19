@@ -90,14 +90,14 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
 
   return (
     <Screen title={title} onBack={onBack} right={<Star on={!!stars[q.id]} onClick={() => actions.toggleStar(q.id)} />}>
-      <div className="px-4 pb-48 pt-4">
+      <div className={`px-4 pb-48 pt-4 ${reveal ? 'reveal-pad' : ''}`}>
         <QuestionMeta q={q} lead={`${Math.min(round.answered + (reveal ? 0 : 1), ROUND)} / ${ROUND}`} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
         <OptionList shown={shown} chosen={chosen} reveal={reveal} onPick={pick} />
       </div>
       {reveal && (
         <button onClick={next} className="fixed inset-x-0 bottom-0 z-20 flex items-end bg-transparent text-left" style={{ top: BELOW_TOP_BAR }} aria-label="Continue">
-          <div className="slide-up safe-bottom w-full rounded-t-2xl border-t-4 bg-[var(--surface)] px-5 pt-4 shadow-[0_-8px_24px_rgba(0,0,0,0.18)]" style={{ borderColor: correct ? 'var(--right)' : 'var(--wrong)' }}>
+          <div className="reveal-panel slide-up safe-bottom w-full rounded-t-2xl border-t-4 bg-[var(--surface)] px-5 pt-4 shadow-[0_-8px_24px_rgba(0,0,0,0.18)]" style={{ borderColor: correct ? 'var(--right)' : 'var(--wrong)' }}>
             <div className="text-[17px] font-bold" style={{ color: correct ? 'var(--right)' : 'var(--wrong)' }}>
               {correct ? 'Correct' : 'Not quite'}
             </div>
@@ -116,7 +116,7 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
 
 function Screen({ title, onBack, right, children }: { title: string; onBack: () => void; right?: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div className="mx-auto min-h-dvh max-w-xl">
+    <div className="page mx-auto min-h-dvh max-w-xl">
       <TopBar title={title} onBack={onBack} right={right} />
       {children}
     </div>
