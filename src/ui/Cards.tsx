@@ -4,7 +4,7 @@ import { isMissed } from '../lib/progress';
 import { shuffled } from '../lib/random';
 import { actions, useStore } from '../lib/store';
 import { answerText, type Question } from '../lib/types';
-import { Btn, SourceLine, Star, TopBar, Unconfirmed } from './common';
+import { Btn, ExamReview, SourceLine, Star, TopBar, Unconfirmed } from './common';
 
 type Filter = 'all' | 'missed' | 'starred';
 const front = (q: Question) => q.flashcard?.front ?? q.stem;
@@ -124,7 +124,7 @@ export function Cards({ onBack }: { onBack: () => void }) {
               }}
             >
               <div className="mb-3 text-[12px] font-semibold uppercase tracking-wide text-[var(--muted)]">
-                {flipped ? 'Answer' : 'Question'} {q.status === 'verify' && <Unconfirmed />}
+                {flipped ? 'Answer' : 'Question'} {q.source.origin === 'review' && <ExamReview />} {q.status === 'verify' && <Unconfirmed />}
               </div>
               <div className={`read leading-snug ${flipped ? 'text-[24px] font-semibold' : 'text-[22px]'}`}>{flipped ? back(q) : front(q)}</div>
               {flipped && backNote(q) && <div className="read mt-3 text-[18px] leading-snug">{backNote(q)}</div>}
