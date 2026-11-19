@@ -1,7 +1,7 @@
 // Clicks through Study, Cards, Test, and Cram on the built app at iPhone size, light and dark.
 // Run: npm run build && npm run e2e. Screenshots land in e2e-output/ (gitignored).
 import { spawn } from 'node:child_process';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
 // Playwright is preinstalled globally on the cloud box and on the Mac; it isn't a dependency.
@@ -10,9 +10,26 @@ const { chromium } = require('playwright');
 
 const out = 'e2e-output';
 mkdirSync(out, { recursive: true });
-const server = spawn('npx', ['vite', 'preview', '--port', '4319', '--strictPort'], { stdio: 'ignore' });
+// Own process group, so finishing kills vite itself and not just npx (a leftover server would
+// keep the port and quietly serve some other build to the next run).
+const server = spawn('npx', ['vite', 'preview', '--port', '4319', '--strictPort'], { stdio: 'ignore', detached: true });
+const stop = () => {
+  try {
+    process.kill(-server.pid);
+  } catch {
+    /* already gone */
+  }
+};
 await new Promise((r) => setTimeout(r, 2500));
 const url = 'http://localhost:4319/';
+// Make sure the server answering is serving this checkout's dist/.
+const want = readFileSync('dist/index.html', 'utf8').match(/\/assets\/index-[^"]+\.js/)?.[0];
+const got = (await (await fetch(url)).text()).match(/\/assets\/index-[^"]+\.js/)?.[0];
+if (!want || want !== got) {
+  stop();
+  console.error(`Port 4319 is serving a different build (${got ?? 'nothing'}, expected ${want}). Stop the other server, run npm run build, and retry.`);
+  process.exit(1);
+}
 const problems = [];
 
 const browser = await chromium.launch();
@@ -112,7 +129,7 @@ try {
   }
 } finally {
   await browser.close();
-  server.kill();
+  stop();
 }
 if (problems.length) {
   console.error(problems.join('\n'));
