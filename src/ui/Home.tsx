@@ -19,10 +19,10 @@ export function Home({ go }: { go: Go }) {
   const [resetArmed, reset] = useTwoTap(actions.reset);
 
   return (
-    <div className="mx-auto min-h-dvh max-w-xl">
-      <header className="safe-top flex items-center gap-3 bg-[var(--color-navy)] px-5 pb-4 text-[var(--color-lavender)]">
-        <img src="/brand/lasso-kj-dog-light.png" alt="" className="w-12" />
-        <h1 className="display text-[26px] leading-tight">Ops School</h1>
+    <div className="home mx-auto min-h-dvh max-w-xl">
+      <header className="home-header safe-top flex items-center gap-3 bg-[var(--color-navy)] px-5 pb-4 text-[var(--color-lavender)]">
+        <img src="/brand/lasso-kj-dog-light.png" alt="" className="home-logo w-12" />
+        <h1 className="home-title display text-[26px] leading-tight">Ops School</h1>
       </header>
 
       {/* Only on Home, in normal flow, so it never sits on top of a control mid-question. */}
@@ -32,7 +32,9 @@ export function Home({ go }: { go: Go }) {
         </button>
       )}
       <InstallHint />
-      <div className="px-4 pt-5">
+      {/* Landscape: .home-body becomes two columns, actions left and topics right (index.css). */}
+      <div className="home-body px-4 pt-5">
+        <div className="home-actions">
         <div className="flex items-center gap-5">
           <Ring done={mastered} total={quiz.length} />
           <div className="text-[15px] leading-snug text-[var(--muted)]">
@@ -54,6 +56,8 @@ export function Home({ go }: { go: Go }) {
           ))}
         </div>
 
+        </div>
+        <div className="home-topics">
         <h2 className="mb-1 mt-7 text-[13px] font-semibold uppercase tracking-wide text-[var(--muted)]">Topics</h2>
         <ul>
           {topics.map((t) => {
@@ -117,7 +121,11 @@ export function Home({ go }: { go: Go }) {
               </button>
             )}
           </div>
+          <a href="https://www.linkedin.com/in/kevinleephillips13" target="_blank" rel="noopener noreferrer" className="min-h-11 px-2 pt-2 text-[12px] underline opacity-80">
+            Created by Lasso &amp; KJ, LLC
+          </a>
         </footer>
+        </div>
       </div>
     </div>
   );
