@@ -23,7 +23,7 @@ export function InstallHint() {
     }
   };
   return (
-    <div className="mx-4 mt-4 rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-[15px] leading-snug">
+    <div className="install-hint mx-4 mt-4 rounded-xl border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-[15px] leading-snug">
       <div className="font-semibold">Put it on your Home Screen</div>
       {platform === 'ios' ? (
         <p className="mt-1 text-[var(--muted)]">

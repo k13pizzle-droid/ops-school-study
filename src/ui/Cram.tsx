@@ -16,7 +16,7 @@ export function Cram({ onBack }: { onBack: () => void }) {
         title="Cram"
         onBack={onBack}
         right={
-          <button onClick={() => (setHideAll((h) => !h), setFlip({}))} className="min-h-11 px-2 text-[14px] font-semibold text-[var(--muted)]">
+          <button onClick={() => (setHideAll((h) => !h), setFlip({}))} className="min-h-11 px-2 text-[14px] font-semibold opacity-80">
             {hideAll ? 'Show all' : 'Hide all'}
           </button>
         }

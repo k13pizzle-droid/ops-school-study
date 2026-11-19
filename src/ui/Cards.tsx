@@ -141,7 +141,7 @@ export function Cards({ onBack }: { onBack: () => void }) {
               {!flipped && <div className="mt-6 text-[13px] text-[var(--muted)]">Tap to flip</div>}
             </div>
           </div>
-          <div className="safe-bottom grid grid-cols-2 gap-3 px-4">
+          <div className="safe-bottom sticky bottom-0 grid grid-cols-2 gap-3 bg-[var(--bg)] px-4 pt-2">
             <button onClick={() => go(false)} className="min-h-14 rounded-xl border-2 border-[var(--wrong)] text-[17px] font-semibold text-[var(--wrong)]">
               ← Again
             </button>

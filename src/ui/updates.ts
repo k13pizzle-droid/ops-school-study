@@ -42,8 +42,9 @@ export const useUpdate = () =>
   );
 
 /** The footer's "Check for updates": ask the server now and say what happened. */
-export async function checkNow(): Promise<'updating' | 'current' | 'offline'> {
+export async function checkNow(): Promise<'updating' | 'current' | 'offline' | 'unavailable'> {
   if (!navigator.onLine) return 'offline';
+  if (!registration) return 'unavailable';
   if (apply) {
     apply();
     return 'updating';
@@ -66,7 +67,14 @@ export async function checkNow(): Promise<'updating' | 'current' | 'offline'> {
  * Last resort for a phone stuck on an old version: drop the service worker and its cached files,
  * then reload from the server. Progress lives in localStorage and is not touched.
  */
-export async function reloadFresh() {
+export async function reloadFresh(): Promise<boolean> {
+  // Only drop the cached app if the server can be reached; offline, it would leave nothing to load.
+  try {
+    const res = await fetch('/', { cache: 'no-store' });
+    if (!res.ok) return false;
+  } catch {
+    return false;
+  }
   try {
     const regs = (await navigator.serviceWorker?.getRegistrations()) ?? [];
     await Promise.all(regs.map((r) => r.unregister()));
@@ -75,4 +83,5 @@ export async function reloadFresh() {
   } finally {
     location.reload();
   }
+  return true;
 }

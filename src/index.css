@@ -67,15 +67,20 @@ button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulat
 @keyframes slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
 .slide-up { animation: slide-up 180ms ease-out; }
 @media (prefers-reduced-motion: reduce) { .slide-up { animation: none; } }
+.reveal-panel { max-height: 100%; overflow-y: auto; }
 @keyframes fall { from { transform: translateY(-20px) rotate(0); opacity: 1; } to { transform: translateY(100dvh) rotate(540deg); opacity: 0.2; } }
 .confetti { animation: fall 1.8s ease-in forwards; }
 @media (prefers-reduced-motion: reduce) { .confetti { display: none; } }
 
 /* Landscape on a phone (short and wide): the question uses the full width and the answer panel
    sits in a column on the right instead of sliding up over the options. */
-@media (orientation: landscape) and (max-height: 520px) {
+@media (orientation: landscape) and (max-height: 520px) and (min-width: 600px) {
   .page { max-width: none; }
-  .reveal-pad { padding-right: calc(42vw + 16px); padding-bottom: 24px; }
+  .page > :not(.fixed) { padding-left: max(env(safe-area-inset-left), 16px); padding-right: max(env(safe-area-inset-right), 16px); }
+  .page > .reveal-pad { padding-right: calc(42vw + 16px); padding-bottom: 24px; }
+  .opt-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .test-nav { padding-top: 6px; }
+  .test-nav button { min-height: 44px; }
   .reveal-panel {
     position: fixed;
     right: 0;
@@ -91,7 +96,7 @@ button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulat
 
 /* Home in landscape on a phone: a slim header, then two columns. Actions stay put on the left;
    the topic list and footer scroll on the right. Side padding clears the notch. */
-@media (orientation: landscape) and (max-height: 520px) {
+@media (orientation: landscape) and (max-height: 520px) and (min-width: 600px) {
   .home { max-width: none; }
   .home-header {
     padding-top: max(env(safe-area-inset-top), 8px);
@@ -109,6 +114,15 @@ button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulat
     padding-right: max(env(safe-area-inset-right), 16px);
   }
   .home-actions { align-self: start; position: sticky; top: 12px; }
+  .home-update { padding-left: max(env(safe-area-inset-left), 16px); padding-right: max(env(safe-area-inset-right), 16px); }
+  .install-hint { margin-left: max(env(safe-area-inset-left), 16px); margin-right: max(env(safe-area-inset-right), 16px); }
+  /* Screens that keep a centered column still get an edge-to-edge top bar. */
+  .topbar {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: max(calc(50vw - 50% + 8px), env(safe-area-inset-left));
+    padding-right: max(calc(50vw - 50% + 8px), env(safe-area-inset-right));
+  }
   .home-topics > h2:first-child { margin-top: 0; }
 }
 

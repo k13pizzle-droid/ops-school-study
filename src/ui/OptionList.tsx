@@ -2,9 +2,9 @@ import type { Shown } from '../lib/options';
 import { letter } from './common';
 
 /** The answer buttons. `reveal` colors the right answer green and a wrong pick red. */
-export function OptionList({ shown, chosen, reveal, onPick }: { shown: Shown; chosen: number | null; reveal: boolean; onPick: (i: number) => void }) {
+export function OptionList({ shown, chosen, reveal, onPick, grid }: { shown: Shown; chosen: number | null; reveal: boolean; onPick: (i: number) => void; grid?: boolean }) {
   return (
-    <div className="flex flex-col gap-2.5">
+    <div className={`flex flex-col gap-2.5 ${grid ? 'opt-grid' : ''}`}>
       {shown.options.map((o, i) => {
         const isRight = reveal && i === shown.answer;
         const isWrong = reveal && i === chosen && i !== shown.answer;

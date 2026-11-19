@@ -89,6 +89,8 @@ try {
     await page.locator('.grid-cols-6 button').nth(n - 1).click();
     // Unanswered questions: the first tap arms, the second finishes.
     await page.getByRole('button', { name: 'Finish' }).click();
+    // A second tap within half a second is ignored (double-tap guard), so pause like a person.
+    await page.waitForTimeout(600);
     await page.getByRole('button', { name: /blank\. Tap again/ }).click();
     await page.getByText('By topic, weakest first').waitFor();
     await shot('test-results'); await overflow('results');

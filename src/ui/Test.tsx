@@ -11,13 +11,44 @@ import { Slides } from './Slide';
 
 type Run = { qs: Question[]; shown: Shown[]; picks: (number | null)[]; started: number; timer: boolean };
 
-/** A test saved mid-way, if every question in it is still in the bank. */
-function loadSaved(): (Run & { idx: number }) | null {
-  const s = savedRun.load();
-  if (!s) return null;
-  const qs = s.ids.map((id) => byId.get(id));
-  if (qs.some((q) => !q) || s.shown.length !== qs.length) return null;
-  return { qs: qs as Question[], shown: s.shown, picks: s.picks, started: s.started, timer: s.timer, idx: s.idx };
+/**
+ * A test saved mid-way. Questions that have left the bank since are dropped. Each remaining
+ * question is checked against the current bank: if its options are unchanged, the answer key is
+ * refreshed (so a correction pushed tonight applies); if they changed, it is reshuffled and its
+ * pick cleared. Anything malformed clears the save instead of breaking Test.
+ */
+function loadSaved(): (Run & { idx: number; dropped: number }) | null {
+  try {
+    const s = savedRun.load();
+    if (!s || !Array.isArray(s.ids) || !Array.isArray(s.shown) || !Array.isArray(s.picks)) throw new Error('bad save');
+    if (s.ids.length !== s.shown.length || s.ids.length !== s.picks.length) throw new Error('bad save');
+    const qs: Question[] = [];
+    const shown: Shown[] = [];
+    const picks: (number | null)[] = [];
+    s.ids.forEach((id, i) => {
+      const q = byId.get(id);
+      if (!q || !isQuizzable(q)) return;
+      const old = s.shown[i]!;
+      const fresh = showOptions(q, Math.random);
+      const same = old.options.length === fresh.options.length && [...old.options].sort().join('\n') === [...fresh.options].sort().join('\n');
+      if (same) {
+        const right = fresh.options[fresh.answer]!;
+        qs.push(q);
+        shown.push({ ...old, answer: old.options.indexOf(right) });
+        picks.push(s.picks[i] ?? null);
+      } else {
+        qs.push(q);
+        shown.push(fresh);
+        picks.push(null);
+      }
+    });
+    if (!qs.length) throw new Error('nothing left');
+    const idx = Math.min(Math.max(0, Number(s.idx) || 0), qs.length - 1);
+    return { qs, shown, picks, started: Number(s.started) || Date.now(), timer: !!s.timer, idx, dropped: s.ids.length - qs.length };
+  } catch {
+    savedRun.clear();
+    return null;
+  }
 }
 
 /** Mock exam: no feedback until the end, any answer can be changed before finishing. */
@@ -32,6 +63,15 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   const [result, setResult] = useState<TestResult | null>(null);
   const [review, setReview] = useState(false);
   const [saved, setSaved] = useState(loadSaved);
+  const startNew = () => {
+    savedRun.clear();
+    setSaved(null);
+    const qs = sampleExam(pool, size, Math.random);
+    setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer });
+    setIdx(0);
+  };
+  // With a saved test waiting, starting over takes two taps so one stray tap can't wipe it.
+  const [newArmed, tapNew] = useTwoTap(startNew);
 
   // Save after every answer and every move, so leaving (back swipe, update, iOS closing the app)
   // never loses a test. Cleared when the test is finished.
@@ -98,7 +138,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
             <Btn
               primary
               onClick={() => {
-                const { idx: i, ...r } = saved;
+                const { idx: i, dropped: _d, ...r } = saved;
                 setRun(r);
                 setIdx(i);
               }}
@@ -106,17 +146,13 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
               Resume test ({saved.picks.filter((p) => p !== null).length} of {saved.qs.length} answered)
             </Btn>
           )}
-          <Btn
-            primary={!saved}
-            onClick={() => {
-              savedRun.clear();
-              setSaved(null);
-              const qs = sampleExam(pool, size, Math.random);
-              setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer });
-              setIdx(0);
-            }}
-          >
-            {saved ? 'Start a new test' : 'Start test'}
+          {saved && saved.dropped > 0 && (
+            <p className="-mt-3 text-[13px] text-[var(--muted)]">
+              {saved.dropped} question{saved.dropped === 1 ? ' was' : 's were'} removed in an update, so the saved test has {saved.qs.length}.
+            </p>
+          )}
+          <Btn primary={!saved} onClick={saved ? tapNew : startNew}>
+            {saved ? (newArmed ? 'Tap again to discard the saved test' : 'Start a new test') : 'Start test'}
           </Btn>
           {tests.length > 0 && (
             <div>
@@ -139,7 +175,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   const left = run.qs.length - answered;
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
+    <div className="page mx-auto flex min-h-dvh max-w-xl flex-col">
       <TopBar
         title={`${idx + 1} of ${run.qs.length}`}
         onBack={onBack /* the test is saved; Test offers Resume next time */}
@@ -171,11 +207,12 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
             shown={run.shown[idx]!}
             chosen={run.picks[idx]!}
             reveal={false}
+            grid
             onPick={(i) => setRun({ ...run, picks: run.picks.map((p, j) => (j === idx ? i : p)) })}
           />
         </div>
       )}
-      <div className="safe-bottom sticky bottom-0 grid grid-cols-3 gap-2 border-t border-[var(--line)] bg-[var(--bg)] px-4 pt-3">
+      <div className="test-nav safe-bottom sticky bottom-0 grid grid-cols-3 gap-2 border-t border-[var(--line)] bg-[var(--bg)] px-4 pt-3">
         <Btn onClick={() => setIdx((i) => Math.max(0, i - 1))}>‹ Back</Btn>
         <Btn onClick={() => setGrid((g) => !g)}>{grid ? 'Question' : 'All'}</Btn>
         {idx < run.qs.length - 1 ? (
@@ -199,7 +236,7 @@ function Clock({ from }: { from: number }) {
     return () => clearInterval(t);
   }, []);
   const s = Math.floor((now - from) / 1000);
-  return <span className="pr-2 text-[15px] tabular-nums text-[var(--muted)]">{`${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`}</span>;
+  return <span className="pr-2 text-[15px] tabular-nums opacity-80">{`${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`}</span>;
 }
 
 function Results({ r, onBack, onReview, onStudyMisses }: { r: TestResult; onBack: () => void; onReview: () => void; onStudyMisses: () => void }) {
