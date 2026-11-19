@@ -124,7 +124,7 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
 
   return (
     <div className="page mx-auto flex min-h-dvh max-w-xl flex-col">
-      <div className="safe-top flex items-center gap-3 bg-[var(--color-navy)] px-3 pb-2 text-[var(--color-lavender)]">
+      <div className="safe-top sticky top-0 z-30 flex items-center gap-3 bg-[var(--color-navy)] px-3 pb-2 text-[var(--color-lavender)]">
         <button onClick={quit} className={`min-h-11 min-w-11 ${quitArmed ? 'text-[13px] font-semibold' : 'text-[22px]'}`} aria-label="Quit lesson">
           {quitArmed ? 'Quit?' : '✕'}
         </button>
@@ -215,8 +215,8 @@ function Lightning({ onExit, onAgain }: { onExit: () => void; onAgain: () => voi
   };
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
-      <div className="safe-top flex items-center justify-between bg-[var(--color-navy)] px-4 pb-2 text-[var(--color-lavender)]">
+    <div className="page mx-auto flex min-h-dvh max-w-xl flex-col">
+      <div className="safe-top sticky top-0 z-30 flex items-center justify-between bg-[var(--color-navy)] px-4 pb-2 text-[var(--color-lavender)]">
         <button onClick={onExit} className="min-h-11 min-w-11 text-left text-[22px]" aria-label="Quit">
           ✕
         </button>
@@ -226,7 +226,7 @@ function Lightning({ onExit, onAgain }: { onExit: () => void; onAgain: () => voi
       <div className="px-4 pt-3">
         <QuestionMeta q={q} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
-        <OptionList shown={shown} chosen={flash?.i ?? null} reveal={!!flash} onPick={pick} />
+        <OptionList shown={shown} chosen={flash?.i ?? null} reveal={!!flash} onPick={pick} grid />
       </div>
     </div>
   );

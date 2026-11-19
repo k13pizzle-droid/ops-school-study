@@ -124,7 +124,12 @@ export function Cards({ onBack }: { onBack: () => void }) {
               }}
             >
               <div className="mb-3 text-[12px] font-semibold uppercase tracking-wide text-[var(--muted)]">
-                {flipped ? 'Answer' : 'Question'} {q.source.origin === 'review' && <ExamReview />} {q.status === 'verify' && <Unconfirmed />}
+                {q.source.origin === 'review' && (
+                  <div className="mb-2">
+                    <ExamReview />
+                  </div>
+                )}
+                {flipped ? 'Answer' : 'Question'} {q.status === 'verify' && <Unconfirmed />}
               </div>
               <div className={`read leading-snug ${flipped ? 'text-[24px] font-semibold' : 'text-[22px]'}`}>{flipped ? back(q) : front(q)}</div>
               {flipped && backNote(q) && <div className="read mt-3 text-[18px] leading-snug">{backNote(q)}</div>}
@@ -136,7 +141,7 @@ export function Cards({ onBack }: { onBack: () => void }) {
               {!flipped && <div className="mt-6 text-[13px] text-[var(--muted)]">Tap to flip</div>}
             </div>
           </div>
-          <div className="safe-bottom grid grid-cols-2 gap-3 px-4">
+          <div className="safe-bottom sticky bottom-0 grid grid-cols-2 gap-3 bg-[var(--bg)] px-4 pt-2">
             <button onClick={() => go(false)} className="min-h-14 rounded-xl border-2 border-[var(--wrong)] text-[17px] font-semibold text-[var(--wrong)]">
               ← Again
             </button>

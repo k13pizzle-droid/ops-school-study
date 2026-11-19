@@ -64,12 +64,19 @@ export const BELOW_TOP_BAR = 'calc(max(env(safe-area-inset-top), 12px) + 52px)';
 /** The small line above a question: topic, type, unconfirmed tag. */
 export function QuestionMeta({ q, lead }: { q: Question; lead?: string }) {
   return (
-    <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] text-[var(--muted)]">
-      {q.source.origin === 'review' && <ExamReview />}
+    <div className="mb-3 text-[13px] text-[var(--muted)]">
+      {/* On its own line, above the number and topic, so it reads first. */}
+      {q.source.origin === 'review' && (
+        <div className="mb-1.5">
+          <ExamReview />
+        </div>
+      )}
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
       {lead && <span>{lead} ·</span>}
       <span>{topicName(q.topic)}</span>
       {q.type === 'tf' && <span>· True or false</span>}
       {q.status === 'verify' && <Unconfirmed />}
+      </div>
     </div>
   );
 }

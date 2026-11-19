@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
+import { createPortal } from 'react-dom';
 import type { Question, SlideImage } from '../lib/types';
 
 /** Slide screenshots for one spot on a question ('stem' or 'answer'). */
@@ -20,9 +21,9 @@ export function Slides({ q, at }: { q: Question; at: SlideImage['at'] }) {
  */
 function Slide({ im }: { im: SlideImage }) {
   const [big, setBig] = useState(false);
-  const pic = (cls: string) => (
+  const pic = (cls: string, imgCls = 'block w-full', imgStyle?: CSSProperties) => (
     <div className={`relative overflow-hidden rounded-lg border border-[var(--line)] bg-white ${cls}`}>
-      <img src={`/${im.src}`} alt={im.alt} className="block w-full" loading="lazy" />
+      <img src={`/${im.src}`} alt={im.alt} className={imgCls} style={imgStyle} loading="lazy" />
       {im.mark && (
         <div
           aria-hidden
@@ -51,7 +52,7 @@ function Slide({ im }: { im: SlideImage }) {
       >
         {pic('')}
       </button>
-      {big && (
+      {big && createPortal(
         <div
           role="dialog"
           aria-label={im.alt}
@@ -61,9 +62,10 @@ function Slide({ im }: { im: SlideImage }) {
           }}
           className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-black/85 p-3"
         >
-          {pic('w-full max-w-4xl')}
+          {pic('shrink-0', 'block h-auto w-auto', { maxWidth: 'calc(100vw - 24px - env(safe-area-inset-left) - env(safe-area-inset-right))', maxHeight: 'calc(100dvh - 64px)' })}
           <div className="mt-3 text-[14px] text-white/80">Tap to close</div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );

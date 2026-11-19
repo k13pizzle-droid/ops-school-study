@@ -15,7 +15,7 @@ export function Home({ go }: { go: Go }) {
   const mastered = quiz.filter((q) => isMastered(progress[q.id])).length;
   const toFinish = questions.filter((q) => q.status !== 'ready').length;
   const update = useUpdate();
-  const [check, setCheck] = useState<'' | 'checking' | 'updating' | 'current' | 'offline'>('');
+  const [check, setCheck] = useState<'' | 'checking' | 'updating' | 'current' | 'offline' | 'unavailable'>('');
   const [resetArmed, reset] = useTwoTap(actions.reset);
 
   return (
@@ -27,7 +27,7 @@ export function Home({ go }: { go: Go }) {
 
       {/* Only on Home, in normal flow, so it never sits on top of a control mid-question. */}
       {update && (
-        <button onClick={update} className="w-full bg-[var(--tag-bg)] px-4 py-3 text-center text-[15px] font-semibold text-[var(--tag)]">
+        <button onClick={update} className="home-update w-full bg-[var(--tag-bg)] px-4 py-3 text-center text-[15px] font-semibold text-[var(--tag)]">
           New questions available, tap to update
         </button>
       )}
@@ -113,10 +113,12 @@ export function Home({ go }: { go: Go }) {
                     ? `Up to date (Bank ${bankVersion})`
                     : check === 'offline'
                       ? "Offline, can't check"
-                      : 'Check for updates'}
+                      : check === 'unavailable'
+                        ? "Can't check in this browser"
+                        : 'Check for updates'}
             </button>
             {check === 'current' && (
-              <button onClick={() => void reloadFresh()} className="min-h-11 px-2 underline">
+              <button onClick={async () => (await reloadFresh()) || setCheck('offline')} className="min-h-11 px-2 underline">
                 Still old? Reload fresh
               </button>
             )}
