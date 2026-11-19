@@ -6,9 +6,9 @@
     "stem": "What is the purpose of asset liability management?",
     "options": [
       "Management of the bank's balance sheet to maintain a mix of loans and deposits for long-term growth and risk management",
-      "Setting pay and benefit levels for employees across every department of the bank",
-      "Tracking the value of branch buildings and equipment for depreciation and insurance",
-      "Deciding which customers qualify for overdraft protection and how much coverage to give them"
+      "Setting the bank's annual operating budget for salaries, occupancy, and technology spending",
+      "Managing each branch's cash drawers and vault limits so tellers can meet daily customer demand",
+      "Reviewing each loan application for credit risk before the loan committee approves it"
     ],
     "answer": 0,
     "source": {
@@ -29,9 +29,9 @@
     "stem": "What is a yield curve?",
     "options": [
       "A graph that plots the interest rates (yields) at different maturities",
-      "A graph of a bank's loan growth over time",
-      "A chart of the deposit rates competitors offer",
-      "A graph of how a stock's price moves during the day"
+      "A graph that plots a bank's net interest margin over several quarters",
+      "A chart comparing the deposit rates competitors in your market offer",
+      "A graph that plots loan default rates at different credit scores"
     ],
     "answer": 0,
     "source": {

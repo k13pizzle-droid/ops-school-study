@@ -70,3 +70,21 @@ button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulat
 @keyframes fall { from { transform: translateY(-20px) rotate(0); opacity: 1; } to { transform: translateY(100dvh) rotate(540deg); opacity: 0.2; } }
 .confetti { animation: fall 1.8s ease-in forwards; }
 @media (prefers-reduced-motion: reduce) { .confetti { display: none; } }
+
+/* Landscape on a phone (short and wide): the question uses the full width and the answer panel
+   sits in a column on the right instead of sliding up over the options. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .page { max-width: none; }
+  .reveal-pad { padding-right: calc(42vw + 16px); padding-bottom: 24px; }
+  .reveal-panel {
+    position: fixed;
+    right: 0;
+    top: calc(max(env(safe-area-inset-top), 12px) + 52px);
+    bottom: 0;
+    width: 42vw;
+    overflow-y: auto;
+    border-radius: 16px 0 0 0;
+    padding-right: max(env(safe-area-inset-right), 20px);
+    animation: none;
+  }
+}

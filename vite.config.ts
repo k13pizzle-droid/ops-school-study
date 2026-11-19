@@ -32,7 +32,8 @@ export default defineConfig({
         short_name: 'Ops School',
         description: 'Private study app for the Operations School final.',
         display: 'standalone',
-        orientation: 'portrait',
+        // Any orientation: the layout has a landscape mode (index.css, .page / .reveal-*).
+        orientation: 'any',
         start_url: '/',
         scope: '/',
         background_color: '#090C5D',

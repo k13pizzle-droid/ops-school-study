@@ -122,7 +122,7 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
   };
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
+    <div className="page mx-auto flex min-h-dvh max-w-xl flex-col">
       <div className="safe-top flex items-center gap-3 bg-[var(--color-navy)] px-3 pb-2 text-[var(--color-lavender)]">
         <button onClick={quit} className={`min-h-11 min-w-11 ${quitArmed ? 'text-[13px] font-semibold' : 'text-[22px]'}`} aria-label="Quit lesson">
           {quitArmed ? 'Quit?' : '✕'}
@@ -135,7 +135,7 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
           <span className="opacity-25">{'♥'.repeat(HEARTS - hearts)}</span>
         </div>
       </div>
-      <div className="px-4 pb-48 pt-3">
+      <div className={`px-4 pb-48 pt-3 ${reveal ? 'reveal-pad' : ''}`}>
         <div className="mb-1 h-6 text-[15px] font-bold text-[var(--tag)]">{combo >= 3 ? `🔥 ${combo} in a row` : ''}</div>
         <QuestionMeta q={q} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
@@ -144,7 +144,7 @@ function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }
       {reveal && (
         <button onClick={next} className="fixed inset-0 z-20 flex items-end text-left" aria-label="Continue">
           <div
-            className="slide-up safe-bottom w-full px-5 pt-4"
+            className="reveal-panel slide-up safe-bottom w-full px-5 pt-4"
             style={{ background: correct ? 'var(--right-bg)' : 'var(--wrong-bg)', color: correct ? 'var(--right)' : 'var(--wrong)' }}
           >
             <div className="text-[20px] font-bold">{correct ? pickCheer(combo) : 'Not quite'}</div>
