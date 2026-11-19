@@ -23,8 +23,9 @@ export function Cram({ onBack }: { onBack: () => void }) {
       />
       <div className="safe-bottom px-4 pt-2">
         <p className="mb-2 text-[13px] text-[var(--muted)]">Tap a fact to hide or show the answer.</p>
+        <div className="cram-groups">
         {groups.map(({ t, facts }) => (
-          <section key={t.slug} className="mb-5">
+          <section key={t.slug} className="mb-5 break-inside-avoid">
             <h2 className="display mb-2 mt-4 text-[20px]">{t.name}</h2>
             <ul className="flex flex-col gap-1.5">
               {facts.map((q) => {
@@ -48,6 +49,7 @@ export function Cram({ onBack }: { onBack: () => void }) {
             </ul>
           </section>
         ))}
+        </div>
       </div>
     </div>
   );

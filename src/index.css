@@ -111,3 +111,50 @@ button { font: inherit; color: inherit; cursor: pointer; touch-action: manipulat
   .home-actions { align-self: start; position: sticky; top: 12px; }
   .home-topics > h2:first-child { margin-top: 0; }
 }
+
+/* Tablet (iPad and Android tablets, either orientation; not phones, and not iPad split view
+   narrower than 768px). Wider reading column, bigger type, Home in two columns, the answer panel
+   as a centered card, Cram in two columns. */
+@media (min-width: 768px) and (min-height: 600px) {
+  /* Every screen's column is max-w-xl (36rem). Widen it here rather than editing each screen. */
+  .max-w-xl { max-width: 50rem; }
+  .page { max-width: 50rem; }
+
+  h2.read { font-size: 27px; }
+  button.read { font-size: 21px; min-height: 64px; }
+  .reveal-panel .read { font-size: 21px; }
+  [role='button'] > .read { font-size: 30px; }
+
+  .reveal-panel {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px 18px 0 0;
+  }
+  .reveal-pad { padding-bottom: 18rem; }
+
+  .home { max-width: none; }
+  .home-header { padding-left: max(env(safe-area-inset-left), 32px); padding-bottom: 18px; }
+  .home-logo { width: 56px; }
+  .home-title { font-size: 32px; }
+  .home-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 28px max(env(safe-area-inset-right), 32px) 0 max(env(safe-area-inset-left), 32px);
+  }
+  .home-actions { align-self: start; position: sticky; top: 24px; }
+  .home-topics > h2:first-child { margin-top: 0; }
+
+  .test-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  /* Top bars run edge to edge even though the column is centered. */
+  .topbar {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: max(calc(50vw - 50% + 8px), env(safe-area-inset-left));
+    padding-right: max(calc(50vw - 50% + 8px), env(safe-area-inset-right));
+  }
+  .cram-groups { columns: 2; column-gap: 28px; }
+}

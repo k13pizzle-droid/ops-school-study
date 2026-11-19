@@ -150,7 +150,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
           <div className="mb-2 text-[13px] text-[var(--muted)]">
             {answered} of {run.qs.length} answered. Tap a number to jump, or finish from the last question.
           </div>
-          <div className="grid grid-cols-6 gap-2">
+          <div className="test-grid grid grid-cols-6 gap-2">
             {run.qs.map((_, i) => (
               <button
                 key={i}
