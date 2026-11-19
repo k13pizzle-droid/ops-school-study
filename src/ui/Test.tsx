@@ -7,6 +7,7 @@ import { isQuizzable, type Question } from '../lib/types';
 import { Btn, QuestionMeta, SourceLine, TopBar } from './common';
 import { OptionList } from './OptionList';
 import { useTwoTap } from './useTwoTap';
+import { Slides } from './Slide';
 
 type Run = { qs: Question[]; shown: Shown[]; picks: (number | null)[]; started: number; timer: boolean };
 
@@ -165,6 +166,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
         <div className="flex-1 px-4 pb-6 pt-4">
           <QuestionMeta q={q} />
           <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
+          <Slides q={q} at="stem" />
           <OptionList
             shown={run.shown[idx]!}
             chosen={run.picks[idx]!}
@@ -247,6 +249,7 @@ function Review({ run, onDone }: { run: Run; onDone: () => void }) {
             <h3 className="read mb-3 text-[19px] font-semibold leading-snug">{q.stem}</h3>
             <OptionList shown={run.shown[i]!} chosen={run.picks[i]!} reveal onPick={() => {}} />
             {q.why && <p className="read mt-2 text-[17px]">{q.why}</p>}
+            <Slides q={q} at="answer" />
             <div className="mt-1">
               <SourceLine q={q} />
             </div>

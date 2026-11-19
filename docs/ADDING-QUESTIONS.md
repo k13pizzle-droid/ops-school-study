@@ -33,6 +33,7 @@ type Question = {
   status: "ready" | "needs-answer" | "needs-options" | "verify";
   flashcard?: { front: string; back: string };
   keyFact?: string;        // "Label: fact", e.g. "CTR: file within 15 calendar days"
+  images?: SlideImage[];   // up to 2 slide screenshots; see "Slide images" below
 };
 ```
 
@@ -95,6 +96,37 @@ Read that list before you push.
   `ref`) unless the slide's own quoted wording needs it. A state-specific concern goes in the
   commit message with `status: "verify"`.
 - Unknown fields fail the check, so a typo like `keyfact` or `explanation` is caught.
+
+## Slide images
+
+A question can show up to two slide screenshots, with the question (`"at": "stem"`) or in the
+answer panel and test review (`"at": "answer"`). Use one where the slide itself teaches it
+better than words: a diagram, a table, a form, a flowchart. A few per topic, not every question.
+
+```json
+"images": [
+  {
+    "src": "slides/bsa-14.webp",
+    "alt": "BSA deck slide 14: table of CTR and SAR deadlines",
+    "at": "answer",
+    "mark": { "x": 5, "y": 40, "w": 60, "h": 12 }
+  }
+]
+```
+
+- Files go in `public/slides/`, named `<topic>-<slide number>.webp` (add `-a`, `-b` for crops of
+  the same slide). Export about 1200px wide, webp, under 250 KB. `check:content` fails if the
+  file is missing or too big.
+- `mark` draws a highlight box over the part that answers the question, with everything else
+  dimmed. Values are percent of the image: `x`/`y` from the top-left corner, `w`/`h` the size.
+  Don't edit highlights into the image itself. Check the box lands where you meant: build, open
+  the question, and look. It's easy to be a line off.
+- `alt` says what the slide shows, so it still makes sense if the image doesn't load.
+- A stem image must not give the answer away. Use a crop that shows the context, or put the
+  image at `"answer"`.
+- Slide images ship on the public site like the question text. Anyone with the link can see
+  them.
+- Cards mode doesn't show images.
 
 ## Status
 

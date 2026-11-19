@@ -6,6 +6,7 @@ import { answerText, isQuizzable } from '../lib/types';
 import { actions, useStore } from '../lib/store';
 import { BELOW_TOP_BAR, Btn, QuestionMeta, SourceLine, Star, TopBar } from './common';
 import { OptionList } from './OptionList';
+import { Slides } from './Slide';
 
 const ROUND = 10;
 
@@ -93,22 +94,24 @@ export function Study({ topic, focus, onBack }: { topic?: string | undefined; fo
       <div className={`px-4 pb-48 pt-4 ${reveal ? 'reveal-pad' : ''}`}>
         <QuestionMeta q={q} lead={`${Math.min(round.answered + (reveal ? 0 : 1), ROUND)} / ${ROUND}`} />
         <h2 className="read mb-5 text-[22px] font-semibold leading-snug">{q.stem}</h2>
+        <Slides q={q} at="stem" />
         <OptionList shown={shown} chosen={chosen} reveal={reveal} onPick={pick} />
       </div>
       {reveal && (
-        <button onClick={next} className="fixed inset-x-0 bottom-0 z-20 flex items-end bg-transparent text-left" style={{ top: BELOW_TOP_BAR }} aria-label="Continue">
+        <div role="button" tabIndex={0} onClick={next} className="fixed inset-x-0 bottom-0 z-20 flex items-end bg-transparent text-left" style={{ top: BELOW_TOP_BAR }} aria-label="Continue">
           <div className="reveal-panel slide-up safe-bottom w-full rounded-t-2xl border-t-4 bg-[var(--surface)] px-5 pt-4 shadow-[0_-8px_24px_rgba(0,0,0,0.18)]" style={{ borderColor: correct ? 'var(--right)' : 'var(--wrong)' }}>
             <div className="text-[17px] font-bold" style={{ color: correct ? 'var(--right)' : 'var(--wrong)' }}>
               {correct ? 'Correct' : 'Not quite'}
             </div>
             {!correct && <div className="read mt-1 text-[19px]">Answer: {answerText(q)}</div>}
             {q.why && <div className="read mt-2 text-[18px] leading-snug">{q.why}</div>}
+            <Slides q={q} at="answer" />
             <div className="mt-3">
               <SourceLine q={q} />
             </div>
             <div className="mt-3 pb-1 text-center text-[13px] text-[var(--muted)]">Tap anywhere to continue</div>
           </div>
-        </button>
+        </div>
       )}
     </Screen>
   );
