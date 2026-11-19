@@ -144,9 +144,9 @@
     "stem": "What is structuring?",
     "options": [
       "Breaking down large amounts of cash into multiple small deposits that fall under reporting thresholds to avoid triggering bank alerts",
-      "Splitting one large loan into several smaller loans to stay under a lending limit",
-      "Setting up a business entity to hide who really owns an account",
-      "Moving money through several accounts to disguise where it came from"
+      "Splitting one large loan into several smaller loans to the same borrower so each stays under the bank's lending limit",
+      "Setting up a shell company so the real owner of an account is hidden from the bank's ownership records",
+      "Moving money through a series of accounts at different banks so investigators can't tell where it came from"
     ],
     "answer": 0,
     "source": {

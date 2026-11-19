@@ -42,6 +42,24 @@ describe('content validator', () => {
     expect(bad([q('a', { status: 'needs-answer', answer: undefined, options: undefined })])).toBe('');
     expect(validateBank(topics, { t: [], x: [] }).errors.join()).toMatch(/no topic "x"/);
   });
+  it('catches the mistakes a big batch makes', () => {
+    const bad = (qs: unknown[]) => validateBank(topics, { t: qs }).errors.join('\n');
+    expect(bad([q('a', { options: ['P', 'Q', 'R', 'A & B'] })])).toMatch(/shuffle": false/);
+    expect(bad([q('a', { options: ['P', 'Q', 'R', 'Both A and C'] })])).toMatch(/shuffle": false/);
+    expect(bad([q('a', { shuffle: 'false' as unknown as boolean })])).toMatch(/shuffle must be true or false/);
+    expect(bad([q('a', { options: ['P', 'Q', 'R', 'Most of the above'] })])).toMatch(/the above/);
+    expect(bad([q('a', { keyFact: 15 as unknown as string })])).toMatch(/keyFact/);
+    expect(bad([q('a', { keyFact: 'no colon here' })])).toMatch(/Label: fact/);
+    expect(bad([{ ...q('a'), keyfact: 'X: y' }])).toMatch(/unknown field "keyfact"/);
+    expect(bad([q('a', { options: ['a. P', 'b. Q', 'c. R', 'd. S'] })])).toMatch(/letter label/);
+    expect(bad([q('a', { type: 'tf', options: undefined, answer: false })])).toMatch(/False statement needs/);
+    expect(bad([q('a', { optionsFrom: 'exam', source: { origin: 'slides' } })])).toMatch(/only goes with origin "review"/);
+    expect(bad([q('a'), q('b')])).toBe(''); // different stems pass
+    expect(bad([q('a'), { ...q('b'), stem: 'Q a' }])).toMatch(/same stem/);
+    // The standard pinned forms are fine.
+    expect(bad([q('a', { options: ['P', 'Q', 'R', 'All of these'], answer: 3 })])).toBe('');
+    expect(bad([q('a', { options: ['P', 'Q', 'A & B'], shuffle: false, why: 'P and Q.' })])).toBe('');
+  });
 });
 
 describe('option shuffling', () => {
@@ -61,6 +79,12 @@ describe('option shuffling', () => {
   it('leaves shuffle:false in stored order with letters', () => {
     const s = showOptions(q('a', { options: ['P', 'Q', 'A & B'], answer: 2, shuffle: false }), seeded(3));
     expect(s).toEqual({ options: ['P', 'Q', 'A & B'], answer: 2, lettered: true });
+  });
+  it('pins "All of these" and "Neither of the above" too', () => {
+    for (let s = 1; s < 50; s++) {
+      expect(showOptions(q('a', { options: ['W', 'X', 'Y', 'All of these'], answer: 3 }), seeded(s)).options.at(-1)).toBe('All of these');
+      expect(showOptions(q('a', { options: ['W', 'X', 'Neither of the above'], answer: 0 }), seeded(s)).options.at(-1)).toBe('Neither of the above');
+    }
   });
   it('maps true/false', () => {
     expect(showOptions(q('a', { type: 'tf', answer: false, options: undefined }), seeded(1)).answer).toBe(1);
@@ -105,6 +129,12 @@ describe('study order and the missed list', () => {
 
   it('puts focus, then missed, then unseen (review first), then oldest seen', () => {
     expect(studyOrder(qs, p, seeded(1), ['focus'])).toEqual(['focus', 'missed', 'unseen-review', 'unseen-authored', 'seen-old', 'seen-new']);
+  });
+  it('puts mastered questions after ones not yet mastered', () => {
+    const p2 = recordAnswer(recordAnswer(p, 'seen-old', true, now + 20), 'seen-old', true, now + 30); // streak 3, but recent
+    const mastered = recordAnswer(p, 'seen-new', true, now + 40); // streak 2
+    expect(studyOrder([q('seen-old'), q('seen-new'), q('fresh-ish')], recordAnswer(mastered, 'fresh-ish', true, now + 50), seeded(2)).slice(0, 1)).toEqual(['seen-old']);
+    expect(studyOrder([q('seen-old'), q('x')], recordAnswer(p2, 'x', true, now + 99), seeded(3))).toEqual(['x', 'seen-old']);
   });
   it('a miss comes back three questions later, or at the end', () => {
     expect(requeue(['a', 'b', 'c', 'd', 'e', 'f'], 0)).toEqual(['a', 'b', 'c', 'd', 'a', 'e', 'f']);

@@ -10,7 +10,7 @@ export type Shown = {
   lettered: boolean;
 };
 
-const PINNED = /^(all|none) of the above\.?$/i;
+export const PINNED = /^(all|none|both|neither)( of)? (the above|these)\.?$/i;
 
 /** Options as they appear on screen. "All/None of the above" stay last; shuffle:false keeps the stored order. */
 export function showOptions(q: Question, rng: Rng): Shown {

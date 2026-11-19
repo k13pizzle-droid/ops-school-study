@@ -6,9 +6,9 @@
     "stem": "What is the purpose of asset liability management?",
     "options": [
       "Management of the bank's balance sheet to maintain a mix of loans and deposits for long-term growth and risk management",
-      "Setting employee pay and benefits across the bank",
-      "Tracking branch buildings and equipment",
-      "Deciding which customers qualify for overdraft protection"
+      "Setting pay and benefit levels for employees across every department of the bank",
+      "Tracking the value of branch buildings and equipment for depreciation and insurance",
+      "Deciding which customers qualify for overdraft protection and how much coverage to give them"
     ],
     "answer": 0,
     "source": {
@@ -60,7 +60,7 @@
       "front": "True/False: Most of the time, the yield curve is flat.",
       "back": "False"
     },
-    "keyFact": "Yield curve is usually flat? False"
+    "keyFact": "Yield curve flat most of the time: False"
   },
   {
     "id": "alm-004",
@@ -82,6 +82,7 @@
     "flashcard": {
       "front": "What are some examples of interest rate risk (IRR)?",
       "back": "Bonds with longer duration, CDs (with floating rates), loans (with variable rates)"
-    }
+    },
+    "keyFact": "Interest rate risk examples: longer-duration bonds, floating-rate CDs, variable-rate loans"
   }
 ]

@@ -1,5 +1,5 @@
 import type { Question } from './types';
-import { isMissed, type Progress } from './progress';
+import { isMastered, isMissed, type Progress } from './progress';
 import { shuffled, type Rng } from './random';
 
 const reviewFirst = (a: Question, b: Question) =>
@@ -7,15 +7,17 @@ const reviewFirst = (a: Question, b: Question) =>
 
 /**
  * Order for a Study session: `focus` ids first (misses from a mock exam), then questions missed
- * last time, then never-seen ones, then the rest (least recently seen first). Within each group
+ * last time, then never-seen ones, then seen but not mastered, then mastered (least recently seen
+ * first in both). Within each group
  * the instructors' review questions come ahead of everything else.
  */
 export function studyOrder(qs: Question[], p: Progress, rng: Rng, focus: string[] = []): string[] {
   const focusSet = new Set(focus);
   const mix = shuffled(qs, rng);
-  const tier = (q: Question) => (focusSet.has(q.id) ? 0 : isMissed(p[q.id]) ? 1 : !p[q.id] ? 2 : 3);
+  const tier = (q: Question) =>
+    focusSet.has(q.id) ? 0 : isMissed(p[q.id]) ? 1 : !p[q.id] ? 2 : isMastered(p[q.id]) ? 4 : 3;
   return mix
-    .sort((a, b) => tier(a) - tier(b) || reviewFirst(a, b) || (tier(a) === 3 ? p[a.id]!.at - p[b.id]!.at : 0))
+    .sort((a, b) => tier(a) - tier(b) || reviewFirst(a, b) || (tier(a) >= 3 ? p[a.id]!.at - p[b.id]!.at : 0))
     .map((q) => q.id);
 }
 

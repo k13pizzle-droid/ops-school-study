@@ -13,7 +13,8 @@
     "flashcard": {
       "front": "Should pandemic planning be part of your BCP?",
       "back": "Yes"
-    }
+    },
+    "keyFact": "Pandemic planning in the BCP: yes"
   },
   {
     "id": "bcp-002",
@@ -36,7 +37,8 @@
     "flashcard": {
       "front": "When might you need a business continuity plan?",
       "back": "Natural disasters, pandemic, cyber attack, core outage"
-    }
+    },
+    "keyFact": "When you need a BCP: natural disasters, pandemic, cyber attack, core outage"
   },
   {
     "id": "bcp-003",
@@ -68,7 +70,7 @@
     "stem": "How often should you monitor and provide training?",
     "options": [
       "Quarterly meetings with ongoing monitoring",
-      "Once a year",
+      "Twice a year",
       "Only after a disaster occurs",
       "Every five years"
     ],

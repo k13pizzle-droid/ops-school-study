@@ -1,6 +1,5 @@
 import { useSyncExternalStore } from 'react';
-import { byId } from './bank';
-import { prune, recordAnswer, type Progress } from './progress';
+import { recordAnswer, type Progress } from './progress';
 
 // Everything saved on the phone. Small enough that one localStorage key per kind is fine.
 export type TestResult = { at: number; score: number; total: number; byTopic: Record<string, [number, number]>; missed: string[] };
@@ -10,12 +9,13 @@ const NEW_GAME: Game = { xp: 0, streak: 0, lastDay: '', bestLightning: 0 };
 export const today = (d = new Date()) => d.toLocaleDateString('en-CA');
 
 const KEY = 'ops-school-v1';
-const ids = new Set(byId.keys());
 
 function load(): State {
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) ?? '{}') as Partial<State>;
-    return { progress: prune(raw.progress ?? {}, ids), stars: prune(raw.stars ?? {}, ids), tests: raw.tests ?? [], game: { ...NEW_GAME, ...raw.game } };
+    // Ids missing from this bank are kept, not pruned: a bad push that drops a file for one deploy
+    // must not wipe progress for good. Screens only ever read ids that exist.
+    return { progress: raw.progress ?? {}, stars: raw.stars ?? {}, tests: raw.tests ?? [], game: { ...NEW_GAME, ...raw.game } };
   } catch {
     return { progress: {}, stars: {}, tests: [], game: NEW_GAME };
   }
@@ -72,4 +72,32 @@ export const liveStreak = (g: Game, now = new Date()) => {
   const y = new Date(now);
   y.setDate(y.getDate() - 1);
   return g.lastDay === today(now) || g.lastDay === today(y) ? g.streak : 0;
+};
+
+// A mock test in progress, saved on every answer so a back swipe, an update, or iOS closing the
+// app in the background doesn't lose it.
+export type SavedRun = { ids: string[]; shown: { options: string[]; answer: number; lettered: boolean }[]; picks: (number | null)[]; idx: number; started: number; timer: boolean };
+const RUN_KEY = 'ops-school-test-run';
+export const savedRun = {
+  load(): SavedRun | null {
+    try {
+      return JSON.parse(localStorage.getItem(RUN_KEY) ?? 'null') as SavedRun | null;
+    } catch {
+      return null;
+    }
+  },
+  save(r: SavedRun) {
+    try {
+      localStorage.setItem(RUN_KEY, JSON.stringify(r));
+    } catch {
+      /* ignore */
+    }
+  },
+  clear() {
+    try {
+      localStorage.removeItem(RUN_KEY);
+    } catch {
+      /* ignore */
+    }
+  },
 };
