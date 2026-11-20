@@ -5,8 +5,10 @@
     "type": "tf",
     "stem": "Pandemic planning should be part of your BCP.",
     "answer": true,
+    "why": "The comparison slide says pandemic planning is part of business continuity management.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Business Continuity Planning deck, page 1"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -30,7 +32,8 @@
     "answer": 3,
     "why": "The list: natural disasters, pandemic, cyber attack, and core outage.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Business Continuity Planning deck, page 2"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -52,8 +55,10 @@
       "Only the BCP coordinator"
     ],
     "answer": 0,
+    "why": "Who should be trained? The slide says the answer is everyone.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Business Continuity Planning deck, page 6"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -75,8 +80,10 @@
       "Every five years"
     ],
     "answer": 0,
+    "why": "Ongoing Monitoring and Training are both listed as elements of business continuity management.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Business Continuity Planning deck, page 2"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -85,5 +92,370 @@
       "back": "Ongoing"
     },
     "keyFact": "BCP monitoring and training: ongoing"
+  },
+  {
+    "id": "bcp-005",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "Business continuity planning plans for preparedness for potential long-term business disruptions.",
+    "answer": false,
+    "why": "The slide says business continuity planning plans for preparedness for potential short-term business disruptions, with \"short term\" underlined.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "BCP disruption horizon: short-term business disruptions"
+  },
+  {
+    "id": "bcp-006",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "Pandemic planning focuses on a broad range of event types.",
+    "answer": false,
+    "why": "Pandemic planning is part of business continuity management and focuses on a specific type of event.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-007",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Compared with a system outage, pandemic planning is described as more of what kind of issue?",
+    "options": [
+      "A people shortage issue",
+      "A vendor failure issue",
+      "A funding shortfall issue",
+      "A data security issue"
+    ],
+    "answer": 0,
+    "why": "The slide says pandemic planning is more of a people shortage issue and not just a system outage.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Pandemic planning: more of a people shortage issue, not just system outage"
+  },
+  {
+    "id": "bcp-008",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "You need to provide examiners a copy of what the bank would do in events such as a flood, tornado, or cyber attack.",
+    "answer": true,
+    "why": "The examples slide lists examiners first: yes, you do need to provide them a copy of what you would do in any of the listed events.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-009",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "How often should the business continuity team meet and document for senior management and the board to show compliance?",
+    "options": [
+      "Monthly",
+      "Semiannually",
+      "Quarterly",
+      "Annually"
+    ],
+    "answer": 2,
+    "why": "Under governance, the slide says to set up quarterly meetings and document for senior management and board to show compliance.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "BCP team meetings: quarterly, documented for senior management and board"
+  },
+  {
+    "id": "bcp-010",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Under governance, who should the business continuity team include?",
+    "options": [
+      "Only senior management",
+      "Someone from each department",
+      "Only the IT department",
+      "Only board members"
+    ],
+    "answer": 1,
+    "why": "Develop a team which includes someone from each department to ensure each voice is heard.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "BCP governance team: someone from each department"
+  },
+  {
+    "id": "bcp-011",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Business Impact Analysis and Risk Assessment fall under which element of business continuity management?",
+    "options": [
+      "Governance",
+      "Resiliency",
+      "Ongoing Monitoring",
+      "Risk Management"
+    ],
+    "answer": 3,
+    "why": "The elements slide lists Risk Management: Business Impact Analysis and Risk Assessment.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Risk Management element: Business Impact Analysis and Risk Assessment"
+  },
+  {
+    "id": "bcp-012",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Which of these is NOT listed as an element of business continuity management?",
+    "options": [
+      "Governance",
+      "Communication",
+      "Succession planning",
+      "Testing"
+    ],
+    "answer": 2,
+    "why": "The elements are Governance, Risk Management, Resiliency, Ongoing Monitoring, Communication, Training, and Testing. Succession plan disruptions appear on the examples slide instead.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-013",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Which of these is NOT shown on the governance and oversight chart?",
+    "options": [
+      "Board of Directors",
+      "IT Team",
+      "Officers/Supervisors",
+      "Customers"
+    ],
+    "answer": 3,
+    "why": "The chart shows the Board of Directors, Executive Team, IT Team, Officers/Supervisors, and Employees. Customers appear on the communication slide.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-014",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "How does the deck define internal resiliency?",
+    "options": [
+      "The ability to prepare for and adapt to changing conditions and disruptions",
+      "The process of identifying the bank's most critical third parties",
+      "The process of identifying triggering events that prompt a response",
+      "The ability to rank events by their likelihood and probability"
+    ],
+    "answer": 0,
+    "why": "The slide title defines internal resiliency as the ability to prepare for and adapt to the changing conditions and disruptions.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Internal resiliency: the ability to prepare for and adapt to changing conditions and disruptions"
+  },
+  {
+    "id": "bcp-015",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "In the deck's process for third parties responsible for critical functions, what is the first step?",
+    "options": [
+      "Monitor third parties for weaknesses",
+      "Identify the bank's most critical third parties",
+      "Identify back-up providers when applicable",
+      "Identify roles and responsibilities of key vendors"
+    ],
+    "answer": 1,
+    "why": "The steps run: identify the most critical third parties, identify roles and responsibilities of key vendors, monitor third parties for weaknesses, then identify back-up providers.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Third-party resiliency step 1: identify the bank's most critical third parties"
+  },
+  {
+    "id": "bcp-016",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the three steps of the Business Impact Analysis?",
+    "options": [
+      "Identify the potential impact on critical financial services",
+      "Identify the severity and/or impact of an event",
+      "Identify likelihood and probability of an event",
+      "Identify back-up providers when applicable"
+    ],
+    "answer": 3,
+    "why": "The three steps are impact on critical financial services, severity and/or impact of an event, and likelihood and probability of an event. Back-up providers are on the third-party slide.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-017",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "\"What happens when your core is down, how do you operate?\" is the question the deck pairs with which resources and telecommunications item?",
+    "options": [
+      "Single points of failure",
+      "Third party risk",
+      "Where redundancies can be added",
+      "Infrastructure at employee residences"
+    ],
+    "answer": 0,
+    "why": "The first item is to understand single points of failure: what happens when your core is down, how do you operate?",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-018",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "For remote workers, the deck says to make sure they have tested their response time and keep in contact with in house employees and supervisors.",
+    "answer": true,
+    "why": "This addresses the lack of infrastructure at employee residences.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-019",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "To address third party risk, the deck says to check with your vendors for their BCP plans and contingency documents.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-020",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Under ongoing monitoring, what must be identified, with plans modified to address each one?",
+    "options": [
+      "Critical vendors",
+      "Remote employees",
+      "Triggering events",
+      "Back-up providers"
+    ],
+    "answer": 2,
+    "why": "Triggers must be identified, and plans modified to address each triggering event.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Ongoing monitoring: identify triggers and modify plans for each triggering event"
+  },
+  {
+    "id": "bcp-021",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the groups on the deck's communication slide?",
+    "options": [
+      "Employees",
+      "Customers",
+      "Vendors",
+      "Examiners"
+    ],
+    "answer": 3,
+    "why": "The communication slide lists employees, customers, vendors, and third party providers.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-022",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "Cross-training is necessary to reduce single point of failure, so each department needs a backup.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Cross-training: each department needs a backup"
+  },
+  {
+    "id": "bcp-023",
+    "topic": "bcp",
+    "type": "mc",
+    "stem": "Besides testing scenarios, what does the deck recommend using to test your plan?",
+    "options": [
+      "Examiner-run surprise drills",
+      "Real life events and outages",
+      "Vendor-run disaster simulations",
+      "Board tabletop reviews only"
+    ],
+    "answer": 1,
+    "why": "Testing is great, but use real life events such as snow storms, floating holidays, and other outages to test your plan.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bcp-024",
+    "topic": "bcp",
+    "type": "tf",
+    "stem": "The deck says a plan communicated only to senior management is enough to ensure a quicker response in a disaster.",
+    "answer": false,
+    "why": "The deck says a plan that has been communicated to all employees will ensure response more quickly, which reduces risk and protects the organization's assets.",
+    "source": {
+      "origin": "slides",
+      "ref": "Business Continuity Planning deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

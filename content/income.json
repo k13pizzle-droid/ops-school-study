@@ -11,8 +11,10 @@
       "So you can raise them at every review"
     ],
     "answer": 0,
+    "why": "The deposits slide calls for periodic review of DDA service charges compared to market competition.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Income and Expense deck, handout page 5"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -34,8 +36,10 @@
       "All of the above"
     ],
     "answer": 3,
+    "why": "For CDs, monitor exception rate increases above current stated rates, early withdrawal penalty waivers, and current market rates for your locations.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Income and Expense deck, handout page 5"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -57,8 +61,10 @@
       "To count how many accounts each employee opened for incentive pay"
     ],
     "answer": 0,
+    "why": "For DDAs, compare service charges with market competition and check whether products are priced within or outside of market scope.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Income and Expense deck, handout page 5"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -67,5 +73,266 @@
       "back": "To see if they compare with market competition, priced within or outside of market scope, fees"
     },
     "keyFact": "Review deposit program: compare with competition, priced within or outside market scope, fees"
+  },
+  {
+    "id": "income-004",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which is listed as the largest non-interest expense?",
+    "options": [
+      "Personnel",
+      "Technology",
+      "Building and ground maintenance",
+      "Supplies"
+    ],
+    "answer": 0,
+    "why": "Personnel is the largest expense. The deck says to review job grades, salaries, and benefits, and keep overtime at a minimum.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Largest non-interest expense: personnel"
+  },
+  {
+    "id": "income-005",
+    "topic": "income",
+    "type": "tf",
+    "stem": "Managing personnel expense includes keeping overtime at a minimum.",
+    "answer": true,
+    "why": "Managing staff means staying within the number of hours required for the employee or position and keeping overtime at a minimum.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-006",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which of these is NOT listed as a popular treasury management service?",
+    "options": [
+      "Collateral inspection fees",
+      "Positive Pay",
+      "ACH origination",
+      "Remote deposit capture (RDC)"
+    ],
+    "answer": 0,
+    "why": "Collateral inspection fees are listed under loan income. ACH origination, RDC, and Positive Pay are treasury management services.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-007",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which of these is listed as a source of loan income?",
+    "options": [
+      "Skip-A-Payment programs",
+      "Merchant services",
+      "Online wires",
+      "Business online payroll"
+    ],
+    "answer": 0,
+    "why": "Loan income includes coupon books, Skip-A-Payment programs, doc fees, unused or renewal fees on LOCs, collateral inspection fees, and late fees. The others are treasury management services.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-008",
+    "topic": "income",
+    "type": "mc",
+    "stem": "As of July 1, 2026, what maximum late fee does the deck show?",
+    "options": [
+      "5% of the unpaid installment or $34.00",
+      "5% of the unpaid installment or $25.00",
+      "10% of the unpaid installment or $34.00",
+      "3% of the unpaid installment or $50.00"
+    ],
+    "answer": 0,
+    "why": "The slide notes that the state updates the minimum and maximum late fees annually.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Late fee max (as of 2026-07-01): 5% of the unpaid installment or $34.00"
+  },
+  {
+    "id": "income-009",
+    "topic": "income",
+    "type": "tf",
+    "stem": "The minimum and maximum a bank can charge for late fees is updated every five years.",
+    "answer": false,
+    "why": "The slide says the minimum and maximum are updated annually.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Late fee limits: updated annually"
+  },
+  {
+    "id": "income-010",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which of these is listed under vendor contract management?",
+    "options": [
+      "Contract expiration and renewal dates",
+      "NSF/OD refund report",
+      "Interchange fees",
+      "Coupon books"
+    ],
+    "answer": 0,
+    "why": "Vendor contract management covers auto-renewal pricing, contract expiration and renewal dates, review, and negotiation.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-011",
+    "topic": "income",
+    "type": "tf",
+    "stem": "For DDAs, the deck suggests pushing e-statements and charging for paper statements.",
+    "answer": true,
+    "why": "The deposits slide asks whether you are pushing e-statements and charging for paper statements, and suggests reward accounts to entice new generational customers.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-012",
+    "topic": "income",
+    "type": "tf",
+    "stem": "Consumer and business debit cards are described as an \"old\" product but a good income generator.",
+    "answer": true,
+    "why": "Interchange fees and reviewing card service provider reports to maximize card usage are listed with it.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-013",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which of these is NOT listed under accountability for fee waivers?",
+    "options": [
+      "Interchange fees",
+      "NSF/OD refund report",
+      "Check order waivers and refunds",
+      "Early withdrawal penalties"
+    ],
+    "answer": 0,
+    "why": "Fee waiver accountability covers the NSF/OD refund report, check order waivers and refunds, miscellaneous item fees, waived service charges, and early withdrawal penalties. Interchange is debit card income.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-014",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Creating customer \"stickiness\" involves tracking what?",
+    "options": [
+      "Number of products per household",
+      "Number of branch visits per month",
+      "Number of fee waivers per account",
+      "Number of online logins per customer"
+    ],
+    "answer": 0,
+    "why": "The deck asks whether we are fully using our products and services based on their cost.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Customer stickiness: track number of products per household"
+  },
+  {
+    "id": "income-015",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Which of these is part of the structured system for expenses that worked for the presenter's bank?",
+    "options": [
+      "Centralized supply ordering",
+      "Skip-A-Payment programs",
+      "Instant issue debit cards",
+      "Reward accounts"
+    ],
+    "answer": 0,
+    "why": "The structured system for expenses includes annual department budgets, bank officer expenses, and centralized supply ordering.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "income-016",
+    "topic": "income",
+    "type": "mc",
+    "stem": "What efficiency ratio did the presenter's bank report as of 9/30/26?",
+    "options": [
+      "43.1",
+      "34.1",
+      "41.3",
+      "53.1"
+    ],
+    "answer": 0,
+    "why": "Increased efficiency (working smarter, not harder) is listed first under what has worked for the bank.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Presenter's bank efficiency ratio (2026-09-30): 43.1"
+  },
+  {
+    "id": "income-017",
+    "topic": "income",
+    "type": "mc",
+    "stem": "Why does the presenter say it is not easy for a community bank to increase fee income?",
+    "options": [
+      "Market share competition",
+      "Regulatory limits on fees",
+      "Rising technology costs",
+      "Customers moving to paperless"
+    ],
+    "answer": 0,
+    "why": "Everyone offers pretty much the same thing. Expenses, by contrast, can be managed through consistent review and effort.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Income and Expense deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

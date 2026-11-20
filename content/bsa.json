@@ -11,8 +11,10 @@
       "At least 20%"
     ],
     "answer": 0,
+    "why": "For covered legal-entity customers, the Ownership Prong identifies each individual who directly or indirectly owns 25% or more of the equity.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "BSA Part 1 deck, page 15"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -35,7 +37,8 @@
     ],
     "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "BSA Part 1 deck, page 23"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -57,8 +60,10 @@
       "1992"
     ],
     "answer": 0,
+    "why": "The BSA is formally the Currency and Foreign Transactions Reporting Act of 1970.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "BSA Part 1 deck, page 4"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -81,7 +86,8 @@
     ],
     "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "BSA Part 1 deck, page 4"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -103,8 +109,10 @@
       "$25,000"
     ],
     "answer": 0,
+    "why": "SARs are $5,000 for identified suspects and $25,000 for unknown suspects.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "BSA Part 2 deck, page 2"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -149,8 +157,10 @@
       "Moving money through a series of accounts at different banks so investigators can't tell where it came from"
     ],
     "answer": 0,
+    "why": "Also called smurfing: multiple small cash deposits under reporting thresholds such as $10,000.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "BSA Part 1 deck, page 10"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -159,5 +169,583 @@
       "back": "Breaking down large amounts of cash into multiple small deposits that fall under reporting thresholds to avoid triggering bank alerts"
     },
     "keyFact": "Structuring: breaking large cash into small deposits under reporting thresholds to avoid bank alerts"
+  },
+  {
+    "id": "bsa-008",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "In what year was the Financial Crimes Enforcement Network (FinCEN) created?",
+    "options": [
+      "1990",
+      "1986",
+      "1992",
+      "1970"
+    ],
+    "answer": 0,
+    "why": "The BSA timeline shows FinCEN created in 1990, between the Money Laundering Control Act (1986) and Annunzio-Wylie (1992).",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FinCEN created: 1990"
+  },
+  {
+    "id": "bsa-009",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "In what year was the Money Laundering Control Act passed?",
+    "options": [
+      "1986",
+      "1990",
+      "1992",
+      "2001"
+    ],
+    "answer": 0,
+    "why": "The BSA timeline lists the Money Laundering Control Act in 1986.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Money Laundering Control Act: 1986"
+  },
+  {
+    "id": "bsa-010",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "In what year did the Customer Due Diligence / Beneficial Ownership Rule arrive?",
+    "options": [
+      "2016",
+      "2001",
+      "2020",
+      "1992"
+    ],
+    "answer": 0,
+    "why": "The BSA timeline lists the CDD / Beneficial Ownership Rule in 2016.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CDD / Beneficial Ownership Rule: 2016"
+  },
+  {
+    "id": "bsa-011",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "The Annunzio-Wylie Money Laundering Suppression Act was passed in 1986.",
+    "answer": false,
+    "why": "Annunzio-Wylie was 1992. The 1986 law was the Money Laundering Control Act.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Annunzio-Wylie Act: 1992"
+  },
+  {
+    "id": "bsa-012",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "Among the enforcement and affiliated agencies, OFAC dates to 1950.",
+    "answer": true,
+    "why": "The agencies slide lists OFAC (1950) and FinCEN (1990).",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "OFAC: 1950"
+  },
+  {
+    "id": "bsa-013",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the 5 pillars of an effective BSA program?",
+    "options": [
+      "Sanctions screening",
+      "Designated BSA/AML Compliance Officer",
+      "Independent testing (audit)",
+      "Ongoing employee training"
+    ],
+    "answer": 0,
+    "why": "The five pillars are a designated compliance officer, ongoing employee training, independent testing, internal controls, and customer due diligence. Sanctions screening is one of the core BSA requirements, not a pillar.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-014",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Which BSA pillar is defined as periodic reviews done by outside parties or independent internal staff to check if the program works well?",
+    "options": [
+      "Independent testing (audit)",
+      "Internal controls",
+      "Customer due diligence",
+      "Ongoing employee training"
+    ],
+    "answer": 0,
+    "why": "Independent testing is the audit pillar. Internal controls are the written policies, procedures, and processes.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Independent testing pillar: periodic reviews by outside parties or independent internal staff"
+  },
+  {
+    "id": "bsa-015",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "In which phase of money laundering are illicit cash or criminal proceeds first injected into the legitimate financial system?",
+    "options": [
+      "Placement",
+      "Layering",
+      "Integration",
+      "Structuring"
+    ],
+    "answer": 0,
+    "why": "Placement is the initial phase, such as cash deposits, and is often where transactions face the most scrutiny, like CTRs.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Money laundering phases in order: placement, layering, integration"
+  },
+  {
+    "id": "bsa-016",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "A launderer moves funds through a complex series of wire transfers, shell companies, and offshore accounts to distance them from their illegal source. Which phase is this?",
+    "options": [
+      "Layering",
+      "Placement",
+      "Integration",
+      "Round-tripping"
+    ],
+    "answer": 0,
+    "why": "Layering is the second phase, designed to make the funds hard to trace.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-017",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "Layering is the final phase of money laundering, where the money re-enters the formal economy and appears completely legitimate.",
+    "answer": false,
+    "why": "That describes integration, the final phase. Layering is the second phase.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-018",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Illegal funds are sent to a bank account in a tax haven, then sent back to the original country disguised as a clean foreign investment or corporate loan. What is this method called?",
+    "options": [
+      "Round-tripping",
+      "Trade-based money laundering",
+      "Black Market Peso Exchange",
+      "Cash smuggling"
+    ],
+    "answer": 0,
+    "why": "The deck defines round-tripping as transferring funds to a tax-haven account and bringing them back disguised as foreign investment or a loan.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Round-tripping: funds to a tax-haven account, then back disguised as foreign investment or a loan"
+  },
+  {
+    "id": "bsa-019",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Over-invoicing or under-invoicing goods shipped internationally to move value across borders is an example of which method?",
+    "options": [
+      "Trade-based money laundering (TBML)",
+      "Round-tripping",
+      "Shell companies",
+      "Black Market Peso Exchange"
+    ],
+    "answer": 0,
+    "why": "TBML is misrepresenting the price, quantity, or quality of goods on invoices.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "TBML: misrepresenting price, quantity, or quality of goods on invoices"
+  },
+  {
+    "id": "bsa-020",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the 8 National AML Priorities?",
+    "options": [
+      "Tax evasion",
+      "Cybercrime",
+      "Proliferation financing",
+      "Human trafficking/smuggling"
+    ],
+    "answer": 0,
+    "why": "The 8 priorities are corruption, cybercrime, terrorist financing, fraud, TCO activity, drug trafficking org activity, human trafficking/smuggling, and proliferation financing.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-021",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the required CIP information items?",
+    "options": [
+      "Expected account activity",
+      "Legal name",
+      "Physical address",
+      "Identification number"
+    ],
+    "answer": 0,
+    "why": "Required CIP information is legal name, physical address, identification number, and date of birth for individuals. Expected activity is part of customer due diligence.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-022",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "Date of birth is required CIP information for every customer, including legal entities.",
+    "answer": false,
+    "why": "Date of birth is required for individuals only.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CIP date of birth: individuals only"
+  },
+  {
+    "id": "bsa-023",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "How long is CIP identifying information generally retained?",
+    "options": [
+      "5 years after account closure",
+      "5 years after account opening",
+      "3 years after account closure",
+      "7 years after account closure"
+    ],
+    "answer": 0,
+    "why": "Identifying information is generally kept 5 years after account closure. Verification records are kept 5 years after they're made.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CIP identifying information: retained 5 years after account closure"
+  },
+  {
+    "id": "bsa-024",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Under the Beneficial Ownership Rule's Control Prong, whom does the bank identify?",
+    "options": [
+      "One individual with significant responsibility to control, manage, or direct the entity",
+      "Each individual who owns 25% or more of the equity",
+      "Every officer and director listed on the entity's filings",
+      "Two individuals who sign on the entity's account"
+    ],
+    "answer": 0,
+    "why": "The Control Prong is one individual with significant responsibility. The 25% test is the Ownership Prong.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 15"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Control Prong: one individual with significant responsibility to control the entity"
+  },
+  {
+    "id": "bsa-025",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Which agency publishes the Specially Designated Nationals (SDN) List?",
+    "options": [
+      "OFAC",
+      "FinCEN",
+      "OCC",
+      "FDIC"
+    ],
+    "answer": 0,
+    "why": "OFAC manages public databases, most notably the SDN List of people, groups, and vessels that U.S. persons are forbidden from doing business with.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 18"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "SDN List: published by OFAC"
+  },
+  {
+    "id": "bsa-026",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "How often do 314(a) information requests come out?",
+    "options": [
+      "Every 2 weeks (Tuesday)",
+      "Every week (Monday)",
+      "Once a month",
+      "Once a quarter"
+    ],
+    "answer": 0,
+    "why": "314(a) requests come every 2 weeks on Tuesday, and responses are due in 2 weeks.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "314(a) requests: every 2 weeks (Tuesday); responses due in 2 weeks"
+  },
+  {
+    "id": "bsa-027",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Which describes 314(b)?",
+    "options": [
+      "Information sharing between banks, with a safe harbor",
+      "Law enforcement requests for help with active investigations",
+      "Screening customers against the sanctions lists",
+      "Reporting cash transactions over the threshold to FinCEN"
+    ],
+    "answer": 0,
+    "why": "314(b) is banks helping banks: check the active registry, and sharing has a safe harbor. 314(a) is law enforcement requests.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "314(b): banks helping banks, with safe harbor"
+  },
+  {
+    "id": "bsa-028",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "What is the dollar threshold for the funds transfer Travel Rule?",
+    "options": [
+      "$3,000 or more",
+      "$5,000 or more",
+      "$10,000 or more",
+      "$1,000 or more"
+    ],
+    "answer": 0,
+    "why": "The Travel Rule recordkeeping applies to funds transfers of $3,000 and up.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 21"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Travel Rule: $3,000+"
+  },
+  {
+    "id": "bsa-029",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "Records must be kept for monetary instruments purchased with cash in what range?",
+    "options": [
+      "$3,000 to $10,000",
+      "$2,000 to $5,000",
+      "$5,000 to $10,000",
+      "$3,000 to $25,000"
+    ],
+    "answer": 0,
+    "why": "Monetary instrument sales purchased with cash from $3,000 to $10,000 require the purchaser's name, date, type, serial number, and amount.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 21"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Monetary instrument cash sales recordkeeping: $3,000 to $10,000"
+  },
+  {
+    "id": "bsa-030",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "A CTR is required for cash transactions of more than $10,000, with totals aggregated for each business day.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 1 deck, page 23"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CTR threshold: cash over $10,000, aggregated per business day"
+  },
+  {
+    "id": "bsa-031",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "What is the SAR filing threshold when the suspect is unknown?",
+    "options": [
+      "$25,000",
+      "$5,000",
+      "$10,000",
+      "$50,000"
+    ],
+    "answer": 0,
+    "why": "SARs are $5,000 for identified suspects and $25,000 for unknown suspects.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "SAR, unknown suspect: $25,000"
+  },
+  {
+    "id": "bsa-032",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "SARs and CTRs are mutually exclusive, so a transaction reported on a CTR shouldn't also be reported on a SAR.",
+    "answer": false,
+    "why": "The slide says SARs and CTRs are not mutually exclusive.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-033",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "A frontline employee can observe behavior and report comments made by customers that monitoring software cannot.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-034",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "Private ATM owners making frequent cash withdrawals is listed as a red flag.",
+    "answer": false,
+    "why": "The red flag is the opposite: private ATM owners who rarely make cash withdrawals.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "bsa-035",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "A person, including a bank employee, who willfully violates the BSA faces what maximum criminal penalty?",
+    "options": [
+      "A fine up to $250,000, five years in prison, or both",
+      "A fine up to $500,000, ten years in prison, or both",
+      "A fine up to $100,000, three years in prison, or both",
+      "A fine up to $1 million, ten years in prison, or both"
+    ],
+    "answer": 0,
+    "why": "Willful violation by a person carries up to $250,000 or five years. The $500,000 and ten years figure is for aggravated structuring.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Willful BSA violation by a person: up to $250,000 or 5 years, or both"
+  },
+  {
+    "id": "bsa-036",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "Structuring involving more than $100,000 in a 12-month period is subject to a fine up to $500,000, ten years in prison, or both.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Structuring over $100,000 in 12 months: up to $500,000 or 10 years, or both"
+  },
+  {
+    "id": "bsa-037",
+    "topic": "bsa",
+    "type": "mc",
+    "stem": "A bank that violates certain BSA provisions faces criminal money penalties up to what amount?",
+    "options": [
+      "The greater of $1 million or twice the value of the transactions",
+      "The greater of $500,000 or the value of the transactions",
+      "A flat $250,000 per violation",
+      "The greater of $1 million or three times the value of the transactions"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Bank criminal BSA penalty: greater of $1 million or twice the transaction value"
+  },
+  {
+    "id": "bsa-038",
+    "topic": "bsa",
+    "type": "tf",
+    "stem": "BSA enforcement actions and money penalties are kept confidential.",
+    "answer": false,
+    "why": "Enforcement actions and money penalties are public knowledge. It's SARs that are confidential.",
+    "source": {
+      "origin": "slides",
+      "ref": "BSA Part 2 deck, page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]
