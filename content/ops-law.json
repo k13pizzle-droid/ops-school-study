@@ -134,7 +134,7 @@
       "When protesting a negotiable instrument held for collection"
     ],
     "answer": 0,
-    "why": "It's unlawful for the notary to take the acknowledgment if they're a party to that instrument, whether individually or as the bank's representative. The notary must be an impartial third party. (One classmate guide says acting as the bank's representative is OK; the slide says the opposite.)",
+    "why": "From the slide \"Personnel as Notary: Strict Prohibitions\": \"It is unlawful for a notary public to take the acknowledgment of an instrument executed by or to the bank if the notary is a party to that specific instrument.\" And under \"The Dual Role Bar\": \"This restriction applies whether the notary is a party individually or acting as a representative of the bank. The goal is to ensure the notarial act is performed by an impartial third-party verifier.\" (One classmate guide says acting as the bank's representative is OK. The slide says it isn't.)",
     "source": {
       "origin": "review",
       "ref": "Bank Operations Law deck, handout page 6"
@@ -145,7 +145,20 @@
       "front": "When is it NOT OK for a bank officer to act as a notary on a banking-related transaction?",
       "back": "When the notary is a party to the instrument, individually or as the bank's representative"
     },
-    "keyFact": "Bank notary: not OK if the notary is a party to the instrument (even for the bank)"
+    "keyFact": "Bank notary: not OK if the notary is a party to the instrument (even for the bank)",
+    "images": [
+      {
+        "src": "slides/ops-law-notary.webp",
+        "alt": "Bank Operations Law slide: Personnel as Notary, Strict Prohibitions. The Dual Role Bar box says the restriction applies whether the notary is a party individually or acting as a representative of the bank.",
+        "at": "answer",
+        "mark": {
+          "x": 51,
+          "y": 32,
+          "w": 45.5,
+          "h": 50
+        }
+      }
+    ]
   },
   {
     "id": "ops-law-007",

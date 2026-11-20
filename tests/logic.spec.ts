@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { sampleExam } from '../src/lib/exam';
+import { sampleExam, sampleRehearsal } from '../src/lib/exam';
 import { showOptions } from '../src/lib/options';
 import { recordAnswer, isMastered, prune, type Progress } from '../src/lib/progress';
 import { seeded } from '../src/lib/random';
@@ -176,5 +176,24 @@ describe('slide images', () => {
     expect(bad({ src: 'slides/a.webp', at: 'answer' })).toMatch(/alt text/);
     expect(bad({ src: 'slides/a.webp', alt: 'x', at: 'why' })).toMatch(/"at"/);
     expect(bad({ src: 'slides/a.webp', alt: 'x', at: 'stem', mark: { x: 80, y: 0, w: 40, h: 10 } })).toMatch(/inside the image/);
+  });
+});
+
+describe('exam rehearsal', () => {
+  const bank = [
+    ...Array.from({ length: 30 }, (_, i) => q(`r${i}`, { topic: i < 15 ? 'a' : 'b' })),
+    ...Array.from({ length: 200 }, (_, i) => q(`s${i}`, { topic: ['a', 'b', 'c'][i % 3]!, source: { origin: 'slides' } })),
+  ];
+  it('includes every review question and fills the rest from the others', () => {
+    for (let s = 1; s < 20; s++) {
+      const got = sampleRehearsal(bank, 89, seeded(s));
+      expect(got).toHaveLength(89);
+      expect(new Set(got.map((x) => x.id)).size).toBe(89);
+      expect(got.filter((x) => x.source.origin === 'review')).toHaveLength(30);
+    }
+  });
+  it('samples review questions when there are more than n', () => {
+    const got = sampleRehearsal(bank.slice(0, 30), 10, seeded(1));
+    expect(got).toHaveLength(10);
   });
 });
