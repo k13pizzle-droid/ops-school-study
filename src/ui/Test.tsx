@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { byId, questions, topicName } from '../lib/bank';
+import { byId, questions, reviewOnly, topicName } from '../lib/bank';
 import { sampleExam, sampleRehearsal } from '../lib/exam';
 import { showOptions, type Shown } from '../lib/options';
 import { actions, savedRun, useStore, type TestResult } from '../lib/store';
@@ -128,7 +128,11 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
               Like the real one: {EXAM.size} questions, {EXAM.minutes} minutes, {Math.round(EXAM.pass * 100)}% to pass. Every exam review question is in it. It ends itself when time runs out.
             </div>
           </button>
-          {pool.length < EXAM.size && <p className="-mt-3 text-[13px] text-[var(--muted)]">{pool.length} questions are ready so far, so a rehearsal uses all of them.</p>}
+          {pool.length < EXAM.size && (
+            <p className="-mt-3 text-[13px] text-[var(--muted)]">
+              {reviewOnly ? `Exam review only is on, so the rehearsal uses all ${pool.length} review questions.` : `${pool.length} questions are ready so far, so a rehearsal uses all of them.`}
+            </p>
+          )}
           <div className="mt-2 text-[14px] font-semibold text-[var(--muted)]">Or a practice test</div>
           <div className="-mt-3">
             <div className="mb-2 text-[14px] text-[var(--muted)]">How many questions</div>
