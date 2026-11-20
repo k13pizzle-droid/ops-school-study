@@ -4,66 +4,148 @@
     "topic": "ops-law",
     "type": "mc",
     "stem": "When can you deny access to a safe deposit box?",
+    "options": [
+      "During hazardous conditions such as a fire, flood, or pandemic",
+      "When complying with a court order or valid search warrant",
+      "When rental fees are unpaid or the lease is violated",
+      "All of the above"
+    ],
+    "answer": 3,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 10"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "When can you deny access to a safe deposit box?",
+      "back": "Unsafe conditions (fire, flood, pandemic); court orders or valid search warrants; unpaid rent or a lease violation; reasonable suspicion of illicit or fraudulent activity"
+    },
+    "keyFact": "Deny SDB access: hazards, court order/search warrant, unpaid rent or lease violation, suspected fraud"
   },
   {
     "id": "ops-law-002",
     "topic": "ops-law",
     "type": "mc",
-    "stem": "What are some examples of effective restrictive endorsements?",
+    "stem": "Which of these is an effective restrictive indorsement?",
+    "options": [
+      "\"For Deposit\"",
+      "\"Pay A only\"",
+      "A signature with nothing else",
+      "\"Pay to the order of B\""
+    ],
+    "answer": 0,
+    "why": "\"For Deposit\" means the funds must be collected by a bank. A restriction like \"Pay A only\" does not prevent further negotiation; later holders can ignore it.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 21"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "What are some examples of effective restrictive endorsements?",
+      "back": "\"For Deposit\" works: the funds must be collected by a bank. \"Pay A only\" doesn't stop further negotiation."
+    },
+    "keyFact": "Effective restrictive indorsement: \"For Deposit\" (\"Pay A only\" can be ignored)"
   },
   {
     "id": "ops-law-003",
     "topic": "ops-law",
     "type": "mc",
     "stem": "Who is typically liable for a forged payor signature on a check?",
+    "options": [
+      "The payor bank",
+      "The depositary bank",
+      "The payee",
+      "The person who presented the check"
+    ],
+    "answer": 0,
+    "why": "Under the \"Final Payment Rule\" the payor bank bears the loss, unless customer negligence substantially contributed or the customer failed to promptly report the forgery.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 23"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Who is typically liable for a forged payor signature on a check?",
+      "back": "The payor bank (Final Payment Rule), unless the customer's negligence contributed or they didn't report it promptly"
+    },
+    "keyFact": "Forged drawer (payor) signature: payor bank bears the loss (Final Payment Rule)"
   },
   {
     "id": "ops-law-004",
     "topic": "ops-law",
     "type": "mc",
     "stem": "What types of negotiable instruments are included in Article 3 of the UCC?",
+    "options": [
+      "Drafts (like checks) and notes (like promissory notes and CDs)",
+      "Wire transfers and ACH entries",
+      "Security agreements over personal property",
+      "Controllable electronic records and digital assets"
+    ],
+    "answer": 0,
+    "why": "Article 3 covers negotiable instruments: drafts (a written order to pay, like checks) and notes (a written promise to pay, like promissory notes and CDs). Wires are 4A, secured transactions are 9, and electronic records are 12.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 17"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "What types of negotiable instruments are included in Article 3 of the UCC?",
+      "back": "Drafts (written orders to pay, e.g. checks) and notes (written promises to pay, e.g. promissory notes, CDs)"
+    },
+    "keyFact": "UCC Article 3: negotiable instruments (drafts and notes)"
   },
   {
     "id": "ops-law-005",
     "topic": "ops-law",
     "type": "mc",
     "stem": "When is it OK for a bank officer to act as a notary on a banking-related transaction?",
+    "options": [
+      "Taking the acknowledgment of a party to a document executed to or by the bank, when the notary isn't a party to it",
+      "Notarizing a loan document the notary signed on behalf of the bank",
+      "Notarizing the notary's own loan with the bank",
+      "Never; bank personnel can't notarize anything related to the bank"
+    ],
+    "answer": 0,
+    "why": "Bank personnel who are notaries may take acknowledgments of parties to instruments executed to or by the bank, administer oaths to other bank personnel, and protest negotiable instruments held for collection.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 5"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "When is it OK for a bank officer to act as a notary on a banking-related transaction?",
+      "back": "Taking acknowledgments of parties to instruments to/by the bank, administering oaths to bank personnel, protesting instruments held for collection, as long as the notary isn't a party"
+    }
   },
   {
     "id": "ops-law-006",
     "topic": "ops-law",
     "type": "mc",
     "stem": "When is it NOT OK for a bank officer to act as a notary on a banking-related transaction?",
+    "options": [
+      "When the notary is a party to the instrument, individually or as the bank's representative",
+      "When the document is executed to or by the bank",
+      "When administering an oath to another bank employee",
+      "When protesting a negotiable instrument held for collection"
+    ],
+    "answer": 0,
+    "why": "It's unlawful for the notary to take the acknowledgment if they're a party to that instrument, whether individually or representing the bank. The notary must be an impartial third party.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 6"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "When is it NOT OK for a bank officer to act as a notary on a banking-related transaction?",
+      "back": "When the notary is a party to the instrument, individually or as the bank's representative"
+    },
+    "keyFact": "Bank notary: not OK if the notary is a party to the instrument (even for the bank)"
   },
   {
     "id": "ops-law-007",
@@ -75,5 +157,434 @@
     },
     "optionsFrom": "authored",
     "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-008",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "For a small estate transfer by affidavit, the aggregate deposits in the deceased's single-ownership accounts must be",
+    "options": [
+      "$50,000 or less",
+      "$25,000 or less",
+      "$100,000 or less",
+      "$10,000 or less"
+    ],
+    "answer": 0,
+    "why": "The account must be in a sole individual's name with no P.O.D. beneficiary, and known heirs sign a sworn affidavit.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Small estate affidavit: $50,000 or less, single-owner accounts, no P.O.D."
+  },
+  {
+    "id": "ops-law-009",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "Which of these CAN an authorized signer (who isn't the owner) do on an account?",
+    "options": [
+      "Make deposits and withdrawals",
+      "Close the account",
+      "Change the P.O.D. beneficiaries",
+      "Pledge the account as collateral"
+    ],
+    "answer": 0,
+    "why": "An authorized signer is a limited agent for transactions only. Unlike a power of attorney, they can't close, change beneficiaries, or pledge.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Authorized signer: deposits and withdrawals only"
+  },
+  {
+    "id": "ops-law-010",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "Notice of an adverse claim to a deposit account requires the bank to hold the funds only when",
+    "options": [
+      "Backed by a court order served on the depositor or an acceptable indemnity bond",
+      "The claimant sends a written letter",
+      "The claimant is a family member",
+      "The claim is over $10,000"
+    ],
+    "answer": 0,
+    "why": "Notice of an adverse claim alone isn't enough to freeze an account.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Adverse claim to deposits: hold only with a court order or indemnity bond"
+  },
+  {
+    "id": "ops-law-011",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A bank may enter into a deposit agreement directly with a minor, and a payment to the minor with a receipt signed by the minor discharges the bank.",
+    "answer": true,
+    "why": "The minor must be the sole and absolute owner of the account.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-law-012",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A standard Power of Attorney automatically grants access to the principal's safe deposit box.",
+    "answer": false,
+    "why": "Not unless the POA is specifically named and authorized on the box's lease agreement.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "POA and safe deposit box: no access unless named on the lease"
+  },
+  {
+    "id": "ops-law-013",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "Safe deposit box access requires dual control, meaning",
+    "options": [
+      "The renter's key and the bank's master key used together",
+      "Two bank employees present",
+      "Two forms of ID from the renter",
+      "Both co-renters present"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "SDB dual control: renter's key + bank's master key"
+  },
+  {
+    "id": "ops-law-014",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A lessee's written authorization for someone's post-death access to their safe deposit box is revoked by divorce unless it's re-executed.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-law-015",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "When safe deposit rent is unpaid, after how many days of default does the bank send the 30-day notice by certified mail?",
+    "options": [
+      "60 days",
+      "30 days",
+      "90 days",
+      "120 days"
+    ],
+    "answer": 0,
+    "why": "After 60 days' default, a 30-day notice goes by certified mail with the amount due and the opening date.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "SDB unpaid rent: 60 days' default, then 30-day certified notice"
+  },
+  {
+    "id": "ops-law-016",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "When a safe deposit box is drilled for nonpayment, it must be witnessed by",
+    "options": [
+      "Two persons, one of them an officer",
+      "A notary public",
+      "A law enforcement officer",
+      "The renter's next of kin"
+    ],
+    "answer": 0,
+    "why": "An inventory is made under oath, and the contents go into a secure package held by the lessor.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Drilling a box: 2 witnesses, one an officer; inventory under oath"
+  },
+  {
+    "id": "ops-law-017",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "After a box is drilled, if no demand is made, how long before the lessor can advertise and sell the contents at public auction?",
+    "options": [
+      "1 year",
+      "6 months",
+      "3 years",
+      "5 years"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Drilled box contents: sell at auction after 1 year"
+  },
+  {
+    "id": "ops-law-018",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "If the surplus from a safe deposit box sale goes unclaimed, after how long is it presumed abandoned and turned over to the State Treasurer?",
+    "options": [
+      "5 years",
+      "1 year",
+      "3 years",
+      "10 years"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Unclaimed SDB sale surplus: escheats after 5 years"
+  },
+  {
+    "id": "ops-law-019",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "After a garnishment summons on a safe deposit box, if no court order directing entry is served within how many days is the box unsealed?",
+    "options": [
+      "30 days",
+      "10 days",
+      "60 days",
+      "90 days"
+    ],
+    "answer": 0,
+    "why": "On service of the summons the lessor must immediately seal the box and deny access except as the court orders.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 15"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "SDB garnishment: seal at once; unseal if no court order within 30 days"
+  },
+  {
+    "id": "ops-law-020",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A safe deposit box may be rented under a trade name regularly used in a valid business, if it's fully disclosed to the bank.",
+    "answer": true,
+    "why": "Otherwise, renting under an assumed name is prohibited.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-law-021",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "A draft (like a check) commonly involves three parties. Which is the drawee?",
+    "options": [
+      "The bank holding the funds",
+      "The person who writes it",
+      "The person who receives it",
+      "The person who indorses it"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 17"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Draft parties: drawer (writes), payee (receives), drawee (bank holding funds)"
+  },
+  {
+    "id": "ops-law-022",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "A note (like a promissory note or CD) involves which two parties?",
+    "options": [
+      "The maker and the payee",
+      "The drawer and the drawee",
+      "The drawee and the payee",
+      "The holder and the bearer"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 18"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Note parties: maker (promises to pay) and payee"
+  },
+  {
+    "id": "ops-law-023",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "Adding the words \"Not Negotiable\" makes a check non-negotiable.",
+    "answer": false,
+    "why": "It works on a promissory note, but this language does not make checks non-negotiable.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "\"Not Negotiable\": works on notes, not on checks"
+  },
+  {
+    "id": "ops-law-024",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "An instrument payable to bearer is negotiated by transfer of possession alone.",
+    "answer": true,
+    "why": "Instruments payable to an identified person need transfer of possession and indorsement.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-law-025",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "A genuine check is made to a payee, but someone forges the payee's indorsement. Who bears the loss?",
+    "options": [
+      "The depositary bank",
+      "The payor bank",
+      "The drawer",
+      "The payee"
+    ],
+    "answer": 0,
+    "why": "The depositary bank breached the presentment warranty of being \"entitled to enforce,\" so the payor bank charges the loss back to it.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 23"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Forged indorsement: depositary bank bears the loss"
+  },
+  {
+    "id": "ops-law-026",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "A completely counterfeit check with no genuine signature is paid. Who is liable?",
+    "options": [
+      "The payor bank",
+      "The depositary bank",
+      "The payee",
+      "The person who cashed it"
+    ],
+    "answer": 0,
+    "why": "The depositary bank only warrants it has no knowledge of a forged signature, so it didn't breach its warranty.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 24"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Counterfeit check: payor bank liable"
+  },
+  {
+    "id": "ops-law-027",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "A genuine check's amount is altered (the drawer's signature is real). Who is liable?",
+    "options": [
+      "The depositary bank",
+      "The payor bank",
+      "The drawer",
+      "The check printer"
+    ],
+    "answer": 0,
+    "why": "Transfer and presentment warranties both include a strict-liability promise that the check hasn't been materially altered.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 24"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Material alteration: depositary bank liable"
+  },
+  {
+    "id": "ops-law-028",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "Which UCC article governs funds transfers (wire transfers)?",
+    "options": [
+      "Article 4A",
+      "Article 3",
+      "Article 9",
+      "Article 12"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 16"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "UCC articles: 3 instruments, 4 deposits & collections, 4A wires, 9 secured transactions, 12 electronic records"
+  },
+  {
+    "id": "ops-law-029",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "To shift liability for an unauthorized wire to the customer, the bank must have",
+    "options": [
+      "Offered and used a commercially reasonable security procedure, accepted the wire in good faith, and followed the procedure",
+      "Called the customer before every wire",
+      "Received the request in writing",
+      "Waited 24 hours before sending"
+    ],
+    "answer": 0,
+    "why": "Otherwise banks are generally strictly liable for unauthorized wires under Article 4A.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 25"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Wire fraud loss shift: commercially reasonable security, good faith, procedure followed"
+  },
+  {
+    "id": "ops-law-030",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "UETA (electronic transactions) is mandatory for all parties to a transaction.",
+    "answer": false,
+    "why": "It only applies if both parties agreed to do business electronically. Best practice is clear, express consent up front.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 27"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]
