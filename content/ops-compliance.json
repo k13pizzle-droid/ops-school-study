@@ -4,43 +4,99 @@
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "Regulation (Reg) E applies to what types of accounts?",
+    "options": [
+      "Consumer accounts",
+      "Commercial accounts",
+      "Both consumer and commercial accounts",
+      "Only savings accounts"
+    ],
+    "answer": 0,
+    "why": "Reg E is a consumer protection regulation covering consumer transactions: ATMs, POS debit cards, certain government benefit accounts, direct deposits, gift, payroll and prepaid cards, and foreign remittance transfers.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 33"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Regulation (Reg) E applies to what types of accounts?",
+      "back": "Consumer accounts (it's a consumer protection regulation)"
+    },
+    "keyFact": "Reg E: consumer accounts only"
   },
   {
     "id": "ops-compliance-002",
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "What is the purpose of FDIC signage and advertising requirements?",
+    "options": [
+      "To maintain public confidence in the banking system and show which products are FDIC-insured deposits",
+      "To advertise the bank's interest rates",
+      "To list the bank's branch hours",
+      "To meet the bank's CRA lending goals"
+    ],
+    "answer": 0,
+    "why": "The FDIC's mission includes maintaining stability and public confidence by insuring deposits. Non-deposit signage separates insured deposits from non-deposit products. Sign and advertising requirements date back to the Banking Act of 1935.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 18"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "What is the purpose of FDIC signage and advertising requirements?",
+      "back": "To maintain public confidence in the banking system, and to separate insured deposits from non-deposit products"
+    },
+    "keyFact": "FDIC signs and advertising: maintain public confidence; separate insured deposits from non-deposit products"
   },
   {
     "id": "ops-compliance-003",
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "Regulation (Reg) CC applies to what types of accounts?",
+    "options": [
+      "Both consumer and commercial accounts",
+      "Consumer accounts only",
+      "Commercial accounts only",
+      "Only accounts over $250,000"
+    ],
+    "answer": 0,
+    "why": "Unlike many regulations, Reg CC applies to both consumer and commercial accounts.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 4"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Regulation (Reg) CC applies to what types of accounts?",
+      "back": "Both consumer and commercial accounts"
+    },
+    "keyFact": "Reg CC: consumer AND commercial accounts"
   },
   {
     "id": "ops-compliance-004",
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "In general, what does Regulation (Reg) CC allow?",
+    "options": [
+      "Placing holds on deposited funds, within the funds-availability rules",
+      "Charging overdraft fees without notice",
+      "Closing an account without notice",
+      "Skipping CTRs on check deposits"
+    ],
+    "answer": 0,
+    "why": "Reg CC (Funds Availability) lets banks protect themselves from check fraud losses by placing holds on funds.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 4"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "In general, what does Regulation (Reg) CC allow?",
+      "back": "Placing holds on deposited funds (funds availability), e.g. to protect against check fraud"
+    },
+    "keyFact": "Reg CC allows: holds on deposited funds"
   }
 ]
