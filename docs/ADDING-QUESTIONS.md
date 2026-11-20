@@ -57,7 +57,8 @@ Read that list before you push.
   deleted id, never change what question an id points to. Fixing a typo or adding a `why` or `ref`
   is fine. If a question is wrong enough to need a different answer, keep the id and fix it.
 - Deleting a question is allowed but rare. `check:content` fails if an id on `origin/main` is
-  missing; run `npm run check:content -- --allow-delete` to confirm a deliberate deletion.
+  missing; run `npm run check:content -- --allow-delete` (or `ALLOW_DELETE=1 npm run build`) to confirm a
+  deliberate deletion. Cloudflare's build skips this check.
 - Before writing, `git pull` and find the highest id in the file. Append to the file; never
   regenerate a whole file. Two sessions must not hand out the same ids.
 

@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "id": "ops-law-001",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "When can you deny access to a safe deposit box?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-002",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "What are some examples of effective restrictive endorsements?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-003",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "Who is typically liable for a forged payor signature on a check?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-004",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "What types of negotiable instruments are included in Article 3 of the UCC?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-005",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "When is it OK for a bank officer to act as a notary on a banking-related transaction?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-006",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "When is it NOT OK for a bank officer to act as a notary on a banking-related transaction?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-law-007",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "If you have a collateral sale, what are things that you must consider?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  }
+]

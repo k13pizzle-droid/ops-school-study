@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "id": "hr-001",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "You can use FMLA if you are adopting a child.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "hr-002",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "FMLA is optional if the employee qualifies.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "hr-003",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "Harassment can be non-verbal.",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  }
+]

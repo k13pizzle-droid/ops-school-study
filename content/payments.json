@@ -34,6 +34,7 @@
       "Debit cards"
     ],
     "answer": 0,
+    "why": "ACH, as long as wires aren't one of the choices.",
     "source": {
       "origin": "review"
     },
@@ -43,7 +44,7 @@
       "front": "What payment method moves the most dollar value of non-cash payments?",
       "back": "ACH"
     },
-    "keyFact": "Most dollar value of non-cash payments: ACH"
+    "keyFact": "Most dollar value of non-cash payments: ACH (if wires aren't a choice)"
   },
   {
     "id": "payments-003",
@@ -61,17 +62,6 @@
       "back": "No"
     },
     "keyFact": "GENIUS Act: stablecoin issuers can't pay interest"
-  },
-  {
-    "id": "payments-004",
-    "topic": "payments",
-    "type": "mc",
-    "stem": "What happens when a Venmo user pays a friend inside the app?",
-    "source": {
-      "origin": "review"
-    },
-    "optionsFrom": "authored",
-    "status": "needs-answer"
   },
   {
     "id": "payments-005",

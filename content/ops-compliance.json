@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "id": "ops-compliance-001",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Regulation (Reg) E applies to what types of accounts?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-compliance-002",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "What is the purpose of FDIC signage and advertising requirements?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-compliance-003",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Regulation (Reg) CC applies to what types of accounts?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  },
+  {
+    "id": "ops-compliance-004",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "In general, what does Regulation (Reg) CC allow?",
+    "source": {
+      "origin": "review"
+    },
+    "optionsFrom": "authored",
+    "status": "needs-answer"
+  }
+]

@@ -26,16 +26,18 @@
     "id": "vendor-002",
     "topic": "vendor",
     "type": "tf",
-    "stem": "You are required to do a review of all vendors and rank them.",
+    "stem": "You are required to do a review of all vendors and rank them in order of performance.",
     "answer": true,
+    "why": "The instructor said this one is a freebie on the exam.",
     "source": {
       "origin": "review"
     },
     "optionsFrom": "authored",
-    "status": "verify",
+    "status": "ready",
     "flashcard": {
-      "front": "True/False: You are required to do a review of all vendors and rank them.",
+      "front": "Are you required to do a review of all vendors and rank them in order of performance? True/False",
       "back": "True"
-    }
+    },
+    "keyFact": "Review all vendors and rank by performance: True (freebie on the exam)"
   }
 ]

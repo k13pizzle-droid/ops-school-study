@@ -75,7 +75,7 @@ try {
     await page.getByRole('button', { name: 'test' }).click();
     await page.getByRole('button', { name: '50', exact: true }).click();
     await page.getByRole('checkbox').check();
-    await page.getByRole('button', { name: 'Start test' }).click();
+    await page.getByRole('button', { name: 'Start practice test' }).click();
     await shot('test-q'); await overflow('test');
     await page.locator('button.read').nth(1).click();
     // Leaving mid-test keeps it: Test offers Resume.
@@ -95,6 +95,15 @@ try {
     await page.getByText('By topic, weakest first').waitFor();
     await shot('test-results'); await overflow('results');
     await page.getByRole('button', { name: /Study my misses/ }).click();
+    await page.locator('h2').waitFor();
+    await page.getByRole('button', { name: 'Back to home' }).click();
+    // Exam rehearsal: starts at once with a 60:00 countdown.
+    await page.getByRole('button', { name: 'test' }).click();
+    await page.getByRole('button', { name: /Exam rehearsal/ }).click();
+    await page.getByText(/^(60:00|59:5\d)$/).waitFor();
+    await page.getByRole('button', { name: 'Back to home' }).click();
+    await page.getByRole('button', { name: 'test' }).click();
+    await page.getByRole('button', { name: /Resume test/ }).click();
     await page.locator('h2').waitFor();
     await page.getByRole('button', { name: 'Back to home' }).click();
 
