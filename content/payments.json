@@ -11,8 +11,10 @@
       "The FDIC"
     ],
     "answer": 0,
+    "why": "FedNow is run by the Federal Reserve Banks. RTP is the private-sector rail run by The Clearing House.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Faster Payments deck, slide 20"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -36,7 +38,8 @@
     "answer": 0,
     "why": "ACH, as long as wires aren't one of the choices.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Faster Payments deck, slide 9"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -52,8 +55,10 @@
     "type": "tf",
     "stem": "Under the GENIUS Act, a payment stablecoin issuer can pay interest.",
     "answer": false,
+    "why": "The GENIUS Act bars issuers from paying holders interest or yield.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Faster Payments deck, slide 36"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -75,8 +80,10 @@
       "A prepaid card loaded with cash"
     ],
     "answer": 0,
+    "why": "A tokenized deposit is an ordinary bank deposit recorded as a token on a shared ledger, with the same FDIC coverage.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Faster Payments deck, slide 39"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -85,5 +92,471 @@
       "back": "Deposits represented as blockchain-based tokens"
     },
     "keyFact": "Tokenized deposit: deposits represented as blockchain-based tokens"
+  },
+  {
+    "id": "payments-006",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "What is the per-item limit for Same Day ACH?",
+    "options": [
+      "$1 million",
+      "$10 million",
+      "$100,000",
+      "$25 million"
+    ],
+    "answer": 0,
+    "why": "Same Day ACH has a $1M per-item limit, while RTP and FedNow allow up to $10M.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 21"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Same Day ACH per-item limit: $1 million"
+  },
+  {
+    "id": "payments-007",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Since November 2025, what is the FedNow network transaction limit?",
+    "options": [
+      "$10 million",
+      "$1 million",
+      "$500,000",
+      "$25 million"
+    ],
+    "answer": 0,
+    "why": "FedNow raised its network limit to $10M in Nov. 2025. Each bank still sets its own lower limits.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FedNow network limit (since Nov. 2025): $10 million"
+  },
+  {
+    "id": "payments-008",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Who operates the RTP network?",
+    "options": [
+      "The Clearing House",
+      "The Federal Reserve",
+      "Nacha",
+      "Early Warning Services"
+    ],
+    "answer": 0,
+    "why": "RTP was launched in 2017 by The Clearing House, which is owned by about two dozen of the largest U.S. banks.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 18"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "RTP operator: The Clearing House (private, bank-owned)"
+  },
+  {
+    "id": "payments-009",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Which of these does The Clearing House NOT run?",
+    "options": [
+      "Fedwire",
+      "EPN",
+      "CHIPS",
+      "RTP"
+    ],
+    "answer": 0,
+    "why": "The Clearing House runs EPN (ACH), CHIPS (wires) and RTP. The Federal Reserve operates Fedwire, FedACH and FedNow.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "The Clearing House runs: EPN (ACH), CHIPS (wires) and RTP"
+  },
+  {
+    "id": "payments-010",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Per the traditional rails comparison, how long do consumers have to return an ACH entry?",
+    "options": [
+      "60 days",
+      "2 days",
+      "30 days",
+      "90 days"
+    ],
+    "answer": 0,
+    "why": "ACH returns are generally allowed within 2 days, or 60 days for consumers.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "ACH return window: 2 days; 60 days for consumers"
+  },
+  {
+    "id": "payments-011",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Which rules govern wire transfers?",
+    "options": [
+      "UCC 4A and Reg J",
+      "UCC 3/4 and Reg CC",
+      "Nacha rules and Reg E",
+      "Network rules and Reg Z"
+    ],
+    "answer": 0,
+    "why": "Wires fall under UCC 4A and Reg J. Checks are UCC 3/4, Reg CC and Check 21; ACH is Nacha and Reg E.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Wire rules: UCC 4A and Reg J"
+  },
+  {
+    "id": "payments-012",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "Once a wire is sent, it can't be pulled back.",
+    "answer": true,
+    "why": "Wires are irrevocable by design, which is why business email compromise targets them.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Wires: irrevocable (final)"
+  },
+  {
+    "id": "payments-013",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "By number, about three of every four noncash payments are card payments.",
+    "answer": true,
+    "why": "Cards move the count, while ACH moves the value (about 74% of noncash value in 2024).",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Noncash payments by number: 3 of 4 are card payments"
+  },
+  {
+    "id": "payments-014",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "From 2021 to 2024, debit card payments grew faster in number than credit card payments.",
+    "answer": false,
+    "why": "Credit outgrew debit for the first time in a decade: credit grew 9.6% a year and debit 4.2%. Debit is still the volume leader.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Annual growth 2021-24: credit 9.6%, debit 4.2%"
+  },
+  {
+    "id": "payments-015",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Banks under what asset size are exempt from the Durbin cap on debit interchange?",
+    "options": [
+      "$10 billion",
+      "$1 billion",
+      "$50 billion",
+      "$250 million"
+    ],
+    "answer": 0,
+    "why": "Banks under $10B are exempt from the Durbin cap and keep higher debit interchange.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Durbin cap exemption: banks under $10 billion"
+  },
+  {
+    "id": "payments-016",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Which of these is NOT a credit push payment?",
+    "options": [
+      "ACH debit",
+      "RTP payment",
+      "FedNow payment",
+      "Wire transfer"
+    ],
+    "answer": 0,
+    "why": "In a credit push the payer's bank sends the money: RTP, FedNow, wires and ACH credits. ACH debits, checks and cards are debit pulls.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 17"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Credit push: payer's bank sends the money (RTP, FedNow, wires, ACH credits)"
+  },
+  {
+    "id": "payments-017",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "When did FedNow launch?",
+    "options": [
+      "July 2023",
+      "November 2017",
+      "July 2025",
+      "November 2025"
+    ],
+    "answer": 0,
+    "why": "FedNow launched in July 2023. RTP launched in November 2017.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FedNow launch: July 2023"
+  },
+  {
+    "id": "payments-018",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "RTP and FedNow connect directly, so a payment can be sent from one network to a bank on the other.",
+    "answer": false,
+    "why": "The two networks don't connect directly. About half of FedNow participants also use RTP.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "payments-019",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "Zelle now runs only inside bank and credit union apps after shutting down its standalone app in 2025.",
+    "answer": true,
+    "why": "Zelle shut down its standalone app in 2025. Processors like Fiserv offer community banks a way on.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 22"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "payments-020",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Which feature do consumers most often rate important in a faster payment?",
+    "options": [
+      "Fraud protection",
+      "Availability",
+      "Notification",
+      "Payee confirmation"
+    ],
+    "answer": 0,
+    "why": "Fraud protection was rated important by 90% of consumers, ahead of payee confirmation (83%) and notification (73%).",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 27"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Top consumer faster-payment feature: fraud protection (90%)"
+  },
+  {
+    "id": "payments-021",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "About what share of small businesses would switch financial institutions to get real-time payments?",
+    "options": [
+      "33%",
+      "61%",
+      "77%",
+      "75%"
+    ],
+    "answer": 0,
+    "why": "33% would switch to get real-time payments, and 61% turn to fintechs when their bank doesn't offer faster payments.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 29"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Small businesses that would switch FIs for real-time payments: 33%"
+  },
+  {
+    "id": "payments-022",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Under the GENIUS Act, what level of reserves must back payment stablecoins?",
+    "options": [
+      "100%",
+      "80%",
+      "50%",
+      "10%"
+    ],
+    "answer": 0,
+    "why": "Issuers must hold 100% reserves in cash, Treasuries and similar assets, with monthly public reports.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 36"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "GENIUS Act reserves: 100% (cash, Treasuries and similar)"
+  },
+  {
+    "id": "payments-023",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "The GENIUS Act is law, but the CLARITY Act is not.",
+    "answer": true,
+    "why": "The GENIUS Act was signed July 18, 2025. The CLARITY Act passed the House in July 2025, but Senate cloture failed 49-50 on Sept. 15, 2026.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 37"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CLARITY Act: passed House Jul 2025; Senate cloture failed 49-50 Sept. 15, 2026"
+  },
+  {
+    "id": "payments-024",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Which of these is FDIC-insured, to standard limits?",
+    "options": [
+      "A tokenized deposit",
+      "A payment stablecoin",
+      "Bitcoin",
+      "A crypto exchange balance"
+    ],
+    "answer": 0,
+    "why": "A tokenized deposit is a deposit, so it carries FDIC coverage to standard limits. Stablecoins and crypto aren't insured.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 34"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FDIC-insured digital money: tokenized deposits (to standard limits)"
+  },
+  {
+    "id": "payments-025",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Under Reg E, a consumer's liability for unauthorized use can be as low as what amount if reported within 2 business days?",
+    "options": [
+      "$50",
+      "$500",
+      "$250",
+      "$1,000"
+    ],
+    "answer": 0,
+    "why": "For unauthorized use of a consumer's account, the bank reimburses, and consumer liability can be as low as $50 if reported within 2 business days.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 47"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E consumer liability: as low as $50 if reported within 2 business days"
+  },
+  {
+    "id": "payments-026",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "A business's wire is sent on fraudulent instructions, and the bank followed the agreed security procedures. Under UCC 4A, who generally bears the loss?",
+    "options": [
+      "The business",
+      "The sending bank",
+      "The receiving bank",
+      "The Federal Reserve"
+    ],
+    "answer": 0,
+    "why": "Under UCC 4A, the business bears the loss if the bank followed the agreed security procedures.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 47"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "payments-027",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "When a customer is tricked into sending a payment themselves, Reg E generally requires the bank to reimburse them.",
+    "answer": false,
+    "why": "Mostly no rules cover it, and it's usually the customer's loss. It's the most active policy debate in payments today.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 47"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "payments-028",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "Under Nacha's 2026 fraud monitoring rules, by what date did every community bank RDFI need to comply, regardless of volume?",
+    "options": [
+      "June 22, 2026",
+      "March 20, 2026",
+      "January 18, 2027",
+      "November 1, 2025"
+    ],
+    "answer": 0,
+    "why": "Phase 1 (March 20, 2026) covered all ODFIs and RDFIs receiving 10M+ entries a year. Phase 2 (June 22, 2026) covered everyone else.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 49"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Nacha fraud monitoring Phase 2 (all other RDFIs): June 22, 2026"
+  },
+  {
+    "id": "payments-029",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "Nacha's 2026 fraud monitoring rules require institutions to review their risk-based fraud monitoring processes at least once a year.",
+    "answer": true,
+    "why": "The rules require risk-based processes reviewed at least annually. Screening every item, or reviewing before posting, is not required.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 49"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Nacha fraud monitoring review: at least once a year"
+  },
+  {
+    "id": "payments-030",
+    "topic": "payments",
+    "type": "tf",
+    "stem": "In the FraudClassifier model, a romance scam where the customer sends the money is a payment started by an unauthorized party.",
+    "answer": false,
+    "why": "A customer manipulated by a scam is an authorized party. Unauthorized-party fraud includes account takeover, misused account or card details, and forgery.",
+    "source": {
+      "origin": "slides",
+      "ref": "Faster Payments deck, slide 46"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]
