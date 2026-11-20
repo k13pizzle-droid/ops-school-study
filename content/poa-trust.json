@@ -125,7 +125,8 @@
     ],
     "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Trusts deck, handout page 3"
     },
     "optionsFrom": "exam",
     "status": "ready",
@@ -137,12 +138,13 @@
     "type": "tf",
     "stem": "A trustee can always delegate routine tasks.",
     "answer": false,
-    "why": "Only when the trust (or power of attorney) says so.",
+    "why": "Trustees may delegate investment and management functions (60 O.S. §175.69), but that doesn't mean they can delegate routine tasks like signing checks or making deposits.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Trusts deck, handout page 4"
     },
     "optionsFrom": "exam",
-    "status": "verify",
+    "status": "ready",
     "flashcard": {
       "front": "A trustee can always delegate routine tasks. True/False",
       "back": "False. Only when the trust (or power of attorney) says so."
@@ -183,10 +185,197 @@
     ],
     "answer": 4,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Trusts deck, handout page 2"
     },
     "optionsFrom": "exam",
     "status": "ready",
     "keyFact": "Trust agreement establishes: trustee limits, revocability, successorship, delegation (all of the above)"
+  },
+  {
+    "id": "poa-trust-011",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "In a trust, the Grantor gives which party the right to hold title to property or assets for the benefit of a Beneficiary?",
+    "options": [
+      "The Trustee",
+      "The Beneficiary",
+      "The Executor",
+      "The attorney in fact"
+    ],
+    "answer": 0,
+    "why": "A Trust creates a fiduciary relationship: the Grantor/Trustor gives the Trustee the right to hold title for the benefit of a Beneficiary.",
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Trust roles: Grantor/Trustor gives, Trustee holds title, Beneficiary benefits"
+  },
+  {
+    "id": "poa-trust-012",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "A trust established by a will, after the Grantor's death, is called a",
+    "options": [
+      "Testamentary Trust",
+      "Inter Vivos Trust",
+      "Living Trust",
+      "Revocable Trust"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Trust created by a will after death: Testamentary Trust"
+  },
+  {
+    "id": "poa-trust-013",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "A trust established by a written document during the Grantor's lifetime is called",
+    "options": [
+      "An Inter Vivos (Living) Trust",
+      "A Testamentary Trust",
+      "A Special Needs Trust",
+      "A Decanted Trust"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Trust created during the Grantor's lifetime: Inter Vivos (Living) Trust"
+  },
+  {
+    "id": "poa-trust-014",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "The property conveyed into a Trust creates the trust",
+    "options": [
+      "Corpus",
+      "Instrument",
+      "Indenture",
+      "Charter"
+    ],
+    "answer": 0,
+    "why": "The trust corpus is sometimes called the principal, estate, or res.",
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Property conveyed into a trust: the corpus (principal, estate, or res)"
+  },
+  {
+    "id": "poa-trust-015",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "If a Trust was created by a will, how are assets transferred into the Trust after the Grantor's death?",
+    "options": [
+      "Through probate procedures in the court system",
+      "By the Trustee signing a transfer form at the bank",
+      "Automatically on the date of death",
+      "By written consent of the beneficiaries"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Testamentary trust assets: transferred in through probate"
+  },
+  {
+    "id": "poa-trust-016",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "When there are co-trustees, the law presumes that majority action is required unless the Trust instrument directs otherwise.",
+    "answer": true,
+    "why": "60 O.S. §175.17: majority action is presumed unless the Trust instrument directs otherwise.",
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Co-trustees: majority action presumed unless the trust says otherwise (60 O.S. §175.17)"
+  },
+  {
+    "id": "poa-trust-017",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "A dissenting co-trustee is not liable for the majority's action if they express their dissent in writing to the co-trustees at or before the time of the act.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Dissenting co-trustee: not liable if dissent is in writing at or before the act"
+  },
+  {
+    "id": "poa-trust-018",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "Trustees may delegate investment and management functions.",
+    "answer": true,
+    "why": "Per 60 O.S. §175.69. That still doesn't let them delegate routine tasks like signing checks or making deposits.",
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Trustees may delegate: investment and management functions (not routine tasks)"
+  },
+  {
+    "id": "poa-trust-019",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "A trustee may appoint an attorney in fact (other than a co-trustee) as the trustee's agent when",
+    "options": [
+      "The Trust documents give the trustee that ability",
+      "The trustee is out of town",
+      "The bank approves the appointment",
+      "The Grantor has died"
+    ],
+    "answer": 0,
+    "why": "Pay close attention to the language in the Trust: the trustee must be given that ability in the Trust documents, unless the agent is another co-trustee.",
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, slide 24"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-020",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the documentation types for creating a trust?",
+    "options": [
+      "Trust Agreement/Declaration of Trust",
+      "Last Will & Testament",
+      "Memo of Trust",
+      "Durable power of attorney"
+    ],
+    "answer": 3,
+    "why": "The documentation types listed: Trust Agreement/Declaration of Trust, Last Will & Testament, Memo of Trust, and Certificate/Authorization Agreement.",
+    "source": {
+      "origin": "slides",
+      "ref": "Trusts deck, handout page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]
