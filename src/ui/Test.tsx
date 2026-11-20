@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { byId, questions, topicName } from '../lib/bank';
-import { sampleExam } from '../lib/exam';
+import { sampleExam, sampleRehearsal } from '../lib/exam';
 import { showOptions, type Shown } from '../lib/options';
 import { actions, savedRun, useStore, type TestResult } from '../lib/store';
 import { isQuizzable, type Question } from '../lib/types';
@@ -70,7 +70,8 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   const begin = (exam: boolean) => {
     savedRun.clear();
     setSaved(null);
-    const qs = sampleExam(pool, exam ? EXAM.size : size, Math.random);
+    // The rehearsal always includes every review question; practice tests sample by topic.
+    const qs = exam ? sampleRehearsal(pool, EXAM.size, Math.random) : sampleExam(pool, size, Math.random);
     setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer: exam || timer, exam });
     setIdx(0);
   };
@@ -124,7 +125,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
           >
             <div className="display text-[22px]">{saved && newArmed && examMode ? 'Tap again to discard the saved test' : 'Exam rehearsal'}</div>
             <div className="text-[14px] opacity-90">
-              Like the real one: {EXAM.size} questions, {EXAM.minutes} minutes, {Math.round(EXAM.pass * 100)}% to pass. It ends itself when time runs out.
+              Like the real one: {EXAM.size} questions, {EXAM.minutes} minutes, {Math.round(EXAM.pass * 100)}% to pass. Every exam review question is in it. It ends itself when time runs out.
             </div>
           </button>
           {pool.length < EXAM.size && <p className="-mt-3 text-[13px] text-[var(--muted)]">{pool.length} questions are ready so far, so a rehearsal uses all of them.</p>}

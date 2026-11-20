@@ -40,3 +40,15 @@ export function sampleExam(qs: Question[], n: number, rng: Rng): Question[] {
   }
   return shuffled(picked, rng);
 }
+
+/**
+ * The exam rehearsal: every instructor review question (the best predictor of the real exam),
+ * then slide and authored questions to fill the rest, spread by topic as in sampleExam. If there
+ * are more review questions than n, a weighted sample of them is used instead.
+ */
+export function sampleRehearsal(qs: Question[], n: number, rng: Rng): Question[] {
+  const review = qs.filter((q) => q.source.origin === 'review');
+  if (review.length >= n) return sampleExam(review, n, rng);
+  const rest = qs.filter((q) => q.source.origin !== 'review');
+  return shuffled([...review, ...sampleExam(rest, n - review.length, rng)], rng);
+}

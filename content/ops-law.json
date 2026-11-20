@@ -134,7 +134,7 @@
       "When protesting a negotiable instrument held for collection"
     ],
     "answer": 0,
-    "why": "It's unlawful for the notary to take the acknowledgment if they're a party to that instrument, whether individually or representing the bank. The notary must be an impartial third party.",
+    "why": "From the slide \"Personnel as Notary: Strict Prohibitions\": \"It is unlawful for a notary public to take the acknowledgment of an instrument executed by or to the bank if the notary is a party to that specific instrument.\" And under \"The Dual Role Bar\": \"This restriction applies whether the notary is a party individually or acting as a representative of the bank. The goal is to ensure the notarial act is performed by an impartial third-party verifier.\" (One classmate guide says acting as the bank's representative is OK. The slide says it isn't.)",
     "source": {
       "origin": "review",
       "ref": "Bank Operations Law deck, handout page 6"
@@ -145,7 +145,20 @@
       "front": "When is it NOT OK for a bank officer to act as a notary on a banking-related transaction?",
       "back": "When the notary is a party to the instrument, individually or as the bank's representative"
     },
-    "keyFact": "Bank notary: not OK if the notary is a party to the instrument (even for the bank)"
+    "keyFact": "Bank notary: not OK if the notary is a party to the instrument (even for the bank)",
+    "images": [
+      {
+        "src": "slides/ops-law-notary.webp",
+        "alt": "Bank Operations Law slide: Personnel as Notary, Strict Prohibitions. The Dual Role Bar box says the restriction applies whether the notary is a party individually or acting as a representative of the bank.",
+        "at": "answer",
+        "mark": {
+          "x": 51,
+          "y": 32,
+          "w": 45.5,
+          "h": 50
+        }
+      }
+    ]
   },
   {
     "id": "ops-law-007",
@@ -597,6 +610,83 @@
     "source": {
       "origin": "slides",
       "ref": "Bank Operations Law deck, handout page 27"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-law-031",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A teller who is a notary takes the acknowledgment of a customer signing a mortgage to the bank. The teller isn't a party to the mortgage. This is OK.",
+    "answer": true,
+    "why": "OK: bank personnel who are notaries may take the acknowledgment of any party to an instrument executed to or by the bank, as long as the notary isn't a party to it.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Notary OK example: acknowledging a customer's mortgage to the bank (notary not a party)"
+  },
+  {
+    "id": "ops-law-032",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A loan officer signs a loan agreement on the bank's behalf and then notarizes the same agreement. This is OK.",
+    "answer": false,
+    "why": "NOT OK: the officer is a party to the instrument as the bank's representative. The Dual Role Bar applies whether the notary is a party individually or acting as a representative of the bank.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Notary NOT OK example: officer who signed for the bank notarizes the same document",
+    "images": [
+      {
+        "src": "slides/ops-law-notary.webp",
+        "alt": "Bank Operations Law slide: Personnel as Notary, Strict Prohibitions, with the Dual Role Bar box highlighted.",
+        "at": "answer",
+        "mark": {
+          "x": 51,
+          "y": 32,
+          "w": 45.5,
+          "h": 50
+        }
+      }
+    ]
+  },
+  {
+    "id": "ops-law-033",
+    "topic": "ops-law",
+    "type": "mc",
+    "stem": "Which of these can a bank employee who is a notary do?",
+    "options": [
+      "Administer an oath to another bank employee",
+      "Notarize their own loan with the bank",
+      "Notarize a contract they signed on the bank's behalf",
+      "Notarize a document where they are the borrower's co-signer"
+    ],
+    "answer": 0,
+    "why": "Permitted: acknowledgments of parties to instruments executed to or by the bank, oaths to other bank personnel, and protests of negotiable instruments held for collection. The others make the notary a party to the instrument.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-law-034",
+    "topic": "ops-law",
+    "type": "tf",
+    "stem": "A bank employee who is a notary may protest a negotiable instrument the bank holds for collection.",
+    "answer": true,
+    "why": "Protesting negotiable instruments held for collection is one of the notarial acts bank personnel are expressly allowed to perform.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Operations Law deck, handout page 5"
     },
     "optionsFrom": "authored",
     "status": "ready"
