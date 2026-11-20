@@ -1,8 +1,8 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { byId, questions } from '../lib/bank';
 import { isMissed } from '../lib/progress';
 import { shuffled } from '../lib/random';
-import { actions, useStore } from '../lib/store';
+import { actions, session, useStore } from '../lib/store';
 import { answerText, type Question } from '../lib/types';
 import { Btn, ExamReview, SourceLine, Star, TopBar, Unconfirmed } from './common';
 
@@ -19,9 +19,17 @@ const back = (q: Question) => {
 const backNote = (q: Question) => (!q.flashcard && (q.type === 'tf' || q.shuffle === false) ? (q.why ?? q.keyFact) : undefined);
 
 /** Flashcards. Any question with an answer, even ones not ready for the quiz yet. */
-export function Cards({ onBack }: { onBack: () => void }) {
+type SavedCards = { filter: Filter; order: string[]; i: number; got: number };
+
+export function Cards({ resume, onBack }: { resume?: boolean; onBack: () => void }) {
   const { progress, stars } = useStore();
-  const [filter, setFilter] = useState<Filter>('all');
+  // After a relaunch, pick the deck back up where it was.
+  const [saved] = useState(() => {
+    if (!resume) return null;
+    const s = session.load<SavedCards>('cards');
+    return s && Array.isArray(s.order) && s.order.every((id) => byId.has(id)) ? s : null;
+  });
+  const [filter, setFilter] = useState<Filter>(saved?.filter ?? 'all');
   const deck = useMemo(
     () =>
       questions.filter(
@@ -31,11 +39,12 @@ export function Cards({ onBack }: { onBack: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [filter],
   );
-  const [order, setOrder] = useState<string[]>(() => shuffled(deck.map((q) => q.id), Math.random));
+  const [order, setOrder] = useState<string[]>(() => saved?.order ?? shuffled(deck.map((q) => q.id), Math.random));
   const [deckKey, setDeckKey] = useState(filter);
-  const [i, setI] = useState(0);
+  const [i, setI] = useState(saved?.i ?? 0);
   const [flipped, setFlipped] = useState(false);
-  const [got, setGot] = useState(0);
+  const [got, setGot] = useState(saved?.got ?? 0);
+  useEffect(() => session.save('cards', { filter, order, i, got } satisfies SavedCards), [filter, order, i, got]);
   const [dx, setDx] = useState(0);
   const start = useRef<number | null>(null);
 

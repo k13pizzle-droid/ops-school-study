@@ -101,3 +101,30 @@ export const savedRun = {
     }
   },
 };
+
+// Where you were: the open screen and the state of a Study session, flashcard deck, or Play lesson,
+// so swiping the app away (or iOS closing it in the background) reopens at the same spot.
+const SESSION_PREFIX = 'ops-school-session-';
+export const session = {
+  load<T>(key: string): T | null {
+    try {
+      return JSON.parse(localStorage.getItem(SESSION_PREFIX + key) ?? 'null') as T | null;
+    } catch {
+      return null;
+    }
+  },
+  save(key: string, value: unknown) {
+    try {
+      localStorage.setItem(SESSION_PREFIX + key, JSON.stringify(value));
+    } catch {
+      /* ignore */
+    }
+  },
+  clear(key: string) {
+    try {
+      localStorage.removeItem(SESSION_PREFIX + key);
+    } catch {
+      /* ignore */
+    }
+  },
+};

@@ -3,7 +3,7 @@ import { byId, questions } from '../lib/bank';
 import { showOptions } from '../lib/options';
 import { shuffled } from '../lib/random';
 import { studyOrder } from '../lib/study';
-import { actions, liveStreak, useStore } from '../lib/store';
+import { actions, liveStreak, session, useStore } from '../lib/store';
 import { answerText, isQuizzable } from '../lib/types';
 import { Btn, QuestionMeta, TopBar } from './common';
 import { OptionList } from './OptionList';
@@ -16,11 +16,21 @@ const LESSON = 10;
 const HEARTS = 3;
 const LIGHTNING_SECONDS = 60;
 
-export function Play({ onBack }: { onBack: () => void }) {
+export function Play({ resume, onBack }: { resume?: boolean; onBack: () => void }) {
   const { game } = useStore();
-  const [mode, setMode] = useState<'menu' | 'lesson' | 'lightning'>('menu');
+  // After a relaunch, a lesson in progress picks up where it was (Lightning just ends).
+  const [mode, setMode] = useState<'menu' | 'lesson' | 'lightning'>(() => (resume && session.load('lesson') ? 'lesson' : 'menu'));
+  const [resumeLesson, setResumeLesson] = useState(!!resume);
   const [round, setRound] = useState(0);
-  if (mode === 'lesson') return <Lesson key={round} onExit={() => setMode('menu')} onAgain={() => setRound((r) => r + 1)} />;
+  if (mode === 'lesson')
+    return (
+      <Lesson
+        key={round}
+        resume={resumeLesson}
+        onExit={() => (session.clear('lesson'), setResumeLesson(false), setMode('menu'))}
+        onAgain={() => (session.clear('lesson'), setResumeLesson(false), setRound((r) => r + 1))}
+      />
+    );
   if (mode === 'lightning') return <Lightning key={round} onExit={() => setMode('menu')} onAgain={() => setRound((r) => r + 1)} />;
   const streak = liveStreak(game);
   return (
@@ -53,20 +63,32 @@ const Stat = ({ big, small }: { big: string; small: string }) => (
   </div>
 );
 
-function Lesson({ onExit, onAgain }: { onExit: () => void; onAgain: () => void }) {
+type SavedLesson = { queue: string[]; pos: number; hearts: number; right: number; tries: number; combo: number; bestCombo: number; xp: number; banked: boolean };
+
+function Lesson({ resume, onExit, onAgain }: { resume?: boolean; onExit: () => void; onAgain: () => void }) {
+  const [saved] = useState(() => {
+    if (!resume) return null;
+    const s = session.load<SavedLesson>('lesson');
+    return s && Array.isArray(s.queue) && s.queue.every((id) => byId.has(id)) ? s : null;
+  });
   const { progress } = useStore();
   const [queue, setQueue] = useState(() =>
+    saved?.queue ??
     studyOrder(questions.filter(isQuizzable), progress, Math.random).slice(0, LESSON),
   );
-  const [pos, setPos] = useState(0);
+  const [pos, setPos] = useState(saved?.pos ?? 0);
   const [chosen, setChosen] = useState<number | null>(null);
-  const [hearts, setHearts] = useState(HEARTS);
-  const [right, setRight] = useState(0);
-  const [tries, setTries] = useState(0);
-  const [combo, setCombo] = useState(0);
-  const [bestCombo, setBestCombo] = useState(0);
-  const [xp, setXp] = useState(0);
-  const [banked, setBanked] = useState(false);
+  const [hearts, setHearts] = useState(saved?.hearts ?? HEARTS);
+  const [right, setRight] = useState(saved?.right ?? 0);
+  const [tries, setTries] = useState(saved?.tries ?? 0);
+  const [combo, setCombo] = useState(saved?.combo ?? 0);
+  const [bestCombo, setBestCombo] = useState(saved?.bestCombo ?? 0);
+  const [xp, setXp] = useState(saved?.xp ?? 0);
+  const [banked, setBanked] = useState(saved?.banked ?? false);
+  // Saved after every answer and move; an answered question counts as done on relaunch.
+  useEffect(() => {
+    session.save('lesson', { queue, pos: chosen !== null ? pos + 1 : pos, hearts, right, tries, combo, bestCombo, xp, banked } satisfies SavedLesson);
+  }, [queue, pos, chosen, hearts, right, tries, combo, bestCombo, xp, banked]);
   const [quitArmed, quit] = useTwoTap(onExit);
 
   const goal = Math.min(LESSON, queue.length);

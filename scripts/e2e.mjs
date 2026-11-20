@@ -139,6 +139,72 @@ try {
     await page.close();
   }
 
+  // Relaunch: closing the app (a new page in the same browser profile) reopens at the same spot.
+  {
+    const fail = (m) => problems.push(`relaunch: ${m}`);
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true });
+    await ctx.addInitScript(() => localStorage.setItem('ops-school-install-hint-dismissed', '1'));
+    let page = await ctx.newPage();
+    page.on('pageerror', (e) => fail(`page error ${e.message}`));
+    const reopen = async () => {
+      await page.close();
+      page = await ctx.newPage();
+      page.on('pageerror', (e) => fail(`page error ${e.message}`));
+      await page.goto(url);
+      await page.waitForTimeout(800);
+    };
+    await page.goto(url);
+    // Study: answer 3, close mid-session (the 3rd answer still showing its panel).
+    await page.getByRole('button', { name: 'Study', exact: true }).click();
+    const stems = [];
+    for (let i = 0; i < 3; i++) {
+      await page.locator('h2').waitFor();
+      stems.push(await page.locator('h2').innerText());
+      await page.locator('button.read').first().click();
+      if (i < 2) await page.getByRole('button', { name: 'Continue' }).click();
+    }
+    await reopen();
+    if (!(await page.locator('.topbar').innerText()).includes('Study')) fail('did not reopen in Study');
+    const meta = await page.getByText(/^\d+ \/ 10/).first().innerText().catch(() => '');
+    if (!meta.startsWith('4 / 10')) fail(`study reopened at "${meta}", expected question 4 of the round`);
+    // The back swipe still returns Home.
+    await page.goBack();
+    await page.getByRole('button', { name: 'Study', exact: true }).waitFor({ timeout: 5000 }).catch(() => fail('back swipe after relaunch did not return Home'));
+    // Cards: 4 through the deck, then relaunch.
+    await page.getByRole('button', { name: 'cards' }).click();
+    for (let i = 0; i < 4; i++) await page.getByRole('button', { name: 'Got it →' }).click();
+    await reopen();
+    const gotText = await page.getByText(/\d+ of \d+ got/).innerText().catch(() => '');
+    if (!gotText.startsWith('4 of')) fail(`cards reopened at "${gotText}", expected 4 got`);
+    await page.getByRole('button', { name: 'Back to home' }).click();
+    // Play lesson: 2 answers, relaunch mid-lesson.
+    await page.getByRole('button', { name: 'play' }).click();
+    await page.getByRole('button', { name: /^Lesson/ }).click();
+    let hearts0 = '';
+    for (let i = 0; i < 2; i++) { await page.locator('h2').waitFor(); await page.locator('button.read').first().click(); await page.getByRole('button', { name: 'Continue' }).click(); }
+    hearts0 = await page.locator('[aria-label$="hearts"]').getAttribute('aria-label');
+    const bar0 = await page.locator('[role=progressbar]').getAttribute('aria-valuenow');
+    await reopen();
+    if (!(await page.locator('[role=progressbar]').count())) fail('did not reopen in the lesson');
+    else {
+      const hearts1 = await page.locator('[aria-label$="hearts"]').getAttribute('aria-label');
+      const bar1 = await page.locator('[role=progressbar]').getAttribute('aria-valuenow');
+      if (hearts1 !== hearts0 || bar1 !== bar0) fail(`lesson reopened with ${hearts1}/${bar1}, expected ${hearts0}/${bar0}`);
+    }
+    // Leaving the lesson, then relaunching, lands on the Play menu (no stale lesson).
+    await page.getByRole('button', { name: 'Quit lesson' }).click();
+    await page.waitForTimeout(600);
+    await page.getByRole('button', { name: 'Quit lesson' }).click();
+    await reopen();
+    if (!(await page.getByRole('button', { name: /^Lesson/ }).count())) fail('after quitting a lesson, relaunch did not land on the Play menu');
+    // Going Home and relaunching lands on Home.
+    await page.getByRole('button', { name: 'Back to home' }).click();
+    await reopen();
+    if (!(await page.getByRole('button', { name: 'Study', exact: true }).count())) fail('relaunch from Home did not land on Home');
+    await ctx.close();
+    console.log('relaunch check: study, cards, lesson resume; home and play menu land correctly');
+  }
+
   // Exam review only: with the switch on, every feature must show review questions and nothing else.
   {
     const dir = new URL('../content/', import.meta.url);
