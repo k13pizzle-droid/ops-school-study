@@ -10,8 +10,6 @@ const files = import.meta.glob<Question[]>(['../../content/*.json', '!../../cont
 
 export const topics: Topic[] = topicsJson as Topic[];
 export const allQuestions: Question[] = topics.flatMap((t) => files[`../../content/${t.slug}.json`] ?? []);
-// Lookups by id always see the whole bank (saved tests, progress), whatever the filter.
-export const byId = new Map(allQuestions.map((q) => [q.id, q]));
 
 // "Exam review only": when on, every mode works from the instructors' review questions alone.
 // Read once at startup; toggling it reloads the app so every screen picks it up.
@@ -33,6 +31,9 @@ export function setReviewOnly(on: boolean) {
   location.reload();
 }
 export const questions: Question[] = reviewOnly ? allQuestions.filter((q) => q.source.origin === 'review') : allQuestions;
+// Lookups follow the same filter, so nothing outside it can surface anywhere (a resumed test, a
+// card, a lesson). Progress is stored by id separately and is kept either way.
+export const byId = new Map(questions.map((q) => [q.id, q]));
 export const topicName = (slug: string) => topics.find((t) => t.slug === slug)?.name ?? slug;
 
 declare const __BANK_VERSION__: string;

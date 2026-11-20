@@ -2,7 +2,7 @@ import { useSyncExternalStore } from 'react';
 import { recordAnswer, type Progress } from './progress';
 
 // Everything saved on the phone. Small enough that one localStorage key per kind is fine.
-export type TestResult = { at: number; score: number; total: number; byTopic: Record<string, [number, number]>; missed: string[]; exam?: boolean };
+export type TestResult = { at: number; score: number; total: number; byTopic: Record<string, [number, number]>; missed: string[]; exam?: boolean; reviewOnly?: boolean };
 export type Game = { xp: number; streak: number; lastDay: string; bestLightning: number };
 type State = { progress: Progress; stars: Record<string, true>; tests: TestResult[]; game: Game };
 const NEW_GAME: Game = { xp: 0, streak: 0, lastDay: '', bestLightning: 0 };
