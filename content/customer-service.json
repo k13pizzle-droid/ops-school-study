@@ -4,43 +4,286 @@
     "topic": "customer-service",
     "type": "tf",
     "stem": "Your work space is part of customer service.",
+    "answer": true,
+    "why": "Tangibles: quality in what can be seen or felt, including the physical facility. Cleanliness is also the first of the 7-11 decisions.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Customer Service deck, handout page 11"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "keyFact": "Work space part of customer service: True (Tangibles: physical facility)"
   },
   {
     "id": "customer-service-002",
     "topic": "customer-service",
     "type": "tf",
     "stem": "AI and human customer service can co-exist.",
+    "answer": true,
+    "why": "The hybrid model: AI handles FAQs and routine tasks, humans focus on complex or emotional cases, with a seamless handoff between them.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Customer Service deck, handout page 5"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "keyFact": "AI and human service co-exist: True (hybrid model)"
   },
   {
     "id": "customer-service-003",
     "topic": "customer-service",
     "type": "mc",
     "stem": "What are the five points that customers evaluate?",
+    "options": [
+      "Reliability, Assurance, Tangibles, Empathy, Responsiveness",
+      "Reliability, Price, Speed, Empathy, Location",
+      "Assurance, Cost, Tangibles, Convenience, Friendliness",
+      "Accuracy, Availability, Price, Empathy, Responsiveness"
+    ],
+    "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Customer Service deck, handout page 10"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "What are the five points that customers evaluate?",
+      "back": "Reliability, Assurance, Tangibles, Empathy, Responsiveness"
+    },
+    "keyFact": "5 points of service quality: Reliability, Assurance, Tangibles, Empathy, Responsiveness (memory aid: RATER)"
   },
   {
     "id": "customer-service-004",
     "topic": "customer-service",
     "type": "mc",
-    "stem": "How do customers evaluate quality service? What do they consider?",
+    "stem": "Customers evaluate service quality on five points. Which of these is NOT one of them?",
+    "options": [
+      "Reliability",
+      "Tangibles",
+      "Empathy",
+      "Price"
+    ],
+    "answer": 3,
+    "why": "The five points: Reliability, Assurance, Tangibles, Empathy, Responsiveness.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Customer Service deck, handout page 10"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "How do customers evaluate quality service? What do they consider?",
+      "back": "Five points: Reliability, Assurance, Tangibles, Empathy, Responsiveness"
+    }
+  },
+  {
+    "id": "customer-service-005",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "When customers first meet you, they decide whether they like you, dislike you, or are indifferent in",
+    "options": [
+      "7 seconds, from 11 impressions",
+      "11 seconds, from 7 impressions",
+      "30 seconds, from 5 impressions",
+      "60 seconds, from 3 impressions"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "First impression: 7 seconds, from 11 impressions"
+  },
+  {
+    "id": "customer-service-006",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "What percentage of consumers will pay more for a better customer experience?",
+    "options": [
+      "86%",
+      "70%",
+      "50%",
+      "25%"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Pay more for better experience: 86% of consumers"
+  },
+  {
+    "id": "customer-service-007",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "According to McKinsey, what percentage of buying experiences are based on how the customer feels?",
+    "options": [
+      "70%",
+      "86%",
+      "50%",
+      "90%"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Buying experiences based on how the customer feels: 70% (McKinsey)"
+  },
+  {
+    "id": "customer-service-008",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "Of 100 airline customers who encounter delayed baggage, what share don't complain at all?",
+    "options": [
+      "90%",
+      "50%",
+      "75%",
+      "10%"
+    ],
+    "answer": 0,
+    "why": "90% don't complain; only 10% complain, spread across baggage agents, reservations, social media, and other channels.",
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Delayed baggage: 90% don't complain, 10% do"
+  },
+  {
+    "id": "customer-service-009",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the 7-11 decisions customers make about you?",
+    "options": [
+      "Cleanliness",
+      "Credible",
+      "Courteous",
+      "Inexpensive"
+    ],
+    "answer": 3,
+    "why": "The 11: cleanliness, warmth, credible, knowledgeable, responsive, friendly, helpful, understanding, courteous, confident, professional.",
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "customer-service-010",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "Which service-quality point covers trust and confidence in you, product knowledge, and listening skills?",
+    "options": [
+      "Assurance",
+      "Reliability",
+      "Empathy",
+      "Tangibles"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Assurance: trust and confidence, skills and knowledge, product knowledge, listening"
+  },
+  {
+    "id": "customer-service-011",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "Which describes Responsiveness?",
+    "options": [
+      "Willingness to assist customers, prompt service, and resolving problems quickly",
+      "Trust and confidence in you and the knowledge to do the job well",
+      "Caring, individualized attention, available when customers need help",
+      "Performing and living up to promises; dependable and accurate"
+    ],
+    "answer": 0,
+    "why": "The other choices describe Assurance, Empathy, and Reliability.",
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Responsiveness: willing to assist, prompt, resolve problems quickly"
+  },
+  {
+    "id": "customer-service-012",
+    "topic": "customer-service",
+    "type": "tf",
+    "stem": "Under the Tangibles point, customers consider the physical facility, equipment, staff, and letters.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Tangibles: what can be seen or felt (facility, equipment, staff, letters)"
+  },
+  {
+    "id": "customer-service-013",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "In the hybrid model of customer service, what does AI handle?",
+    "options": [
+      "FAQs and routine tasks",
+      "Complex or emotional cases",
+      "Final decisions on complaints",
+      "Every customer contact"
+    ],
+    "answer": 0,
+    "why": "Humans focus on complex or emotional cases, with a seamless handoff between AI and human agents.",
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "customer-service-014",
+    "topic": "customer-service",
+    "type": "tf",
+    "stem": "Compared with human customer service, AI customer service is strong in complex cases.",
+    "answer": false,
+    "why": "AI struggles with nuance; human customer service is strong in complex cases.",
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "customer-service-015",
+    "topic": "customer-service",
+    "type": "mc",
+    "stem": "Who said, \"Your most unhappy customers are your greatest source of learning\"?",
+    "options": [
+      "Bill Gates",
+      "Steve Jobs",
+      "Warren Buffett",
+      "Jeff Bezos"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Customer Service deck, handout page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]
