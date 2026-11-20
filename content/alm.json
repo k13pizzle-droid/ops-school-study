@@ -5,12 +5,13 @@
     "type": "mc",
     "stem": "What is the purpose of asset liability management?",
     "options": [
-      "Management of the bank's balance sheet to maintain a mix of loans and deposits for long-term growth and risk management",
+      "Controlling the bank's sensitivity to changes in market interest rates and limiting losses in income and capital",
       "Setting the bank's annual operating budget for salaries, occupancy, and technology spending",
       "Managing each branch's cash drawers and vault limits so tellers can meet daily customer demand",
       "Reviewing each loan application for credit risk before the loan committee approves it"
     ],
     "answer": 0,
+    "why": "Your notes from the review: ALM controls a bank's sensitivity to market rate changes and limits losses in income and capital (managing the balance sheet's mix of loans and deposits).",
     "source": {
       "origin": "review",
       "ref": "Bank Investments deck, handout page 18"
@@ -19,9 +20,9 @@
     "status": "ready",
     "flashcard": {
       "front": "What is the purpose of asset liability management?",
-      "back": "Management of the bank's balance sheet to maintain a mix of loans and deposits for long-term growth and risk management"
+      "back": "Controls a bank's sensitivity to changes in market interest rates and limits losses in income and capital"
     },
-    "keyFact": "ALM: managing the balance sheet's mix of loans and deposits for long-term growth and risk management"
+    "keyFact": "ALM purpose: control sensitivity to market rate changes; limit losses in income and capital"
   },
   {
     "id": "alm-002",
@@ -70,24 +71,26 @@
     "id": "alm-004",
     "topic": "alm",
     "type": "mc",
-    "stem": "Which of these is an example of interest rate risk (IRR)?",
+    "stem": "Which of these is a type of interest rate risk (IRR)?",
     "options": [
-      "Bonds with longer duration",
-      "CDs with floating rates",
-      "Loans with variable rates",
+      "Repricing risk",
+      "Yield curve risk",
+      "Basis risk",
+      "Option risk",
       "All of the above"
     ],
-    "answer": 3,
+    "answer": 4,
+    "why": "The review answer lists the IRR types: repricing risk, yield curve risk, option risk, and basis risk.",
     "source": {
       "origin": "review"
     },
     "optionsFrom": "authored",
     "status": "ready",
     "flashcard": {
-      "front": "What are some examples of interest rate risk (IRR)?",
-      "back": "Bonds with longer duration, CDs (with floating rates), loans (with variable rates)"
+      "front": "What are some examples of interest rate risk (IRR)? (risk types)",
+      "back": "Repricing risk, yield curve risk, option risk, basis risk"
     },
-    "keyFact": "Interest rate risk examples: longer-duration bonds, floating-rate CDs, variable-rate loans"
+    "keyFact": "IRR types: repricing, yield curve, option, basis"
   },
   {
     "id": "alm-005",

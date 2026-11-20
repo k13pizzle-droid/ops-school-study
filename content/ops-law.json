@@ -19,7 +19,7 @@
     "status": "ready",
     "flashcard": {
       "front": "When can you deny access to a safe deposit box?",
-      "back": "Unsafe conditions (fire, flood, pandemic); court orders or valid search warrants; unpaid rent or a lease violation; reasonable suspicion of illicit or fraudulent activity"
+      "back": "Unsafe conditions (fire, flood, pandemic) and court orders or search warrants; also unpaid rent, lease violations, or suspected fraud"
     },
     "keyFact": "Deny SDB access: hazards, court order/search warrant, unpaid rent or lease violation, suspected fraud"
   },
@@ -29,13 +29,13 @@
     "type": "mc",
     "stem": "Which of these is an effective restrictive indorsement?",
     "options": [
-      "\"For Deposit\"",
-      "\"Pay A only\"",
-      "A signature with nothing else",
-      "\"Pay to the order of B\""
+      "\"For Deposit Only\"",
+      "A blank indorsement (signature only)",
+      "\"Pay to the order of B\"",
+      "\"Without recourse\""
     ],
     "answer": 0,
-    "why": "\"For Deposit\" means the funds must be collected by a bank. A restriction like \"Pay A only\" does not prevent further negotiation; later holders can ignore it.",
+    "why": "The review answer: limiting payment to a person, and \"for deposit only\". \"For Deposit\" means the funds must be collected by a bank. (The slides add that a \"Pay A only\" restriction can be ignored by later holders.)",
     "source": {
       "origin": "review",
       "ref": "Bank Operations Law deck, handout page 21"
@@ -44,9 +44,9 @@
     "status": "ready",
     "flashcard": {
       "front": "What are some examples of effective restrictive endorsements?",
-      "back": "\"For Deposit\" works: the funds must be collected by a bank. \"Pay A only\" doesn't stop further negotiation."
+      "back": "Limiting payment to a person, and \"for deposit only\""
     },
-    "keyFact": "Effective restrictive indorsement: \"For Deposit\" (\"Pay A only\" can be ignored)"
+    "keyFact": "Restrictive indorsements: limiting payment to a person; \"for deposit only\""
   },
   {
     "id": "ops-law-003",
@@ -151,12 +151,26 @@
     "id": "ops-law-007",
     "topic": "ops-law",
     "type": "mc",
-    "stem": "If you have a collateral sale, what are things that you must consider?",
+    "stem": "If you have a collateral sale of safe deposit box contents, what must you consider?",
+    "options": [
+      "Proceeds first cover rent and expenses; the rest belongs to the lessee",
+      "All proceeds go to the bank",
+      "All proceeds go straight to the State Treasurer",
+      "Proceeds are split evenly between the bank and the lessee"
+    ],
+    "answer": 0,
+    "why": "If no demand is made within 1 year, the lessor can sell the contents at public auction. Proceeds first cover rent and expenses; the residue is held for the lessee (and escheats if unclaimed for 5 years).",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Operations Law deck, handout page 14"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "If you have a collateral sale, what must you consider?",
+      "back": "First consider expenses; the rest belongs to the lessee"
+    },
+    "keyFact": "Safe deposit sale proceeds: rent and expenses first, the rest belongs to the lessee"
   },
   {
     "id": "ops-law-008",

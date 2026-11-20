@@ -74,7 +74,7 @@
     "type": "mc",
     "stem": "In very general terms, what is a tokenized deposit?",
     "options": [
-      "Deposits represented as blockchain-based tokens",
+      "An ordinary deposit recorded as a token on a shared ledger",
       "A stablecoin issued by a non-bank company",
       "A check deposited by taking a photo in a mobile app",
       "A prepaid card loaded with cash"
@@ -89,9 +89,9 @@
     "status": "ready",
     "flashcard": {
       "front": "In very general terms, what is a tokenized deposit?",
-      "back": "Deposits represented as blockchain-based tokens"
+      "back": "An ordinary deposit recorded as a token on a shared ledger"
     },
-    "keyFact": "Tokenized deposit: deposits represented as blockchain-based tokens"
+    "keyFact": "Tokenized deposit: an ordinary deposit recorded as a token on a shared ledger"
   },
   {
     "id": "payments-006",
@@ -558,5 +558,30 @@
     },
     "optionsFrom": "authored",
     "status": "ready"
+  },
+  {
+    "id": "payments-031",
+    "topic": "payments",
+    "type": "mc",
+    "stem": "What happens when a Venmo user pays a friend inside the app?",
+    "options": [
+      "The balance moves between the two users on Venmo's own ledger",
+      "The money moves instantly between their banks over FedNow",
+      "An ACH transfer goes straight to the friend's bank account",
+      "A wire transfer is sent to the friend's bank"
+    ],
+    "answer": 0,
+    "why": "Venmo, PayPal and Cash App ride existing rails. Sending to a friend just updates the app's books; a real bank transaction happens only when money is loaded in or cashed out.",
+    "source": {
+      "origin": "review",
+      "ref": "Faster Payments deck, slide 23"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "flashcard": {
+      "front": "What happens when a Venmo user pays a friend within the app?",
+      "back": "It bounces between users: balances move on the app's ledger, not between banks"
+    },
+    "keyFact": "Venmo P2P: balances move between users on the app's ledger (not a payment rail)"
   }
 ]
