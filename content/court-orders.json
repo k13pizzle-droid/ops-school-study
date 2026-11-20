@@ -408,7 +408,7 @@
     },
     "optionsFrom": "authored",
     "status": "ready",
-    "keyFact": "Freeze only on a valid court order (else wrongful dishonor)"
+    "keyFact": "Freezing an account: only on a valid court order (else wrongful dishonor)"
   },
   {
     "id": "court-orders-022",
