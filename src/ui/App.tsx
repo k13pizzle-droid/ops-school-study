@@ -6,15 +6,29 @@ import { Play } from './Play';
 import { Study } from './Study';
 import { Test } from './Test';
 import { ToFinish } from './ToFinish';
+import { session } from '../lib/store';
 
 type Screen =
   | { name: 'home' }
   | { name: 'study'; topic?: string | undefined; focus?: string[] | undefined }
   | { name: 'cards' | 'test' | 'cram' | 'play' | 'finish' };
 
+const SCREENS = ['home', 'study', 'cards', 'test', 'cram', 'play', 'finish'];
+function restoredScreen(): Screen {
+  const s = session.load<Screen>('screen');
+  return s && SCREENS.includes(s.name) ? s : { name: 'home' };
+}
+
 export function App() {
-  const [screen, setScreen] = useState<Screen>({ name: 'home' });
+  const [screen, setScreen] = useState<Screen>(restoredScreen);
+  // key 0 is the screen restored at launch: only it resumes its saved session.
   const [key, setKey] = useState(0);
+  useEffect(() => session.save('screen', screen), [screen]);
+  // A restored screen still needs a history entry so the back swipe returns Home.
+  useEffect(() => {
+    if (screen.name !== 'home') history.pushState({ ops: 1 }, '');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const go = (s: Screen) => {
     if (screen.name === 'home' && s.name !== 'home') history.pushState({ ops: 1 }, '');
@@ -36,10 +50,10 @@ export function App() {
   return (
     <>
       {screen.name === 'home' && <Home go={go} />}
-      {screen.name === 'study' && <Study key={key} topic={screen.topic} focus={screen.focus} onBack={home} />}
-      {screen.name === 'cards' && <Cards onBack={home} />}
+      {screen.name === 'study' && <Study key={key} topic={screen.topic} focus={screen.focus} resume={key === 0} onBack={home} />}
+      {screen.name === 'cards' && <Cards key={key} resume={key === 0} onBack={home} />}
       {screen.name === 'test' && <Test onBack={home} onStudyMisses={(ids) => (setScreen({ name: 'study', focus: ids }), setKey((k) => k + 1))} />}
-      {screen.name === 'play' && <Play onBack={home} />}
+      {screen.name === 'play' && <Play key={key} resume={key === 0} onBack={home} />}
       {screen.name === 'cram' && <Cram onBack={home} />}
       {screen.name === 'finish' && <ToFinish onBack={home} />}
     </>

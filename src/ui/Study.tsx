@@ -1,26 +1,40 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { byId, questions, topicName } from '../lib/bank';
 import { showOptions } from '../lib/options';
 import { requeue, studyOrder } from '../lib/study';
 import { answerText, isQuizzable } from '../lib/types';
-import { actions, useStore } from '../lib/store';
+import { actions, session, useStore } from '../lib/store';
 import { BELOW_TOP_BAR, Btn, QuestionMeta, SourceLine, Star, TopBar } from './common';
 import { OptionList } from './OptionList';
 import { Slides } from './Slide';
 
 const ROUND = 10;
 
-export function Study({ topic, focus, onBack }: { topic?: string | undefined; focus?: string[] | undefined; onBack: () => void }) {
+type SavedStudy = { topic: string | null; queue: string[]; pos: number; round: { answered: number; right: number }; pending: string[]; between: boolean; total: { answered: number; right: number } };
+
+export function Study({ topic, focus, resume, onBack }: { topic?: string | undefined; focus?: string[] | undefined; resume?: boolean; onBack: () => void }) {
   const { progress, stars } = useStore();
   const pool = useMemo(() => questions.filter((q) => isQuizzable(q) && (!topic || q.topic === topic)), [topic]);
-  const [queue, setQueue] = useState(() => studyOrder(pool, progress, Math.random, focus));
-  const [pos, setPos] = useState(0);
+  // After a relaunch, pick up the same session if it still fits the bank.
+  const [saved] = useState(() => {
+    if (!resume) return null;
+    const s = session.load<SavedStudy>('study');
+    if (!s || s.topic !== (topic ?? null) || !Array.isArray(s.queue) || !s.queue.length || s.queue.some((id) => !byId.has(id))) return null;
+    return s;
+  });
+  const [queue, setQueue] = useState(() => saved?.queue ?? studyOrder(pool, progress, Math.random, focus));
+  const [pos, setPos] = useState(() => Math.min(saved?.pos ?? 0, queue.length));
   const [chosen, setChosen] = useState<number | null>(null);
-  const [round, setRound] = useState({ answered: 0, right: 0 });
+  const [round, setRound] = useState(() => saved?.round ?? { answered: 0, right: 0 });
   // Misses not yet answered right on their way back: the "N coming back" count.
-  const [pending, setPending] = useState<Set<string>>(new Set());
-  const [between, setBetween] = useState(false);
-  const [total, setTotal] = useState({ answered: 0, right: 0 });
+  const [pending, setPending] = useState<Set<string>>(() => new Set(saved?.pending ?? []));
+  const [between, setBetween] = useState(() => saved?.between ?? false);
+  const [total, setTotal] = useState(() => saved?.total ?? { answered: 0, right: 0 });
+  // Saved after every change. An answered-but-not-continued question counts as done (its answer
+  // is already recorded), so a relaunch lands on the next one.
+  useEffect(() => {
+    session.save('study', { topic: topic ?? null, queue, pos: chosen !== null ? pos + 1 : pos, round, pending: [...pending], between: between || (chosen !== null && round.answered >= 10), total } satisfies SavedStudy);
+  }, [topic, queue, pos, chosen, round, pending, between, total]);
 
   const q = byId.get(queue[pos] ?? '');
   // Fresh shuffle for each position, so a question that comes back isn't in the same order.
