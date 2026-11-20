@@ -12,7 +12,8 @@
     ],
     "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Investments deck, handout page 18"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -35,7 +36,8 @@
     ],
     "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Investments deck, handout page 3"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -51,8 +53,10 @@
     "type": "tf",
     "stem": "Most of the time, the yield curve is flat.",
     "answer": false,
+    "why": "Most (but not all) of the time the yield curve is upward sloping. It is only sometimes flat or inverted.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Investments deck, handout page 3"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -84,5 +88,484 @@
       "back": "Bonds with longer duration, CDs (with floating rates), loans (with variable rates)"
     },
     "keyFact": "Interest rate risk examples: longer-duration bonds, floating-rate CDs, variable-rate loans"
+  },
+  {
+    "id": "alm-005",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "When the yield curve is upward sloping, what does that indicate?",
+    "options": [
+      "Longer maturity loans or bonds are riskier than shorter term loans or bonds",
+      "Shorter term loans or bonds are riskier than longer maturity loans or bonds",
+      "The market expects interest rates to fall, as in a recession",
+      "Loans and bonds of every maturity carry about the same risk"
+    ],
+    "answer": 0,
+    "why": "Most (but not all) of the time the yield curve is upward sloping, which indicates that longer maturity loans or bonds are riskier than shorter term ones.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Upward-sloping yield curve: longer maturity loans or bonds are riskier than shorter term"
+  },
+  {
+    "id": "alm-006",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "A flat or inverted yield curve normally happens when the market expects interest rates to",
+    "options": [
+      "Fall, for example if the economy enters recession",
+      "Rise, for example if the economy grows quickly",
+      "Stay exactly where they are for several years",
+      "Rise only at the short end of the curve"
+    ],
+    "answer": 0,
+    "why": "Sometimes the yield curve is flat or inverted. This normally happens when the market expects rates to fall, e.g. if the economy enters recession.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Flat or inverted yield curve: market expects rates to fall (e.g. recession)"
+  },
+  {
+    "id": "alm-007",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "Long maturity yields are largely tethered to the existing fed funds rate.",
+    "answer": false,
+    "why": "Short maturity yields are tethered to the existing fed funds rate. Long maturity yields reflect expectations of future economic conditions and the future path of the fed funds rate.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Short maturity yields: largely tethered to the existing fed funds rate"
+  },
+  {
+    "id": "alm-008",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Net interest income (net interest margin) is the difference between",
+    "options": [
+      "Interest earned on loans, investments, and cash and interest paid on deposits or borrowings",
+      "Interest earned on loans and the fees charged on deposit accounts",
+      "Total assets and total liabilities on the balance sheet",
+      "Interest paid on deposits and the bank's operating expenses"
+    ],
+    "answer": 0,
+    "why": "Banks pay interest on deposits or borrowings and earn interest on loans, investments, and cash. The difference is net interest income.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Net interest income: interest earned (loans, investments, cash) minus interest paid (deposits, borrowings)"
+  },
+  {
+    "id": "alm-009",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "What are the two primary factors that influence the interest rate on an individual loan?",
+    "options": [
+      "Credit and maturity",
+      "Inflation and Fed policy",
+      "Economic growth and inflation",
+      "Supply and demand for credit"
+    ],
+    "answer": 0,
+    "why": "Credit and maturity drive the rate on an individual loan. Macroeconomic factors like supply and demand, economic growth, inflation, and Fed policy influence all interest rates.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Individual loan rate, two primary factors: credit and maturity"
+  },
+  {
+    "id": "alm-010",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "A bond is typically issued with a fixed rate of interest (coupon rate) that does not change over its life.",
+    "answer": true,
+    "why": "The coupon is fixed, but market interest rates move up or down every day.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "alm-011",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "In a bullet structure (Treasuries, agencies, munis, corporates), how often are periodic interest payments made until maturity?",
+    "options": [
+      "Every month",
+      "Every 3 months",
+      "Every 6 months",
+      "Every 12 months"
+    ],
+    "answer": 2,
+    "why": "Bullets pay interest every 6 months until maturity and return all principal at maturity.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Bullet bonds: interest every 6 months, all principal at maturity"
+  },
+  {
+    "id": "alm-012",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "A certificate of deposit bought as an investment can receive a federal guarantee if the investor owns less than how much of each issuer?",
+    "options": [
+      "$100,000",
+      "$250,000",
+      "$500,000",
+      "$1,000,000"
+    ],
+    "answer": 1,
+    "why": "CDs are issued by banks and credit unions and can receive federal guarantee if the investor owns less than $250,000 of each issuer.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CD federal guarantee: investor owns less than $250,000 of each issuer"
+  },
+  {
+    "id": "alm-013",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Which type of bond is a pool of non-mortgage assets like credit card or auto loans, where most are not guaranteed by any government entity?",
+    "options": [
+      "Asset-Backed Securities (ABS)",
+      "Mortgage-Backed Securities (MBS)",
+      "Collateralized Mortgage Obligations (CMO)",
+      "Agencies"
+    ],
+    "answer": 0,
+    "why": "With most ABS, the investor takes on both credit risk and prepayment risk.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "ABS: pools of non-mortgage assets (credit card, auto loans)"
+  },
+  {
+    "id": "alm-014",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "The risk that an investor's principal will be returned earlier than expected is called",
+    "options": [
+      "Call/prepayment risk",
+      "Credit/default risk",
+      "Interest rate risk",
+      "Basis risk"
+    ],
+    "answer": 0,
+    "why": "This normally happens when interest rates have fallen and the investor has to reinvest the proceeds into lower yielding investments.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Call/prepayment risk: principal returned earlier than expected"
+  },
+  {
+    "id": "alm-015",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "When a bond is bought at a discount, the discount is accreted as income.",
+    "answer": true,
+    "why": "Bonds priced below par sell at a discount, which is accreted as income. Bonds above par sell at a premium, which is amortized as expense.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Bond discount: accreted as income (premium is amortized as expense)"
+  },
+  {
+    "id": "alm-016",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "When market yields decrease, bond prices also decrease.",
+    "answer": false,
+    "why": "Yield and price move in opposite directions: yields decrease, price increases; yields increase, price decreases.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Yield and price: move in opposite directions"
+  },
+  {
+    "id": "alm-017",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "What is the maturity range of a Treasury Note?",
+    "options": [
+      "Up to 1 year",
+      "1 to 10 years",
+      "More than 10 years",
+      "10 to 30 years"
+    ],
+    "answer": 1,
+    "why": "Treasury bills mature in up to 1 year, notes in 1 to 10 years, and bonds in more than 10 years.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Treasury Note maturity: 1 to 10 years"
+  },
+  {
+    "id": "alm-018",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "What risk-based capital weighting does a municipal revenue bond carry?",
+    "options": [
+      "0%",
+      "20%",
+      "50%",
+      "100%"
+    ],
+    "answer": 2,
+    "why": "Revenue bonds carry 50% risk-based capital weighting. General obligation bonds carry 20%.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Municipal revenue bond risk-based capital: 50% (GO bonds 20%)"
+  },
+  {
+    "id": "alm-019",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "A municipal bond for a water and sewer utility is secured by the revenue stream of that project. What type of municipal bond is it?",
+    "options": [
+      "Revenue bond",
+      "General obligation bond",
+      "Agency debenture",
+      "Treasury bond"
+    ],
+    "answer": 0,
+    "why": "Revenue bonds are secured by the revenue stream of the project. General obligation bonds are backed by the government's authority to levy taxes.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "alm-020",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Which mortgage-backed securities carry the full faith and credit of the US, so the holder assumes no credit risk?",
+    "options": [
+      "Ginnie Mae (GNMA)",
+      "Fannie Mae (FNMA)",
+      "Freddie Mac (FHLMC)",
+      "Federal Home Loan Bank (FHLB)"
+    ],
+    "answer": 0,
+    "why": "GNMA guarantees pools of FHA, VA, and RHS loans with the full faith and credit of the US (0% RBC). FNMA and FHLMC carry an implicit guarantee (20% RBC).",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "GNMA MBS: full faith and credit of the US, 0% risk-based capital"
+  },
+  {
+    "id": "alm-021",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the 3 primary funding sources?",
+    "options": [
+      "Deposits",
+      "Cash flows / loan renewals",
+      "The Fed / wholesale funding",
+      "Letters of credit"
+    ],
+    "answer": 3,
+    "why": "The 3 primary funding sources are deposits, cash flows / loan renewals, and the Fed / wholesale funding.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "alm-022",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Which ALM component is the decision making body that manages the ALM processes?",
+    "options": [
+      "Asset/Liability Committee (ALCO)",
+      "Policy",
+      "Measurements",
+      "Software"
+    ],
+    "answer": 0,
+    "why": "Policy states management's ALM objectives, measurements are the ratios and analyses, software calculates them, and ALCO makes the decisions.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "ALCO: decision making body that manages the ALM processes"
+  },
+  {
+    "id": "alm-023",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "The ALCO is primarily concerned with interest rate risk management issues.",
+    "answer": true,
+    "why": "ALCO duties include pricing, profitability, cash flow needs, and managing risk, but it is primarily concerned with interest rate risk.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "alm-024",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the types of interest rate risk?",
+    "options": [
+      "Credit risk",
+      "Repricing risk",
+      "Yield curve risk",
+      "Basis risk"
+    ],
+    "answer": 0,
+    "why": "The types of interest rate risk listed are repricing risk, yield curve risk, option risk, and basis risk.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 21"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Types of interest rate risk: repricing, yield curve, option, basis"
+  },
+  {
+    "id": "alm-025",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "Economic Value of Equity (EVE) is a short-term model used for the 12 and 24 month time horizon.",
+    "answer": false,
+    "why": "EVE and extended income simulation are long-term models (longer than 24 months). Gap analysis and income simulation are the short-term models.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 22"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Short-term IRR models (12 and 24 months): gap analysis and income simulation"
+  },
+  {
+    "id": "alm-026",
+    "topic": "alm",
+    "type": "tf",
+    "stem": "If a bank is liability sensitive, its net interest income will move in the same direction as interest rates.",
+    "answer": false,
+    "why": "A liability sensitive bank's liabilities reprice faster than its assets, so net interest income moves opposite to rates. An asset sensitive bank's NII moves the same direction.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 23"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Liability sensitive bank: NII moves opposite to interest rates"
+  },
+  {
+    "id": "alm-027",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "A bank has a negative GAP and interest rates increase. What happens to its net interest income?",
+    "options": [
+      "It decreases",
+      "It increases",
+      "It does not change",
+      "It increases because interest income rises"
+    ],
+    "answer": 0,
+    "why": "With a negative gap, interest expense rises more than interest income when rates go up, so net interest income decreases.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 23"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Negative GAP, rates increase: net interest income decreases"
+  },
+  {
+    "id": "alm-028",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "How is Economic Value of Equity (EVE) calculated?",
+    "options": [
+      "Present value of all asset cash flows less present value of all liability cash flows",
+      "Total book value of assets less total book value of liabilities",
+      "Interest income less interest expense over the next 12 months",
+      "Rate sensitive assets less rate sensitive liabilities in each time bucket"
+    ],
+    "answer": 0,
+    "why": "EVE captures the change in economic value of the bank even when that change isn't reflected in the accounting books.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 25"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "EVE: PV of all asset cash flows less PV of all liability cash flows"
+  },
+  {
+    "id": "alm-029",
+    "topic": "alm",
+    "type": "mc",
+    "stem": "Who is ultimately responsible for the interest rate risk (IRR) of the institution?",
+    "options": [
+      "The Board of Directors",
+      "Senior management",
+      "The ALCO",
+      "The examiners"
+    ],
+    "answer": 0,
+    "why": "The board approves the IRR or A/L policy and risk limits. Senior management executes the board-approved strategies.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Investments deck, handout page 26"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Ultimately responsible for IRR: Board of Directors"
   }
 ]

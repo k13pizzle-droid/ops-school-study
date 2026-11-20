@@ -56,8 +56,10 @@
       "Individually unless otherwise provided by POA"
     ],
     "answer": 2,
+    "why": "The UPOA Act addresses co-agents' ability to act individually vs. jointly (§3011.A).",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Fiduciaries deck, page 7"
     },
     "optionsFrom": "exam",
     "status": "ready",
@@ -73,8 +75,10 @@
       "Non-durable"
     ],
     "answer": 0,
+    "why": "The UPOA Act (effective November 1, 2021) presumes a power of attorney is durable.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Fiduciaries deck, page 6"
     },
     "optionsFrom": "exam",
     "status": "ready",
@@ -88,7 +92,8 @@
     "answer": true,
     "why": "Someone can sign at their direction (incapacitated, blinking, etc.).",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Fiduciaries deck, page 6"
     },
     "optionsFrom": "exam",
     "status": "ready"
@@ -107,7 +112,8 @@
     "answer": 3,
     "why": "It is not a fiduciary duty to not use funds under any circumstances.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Fiduciaries deck, page 3"
     },
     "optionsFrom": "exam",
     "status": "ready"
@@ -374,6 +380,225 @@
     "source": {
       "origin": "slides",
       "ref": "Trusts deck, handout page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-021",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "The word \"fiduciary\" comes from a Latin word meaning",
+    "options": [
+      "Trust",
+      "Agent",
+      "Guardian",
+      "Property"
+    ],
+    "answer": 0,
+    "why": "A fiduciary is a person who stands in a special relation of trust, confidence, or responsibility in their obligation to another.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Fiduciary: Latin word meaning \"trust\""
+  },
+  {
+    "id": "poa-trust-022",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Which of these is NOT listed as an example of a fiduciary?",
+    "options": [
+      "Beneficiary",
+      "Trustee",
+      "Guardian",
+      "Investment adviser"
+    ],
+    "answer": 0,
+    "why": "The examples listed are attorney, director, trustee, guardian, investment adviser, and agent / attorney in fact.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-023",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "An agent (attorney in fact) under a power of attorney owes a fiduciary duty to",
+    "options": [
+      "The principal, who created the power of attorney",
+      "The beneficiaries of a trust",
+      "The bank that accepts the power of attorney",
+      "The principal's heirs"
+    ],
+    "answer": 0,
+    "why": "A trustee owes a duty to the beneficiaries of a trust. An agent owes a duty to the principal, the creator of the power of attorney.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Agent under a POA owes a duty to: the principal"
+  },
+  {
+    "id": "poa-trust-024",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "A trustee owes a fiduciary duty to the beneficiary or beneficiaries of the trust.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-025",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the fiduciary duties listed?",
+    "options": [
+      "Indemnity",
+      "Loyalty",
+      "Prudence",
+      "Disclosure"
+    ],
+    "answer": 0,
+    "why": "Fiduciary duties include care, loyalty, good faith, confidentiality, prudence, and disclosure.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Fiduciary duties: care, loyalty, good faith, confidentiality, prudence, disclosure"
+  },
+  {
+    "id": "poa-trust-026",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "In a power of attorney, the individual who creates the document and grants the powers and authority is the",
+    "options": [
+      "Principal",
+      "Agent",
+      "Trustee",
+      "Beneficiary"
+    ],
+    "answer": 0,
+    "why": "The agent / attorney-in-fact is the person the principal authorizes to act on their behalf.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Principal: the individual creating and granting the powers in a POA"
+  },
+  {
+    "id": "poa-trust-027",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "An agent under a power of attorney may profit from their position without the principal's consent.",
+    "answer": false,
+    "why": "The agent owes loyalty to the principal above others and cannot profit from their position without the principal's consent.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-028",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "A limited power of attorney gives the agent nearly unlimited authority.",
+    "answer": false,
+    "why": "A general power of attorney is broad and gives nearly unlimited authority. A limited power of attorney is for designated functions only, such as a real estate closing.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-029",
+    "topic": "poa-trust",
+    "type": "tf",
+    "stem": "Under the UPOA Act, a signature on a power of attorney is presumed to be genuine.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-030",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Under the UPOA Act, which section covers an agent's powers for banks and other financial institutions?",
+    "options": [
+      "§3031",
+      "§3027",
+      "§3028",
+      "§3032"
+    ],
+    "answer": 0,
+    "why": "§3027 covers real estate, §3028 tangible personal property, §3031 banks and other financial institutions, and §3032 operation of an entity or business.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "POA powers for banks and financial institutions: §3031"
+  },
+  {
+    "id": "poa-trust-031",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "Which of these is NOT one of the power of attorney forms listed under the UPOA Act (§3041)?",
+    "options": [
+      "Health care power of attorney",
+      "UPOA form",
+      "Statutory form POA",
+      "General power of attorney"
+    ],
+    "answer": 0,
+    "why": "The forms listed under §3041 are the UPOA form, the statutory form POA, and a general power of attorney. The health care POA comes up separately as an issue facing banks.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "poa-trust-032",
+    "topic": "poa-trust",
+    "type": "mc",
+    "stem": "A dormant power of attorney, listed as an issue facing banks, is also known as",
+    "options": [
+      "An old power of attorney",
+      "A limited power of attorney",
+      "A health care power of attorney",
+      "A co-agent power of attorney"
+    ],
+    "answer": 0,
+    "why": "Dormant power of attorney: a/k/a an old power of attorney",
+    "source": {
+      "origin": "slides",
+      "ref": "Fiduciaries deck, page 7"
     },
     "optionsFrom": "authored",
     "status": "ready"
