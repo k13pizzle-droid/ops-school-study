@@ -4,32 +4,56 @@
     "topic": "hr",
     "type": "tf",
     "stem": "You can use FMLA if you are adopting a child.",
+    "answer": true,
+    "why": "Placement of a child for adoption or foster care is an FMLA qualifying event (up to 12 weeks), completed within 12 months of the placement.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Human Resources deck, slide 8"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Can you use FMLA if you are adopting a child?",
+      "back": "Yes. Adoption or foster care placement is a qualifying event."
+    },
+    "keyFact": "FMLA and adoption: yes, a qualifying event"
   },
   {
     "id": "hr-002",
     "topic": "hr",
     "type": "tf",
     "stem": "FMLA is optional if the employee qualifies.",
+    "answer": false,
+    "why": "FMLA is not discretionary. Once the employer knows leave is for an FMLA reason, it must designate it as FMLA leave, even without the employee's cooperation (\"forced designation\").",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Human Resources deck, slides 7 and 12"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Is FMLA optional if the employee qualifies?",
+      "back": "No. FMLA is not discretionary; the employer must designate qualifying leave."
+    },
+    "keyFact": "FMLA optional for a qualifying employee: No (not discretionary; forced designation)"
   },
   {
     "id": "hr-003",
     "topic": "hr",
     "type": "tf",
     "stem": "Harassment can be non-verbal.",
+    "answer": true,
+    "why": "Harassment may be physical, verbal, or non-verbal. Non-verbal examples include cartoons, posters, photographs, clothing, bumper stickers, and gestures.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Human Resources deck, slides 30 and 32"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Can harassment be non-verbal?",
+      "back": "Yes. It may be physical, verbal, or non-verbal (cartoons, posters, gestures, etc.)."
+    },
+    "keyFact": "Harassment: physical, verbal, or non-verbal"
   }
 ]
