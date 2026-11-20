@@ -1,4 +1,4 @@
-import { bankVersion, buildTime, questions, topics } from '../lib/bank';
+import { allQuestions, bankVersion, buildTime, questions, reviewOnly, setReviewOnly, topics } from '../lib/bank';
 import { isMastered } from '../lib/progress';
 import { actions, useStore } from '../lib/store';
 import { isQuizzable } from '../lib/types';
@@ -48,6 +48,22 @@ export function Home({ go }: { go: Go }) {
         <button onClick={() => go({ name: 'study' })} className="display mt-5 min-h-16 w-full rounded-2xl bg-[var(--accent)] text-[24px] text-[var(--on-accent)]">
           Study
         </button>
+        <button
+          role="switch"
+          aria-checked={reviewOnly}
+          onClick={() => setReviewOnly(!reviewOnly)}
+          className={`mt-3 flex min-h-12 w-full items-center justify-between gap-3 rounded-xl border px-4 text-left ${reviewOnly ? 'border-[var(--accent)] bg-[var(--soft)]' : 'border-[var(--line)] bg-[var(--surface)]'}`}
+        >
+          <span>
+            <span className="block text-[15px] font-semibold">Exam review only</span>
+            <span className="block text-[12px] text-[var(--muted)]">
+              {reviewOnly ? `On: every mode uses the ${questions.length} review questions` : `Off: all ${allQuestions.length} questions`}
+            </span>
+          </span>
+          <span aria-hidden className={`relative h-7 w-12 shrink-0 rounded-full transition-colors ${reviewOnly ? 'bg-[var(--accent)]' : 'bg-[var(--line)]'}`}>
+            <span className={`absolute top-1 h-5 w-5 rounded-full bg-[var(--surface)] shadow transition-all ${reviewOnly ? 'left-6' : 'left-1'}`} />
+          </span>
+        </button>
         <div className="mt-3 grid grid-cols-4 gap-2">
           {(['play', 'cards', 'test', 'cram'] as const).map((n) => (
             <button key={n} onClick={() => go({ name: n })} className="min-h-12 rounded-xl border border-[var(--line)] bg-[var(--surface)] text-[15px] font-semibold capitalize">
@@ -87,7 +103,7 @@ export function Home({ go }: { go: Go }) {
 
         <footer className="safe-bottom mt-6 flex flex-col items-center gap-2 pb-4 text-center text-[13px] text-[var(--muted)]">
           <div>
-            Bank {bankVersion} · {questions.length} questions · {buildTime}
+            Bank {bankVersion} · {allQuestions.length} questions{reviewOnly ? ` (${questions.length} review only)` : ''} · {buildTime}
           </div>
           <div className="flex gap-4">
             <button onClick={() => go({ name: 'finish' })} className="min-h-11 px-2 underline">

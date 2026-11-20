@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { byId, questions, topicName } from '../lib/bank';
+import { byId, questions, reviewOnly, topicName } from '../lib/bank';
 import { sampleExam, sampleRehearsal } from '../lib/exam';
 import { showOptions, type Shown } from '../lib/options';
 import { actions, savedRun, useStore, type TestResult } from '../lib/store';
@@ -66,7 +66,6 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
   const [result, setResult] = useState<TestResult | null>(null);
   const [review, setReview] = useState(false);
   const [saved, setSaved] = useState(loadSaved);
-  const [examMode, setExamMode] = useState(false);
   const begin = (exam: boolean) => {
     savedRun.clear();
     setSaved(null);
@@ -75,9 +74,10 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
     setRun({ qs, shown: qs.map((q) => showOptions(q, Math.random)), picks: qs.map(() => null), started: Date.now(), timer: exam || timer, exam });
     setIdx(0);
   };
-  const startNew = () => begin(examMode);
-  // With a saved test waiting, starting over takes two taps so one stray tap can't wipe it.
-  const [newArmed, tapNew] = useTwoTap(startNew);
+  // With a saved test waiting, starting over takes two taps so one stray tap can't wipe it. Each
+  // button has its own confirm, so arming one can never start the other.
+  const [practiceArmed, tapPractice] = useTwoTap(() => begin(false));
+  const [examArmed, tapExam] = useTwoTap(() => begin(true));
 
   // Save after every answer and every move, so leaving (back swipe, update, iOS closing the app)
   // never loses a test. Cleared when the test is finished.
@@ -99,7 +99,7 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
       else missed.push(qq.id);
       if (run.picks[i] !== null) results.push([qq.id, ok]);
     });
-    const r: TestResult = { at: Date.now(), score: run.qs.length - missed.length, total: run.qs.length, byTopic, missed, exam: !!run.exam };
+    const r: TestResult = { at: Date.now(), score: run.qs.length - missed.length, total: run.qs.length, byTopic, missed, exam: !!run.exam, reviewOnly };
     actions.answerMany(results);
     actions.saveTest(r);
     savedRun.clear();
@@ -120,15 +120,19 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
         <TopBar title="Mock test" onBack={onBack} />
         <div className="safe-bottom flex flex-col gap-5 px-4 pt-5">
           <button
-            onClick={() => (saved ? (setExamMode(true), tapNew()) : begin(true))}
+            onClick={() => (saved ? tapExam() : begin(true))}
             className="rounded-2xl bg-[var(--accent)] px-5 py-4 text-left text-[var(--on-accent)]"
           >
-            <div className="display text-[22px]">{saved && newArmed && examMode ? 'Tap again to discard the saved test' : 'Exam rehearsal'}</div>
+            <div className="display text-[22px]">{saved && examArmed ? 'Tap again to discard the saved test' : 'Exam rehearsal'}</div>
             <div className="text-[14px] opacity-90">
               Like the real one: {EXAM.size} questions, {EXAM.minutes} minutes, {Math.round(EXAM.pass * 100)}% to pass. Every exam review question is in it. It ends itself when time runs out.
             </div>
           </button>
-          {pool.length < EXAM.size && <p className="-mt-3 text-[13px] text-[var(--muted)]">{pool.length} questions are ready so far, so a rehearsal uses all of them.</p>}
+          {pool.length < EXAM.size && (
+            <p className="-mt-3 text-[13px] text-[var(--muted)]">
+              {reviewOnly ? `Exam review only is on, so the rehearsal uses all ${pool.length} review questions.` : `${pool.length} questions are ready so far, so a rehearsal uses all of them.`}
+            </p>
+          )}
           <div className="mt-2 text-[14px] font-semibold text-[var(--muted)]">Or a practice test</div>
           <div className="-mt-3">
             <div className="mb-2 text-[14px] text-[var(--muted)]">How many questions</div>
@@ -165,18 +169,24 @@ export function Test({ onBack, onStudyMisses }: { onBack: () => void; onStudyMis
           )}
           {saved && saved.dropped > 0 && (
             <p className="-mt-3 text-[13px] text-[var(--muted)]">
-              {saved.dropped} question{saved.dropped === 1 ? ' was' : 's were'} removed in an update, so the saved test has {saved.qs.length}.
+              {reviewOnly
+                ? `${saved.dropped} question${saved.dropped === 1 ? " isn't an exam review question" : "s aren't exam review questions"}, so with Exam review only on the saved test has ${saved.qs.length}.`
+                : `${saved.dropped} question${saved.dropped === 1 ? ' was' : 's were'} removed in an update, so the saved test has ${saved.qs.length}.`}
             </p>
           )}
-          <Btn primary={!saved} onClick={() => (setExamMode(false), saved ? tapNew() : begin(false))}>
-            {saved ? (newArmed && !examMode ? 'Tap again to discard the saved test' : 'Start a new practice test') : 'Start practice test'}
+          <Btn primary={!saved} onClick={() => (saved ? tapPractice() : begin(false))}>
+            {saved ? (practiceArmed ? 'Tap again to discard the saved test' : 'Start a new practice test') : 'Start practice test'}
           </Btn>
           {tests.length > 0 && (
             <div>
               <div className="mb-2 text-[14px] font-semibold text-[var(--muted)]">Last results</div>
               {tests.map((t) => (
                 <div key={t.at} className="flex justify-between border-b border-[var(--line)] py-2 text-[15px]">
-                  <span>{new Date(t.at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
+                  <span>
+                    {new Date(t.at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}
+                    {t.exam ? ' · rehearsal' : ''}
+                    {t.reviewOnly ? ' · review only' : ''}
+                  </span>
                   <span className="font-semibold">
                     {t.score}/{t.total} · {Math.round((100 * t.score) / t.total)}%
                   </span>

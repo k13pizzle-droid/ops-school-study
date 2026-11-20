@@ -1,7 +1,7 @@
 // Clicks through Study, Cards, Test, and Cram on the built app at iPhone size, light and dark.
 // Run: npm run build && npm run e2e. Screenshots land in e2e-output/ (gitignored).
 import { spawn } from 'node:child_process';
-import { mkdirSync, readFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
 // Playwright is preinstalled globally on the cloud box and on the Mac; it isn't a dependency.
@@ -137,6 +137,112 @@ try {
     await page.getByRole('button', { name: /To finish/ }).click();
     await shot('finish');
     await page.close();
+  }
+
+  // Exam review only: with the switch on, every feature must show review questions and nothing else.
+  {
+    const dir = new URL('../content/', import.meta.url);
+    const all = readdirSync(dir).filter((f) => f.endsWith('.json') && f !== 'topics.json').flatMap((f) => JSON.parse(readFileSync(new URL(f, dir), 'utf8')));
+    const review = all.filter((q) => q.source.origin === 'review' && (q.status === 'ready' || q.status === 'verify'));
+    const reviewFacts = all.filter((q) => q.source.origin === 'review' && q.keyFact).length;
+    const slideIds = all.filter((q) => q.source.origin !== 'review' && q.status === 'ready').map((q) => q.id);
+    const fail = (m) => problems.push(`review-only: ${m}`);
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true });
+    // A test saved before the switch was turned on: 3 slide questions and 2 review questions.
+    const savedIds = [...slideIds.slice(0, 3), ...review.slice(0, 2).map((q) => q.id)];
+    const sh = savedIds.map((id) => { const q = all.find((x) => x.id === id); return q.type === 'tf' ? { options: ['True', 'False'], answer: q.answer ? 0 : 1, lettered: false } : { options: q.options, answer: q.answer, lettered: false }; });
+    await ctx.addInitScript(([ids, shown]) => {
+      if (sessionStorage.getItem('seeded')) return;
+      sessionStorage.setItem('seeded', '1');
+      localStorage.setItem('ops-school-install-hint-dismissed', '1');
+      localStorage.setItem('ops-school-test-run', JSON.stringify({ ids, shown, picks: ids.map(() => null), idx: 0, started: Date.now(), timer: false }));
+    }, [savedIds, sh]);
+    const page = await ctx.newPage();
+    page.on('pageerror', (e) => fail(`page error ${e.message}`));
+    await page.goto(url);
+    await page.getByRole('switch', { name: /Exam review only/ }).click();
+    await page.getByRole('button', { name: 'Study', exact: true }).waitFor();
+    const badge = () => page.locator('span', { hasText: /^!\s*Exam review$/ }).count();
+    const mustBadge = async (where) => { if (!(await badge())) fail(`${where}: "${(await page.locator('h2, .read').first().innerText()).slice(0, 60)}" has no review badge`); };
+
+    // Home: ring and topic counts.
+    if (!(await page.getByText(`of ${review.length} mastered`).count())) fail('home ring total is not the review count');
+    const counts = await page.locator('ul li span.tabular-nums').allInnerTexts();
+    const sum = counts.reduce((s, t) => s + (Number(t.split('/')[1]) || 0), 0);
+    if (sum !== review.length) fail(`home topic counts add to ${sum}, expected ${review.length}`);
+
+    // Study: 20 questions, two rounds.
+    await page.getByRole('button', { name: 'Study', exact: true }).click();
+    for (let i = 0; i < 20; i++) {
+      if (await page.getByRole('button', { name: 'Keep going' }).count()) await page.getByRole('button', { name: 'Keep going' }).click();
+      await page.locator('h2').waitFor();
+      await mustBadge('study');
+      await page.locator('button.read').first().click();
+      await page.getByRole('button', { name: 'Continue' }).click();
+    }
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
+    // Topic study from the list.
+    await page.getByRole('button', { name: 'BSA' }).first().click();
+    for (let i = 0; i < 5; i++) { await page.locator('h2').waitFor(); await mustBadge('topic study'); await page.locator('button.read').first().click(); await page.getByRole('button', { name: 'Continue' }).click(); }
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
+    // Cards: 15 cards, and the deck size.
+    await page.getByRole('button', { name: 'cards' }).click();
+    const left = await page.getByText(/\d+ left/).innerText();
+    if (!left.includes(`${review.length} left`)) fail(`cards deck is "${left}", expected ${review.length}`);
+    for (let i = 0; i < 15; i++) { await mustBadge('cards'); await page.getByRole('button', { name: 'Got it →' }).click(); }
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
+    // Test: the saved test resumes without its slide questions.
+    await page.getByRole('button', { name: 'test' }).click();
+    const resume = await page.getByRole('button', { name: /Resume test/ }).innerText();
+    if (!resume.includes('of 2 answered')) fail(`resume shows "${resume}", expected 2 questions`);
+    // Rehearsal: every question, checked through the grid.
+    // Arming practice then tapping rehearsal must not start a practice test (each has its own confirm).
+    await page.getByRole('button', { name: 'Start a new practice test' }).click();
+    await page.waitForTimeout(600);
+    await page.getByRole('button', { name: /Exam rehearsal/ }).click();
+    if (await page.locator('.test-grid, h2').count()) fail('arming practice then tapping rehearsal started a test');
+    await page.waitForTimeout(600);
+    await page.getByRole('button', { name: /Tap again to discard/ }).first().click();
+    const title = await page.locator('.topbar').innerText();
+    if (!title.includes(`of ${review.length}`)) fail(`rehearsal is "${title.replace(/\s+/g, ' ')}", expected ${review.length}`);
+    for (let i = 0; i < review.length; i++) {
+      await page.locator('h2').waitFor();
+      await mustBadge(`rehearsal q${i + 1}`);
+      if (i < review.length - 1) await page.getByRole('button', { name: 'Next ›' }).click();
+    }
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
+    // Play: a full lesson and part of a lightning round.
+    await page.getByRole('button', { name: 'play' }).click();
+    await page.getByRole('button', { name: /^Lesson/ }).click();
+    for (let i = 0; i < 40; i++) {
+      if (await page.getByRole('button', { name: 'Play again' }).isVisible()) break;
+      await page.locator('h2').waitFor();
+      await mustBadge('lesson');
+      await page.locator('button.read').first().click();
+      await page.getByRole('button', { name: 'Continue' }).click();
+    }
+    await page.getByRole('button', { name: 'Done' }).click();
+    await page.getByRole('button', { name: /^Lightning/ }).click();
+    for (let i = 0; i < 8; i++) { await page.locator('h2').waitFor(); await mustBadge('lightning'); await page.locator('button.read').first().click(); await page.waitForTimeout(1000); }
+    await page.getByRole('button', { name: 'Quit' }).click();
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
+    // Cram: exactly the review key facts.
+    await page.getByRole('button', { name: 'cram' }).click();
+    const facts = await page.locator('section li button').count();
+    if (facts !== reviewFacts) fail(`cram shows ${facts} facts, expected ${reviewFacts}`);
+    await page.getByRole('button', { name: 'Back to home' }).click();
+
+    // Switching off restores the full bank.
+    await page.getByRole('switch', { name: /Exam review only/ }).click();
+    await page.getByRole('button', { name: 'Study', exact: true }).waitFor();
+    if (await page.getByText(`of ${review.length} mastered`).count()) fail('switching off did not restore the full bank');
+    await ctx.close();
+    console.log(`review-only check: ${review.length} review questions, ${reviewFacts} key facts`);
   }
 } finally {
   await browser.close();
