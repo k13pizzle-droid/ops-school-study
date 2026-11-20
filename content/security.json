@@ -13,7 +13,8 @@
     "answer": 3,
     "why": "All of these were on the list: identity theft, card fraud, organized check fraud, loan fraud, wire fraud, and customer losses from scams.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Fraud deck, page 2"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -37,7 +38,8 @@
     "answer": 0,
     "why": "The review answer in short: to mitigate risks.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Internal Controls deck, page 1"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -78,8 +80,10 @@
       "Only for cash transactions over $10,000"
     ],
     "answer": 0,
+    "why": "Requiring two people to complete sensitive tasks adds oversight and accountability, so it's harder for one person to commit fraud undetected.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Internal Controls deck, page 3"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -387,5 +391,490 @@
     "optionsFrom": "authored",
     "status": "ready",
     "keyFact": "Run, Hide, Fight, when to fight: last resort, if your life is in danger"
+  },
+  {
+    "id": "security-021",
+    "topic": "security",
+    "type": "tf",
+    "stem": "Most industries consider loss prevention a profit center.",
+    "answer": false,
+    "why": "Most industries consider loss prevention a cost center, not a profit center. Increasing profits grows the bank, and decreasing loss retains the growth.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Loss prevention, how most industries see it: a cost center, not a profit center"
+  },
+  {
+    "id": "security-022",
+    "topic": "security",
+    "type": "mc",
+    "stem": "According to the fraud deck, what is the key to fighting impersonation fraud such as fraudulent online account applications?",
+    "options": [
+      "KYC",
+      "Two-factor authentication",
+      "Positive pay",
+      "Dual control"
+    ],
+    "answer": 0,
+    "why": "Impersonation fraud is rampant, from fraudulent online applications to imposters using false IDs, and the slide says KYC is the key.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Impersonation fraud defense: KYC is the key"
+  },
+  {
+    "id": "security-023",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In a new account bust out, about how long do the accounts season before the inflated balance is busted out?",
+    "options": [
+      "90 days",
+      "30 days",
+      "60 days",
+      "180 days"
+    ],
+    "answer": 0,
+    "why": "Accounts are opened, season 90 days, get rapid deposits of fraudulent checks, then the inflated balance is busted out with ATM withdrawals and POS purchases.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Bust out account seasoning: 90 days"
+  },
+  {
+    "id": "security-024",
+    "topic": "security",
+    "type": "mc",
+    "stem": "If you suspect fraud involving a U.S. Treasury check, what is the first step listed?",
+    "options": [
+      "Place a hold on the funds",
+      "Return the check to the depositor",
+      "Close the account immediately",
+      "Mail the original check back to Treasury"
+    ],
+    "answer": 0,
+    "why": "Place a hold on the funds, then email the IRS External Leads contacts. If fraud is involved, they will notify you.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-025",
+    "topic": "security",
+    "type": "tf",
+    "stem": "If the check reader or scanner does not show the numbers in the MICR line of a savings bond, the bond can still be redeemed.",
+    "answer": false,
+    "why": "If the reader doesn't show the MICR numbers, the bond should not be redeemed and should be mailed in instead. If it does show them, run the bond through SBVV.treasurydirect.gov.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-026",
+    "topic": "security",
+    "type": "tf",
+    "stem": "Employees who fail to follow policies and procedures are one of the causes of the latest wire fraud losses.",
+    "answer": true,
+    "why": "The latest wire fraud losses involve commercial customers taken over after calls from the bank's \"fraud department,\" employees who fail to follow policies and procedures, and scam victims who want the bank to reimburse them.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-027",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Which type of card fraud is described as customer facilitated?",
+    "options": [
+      "Card cracking",
+      "Terminal skimming",
+      "BIN attacks",
+      "Relay attack"
+    ],
+    "answer": 0,
+    "why": "The card fraud list marks card cracking as customer facilitated.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Card cracking: customer facilitated card fraud"
+  },
+  {
+    "id": "security-028",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Which of these is NOT a red flag listed for a debit card bust out?",
+    "options": [
+      "A long relationship with steady payroll deposits",
+      "A new relationship",
+      "A foreign passport",
+      "A request for a card limit increase"
+    ],
+    "answer": 0,
+    "why": "The red flags are a new relationship, a foreign passport, consumer and business accounts, 90 days of seasoning with regular cash deposits, a card limit increase request, and card transactions in foreign countries before the bust out.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-029",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In 2024, three banks each lost about $300,000 to debit card bust outs. What type of address had the customer provided?",
+    "options": [
+      "A CMRA (Commercial Mail Receiving Agency)",
+      "A hotel room",
+      "A vacant rental property",
+      "A storage unit"
+    ],
+    "answer": 0,
+    "why": "The address provided in those cases was a CMRA, a Commercial Mail Receiving Agency.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Debit card bust out address (2024 cases): a CMRA (Commercial Mail Receiving Agency)"
+  },
+  {
+    "id": "security-030",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Which of these is NOT on the deck's list of loan fraud types?",
+    "options": [
+      "Check kiting",
+      "Straw borrowers",
+      "Auto VIN cloning",
+      "Ag loans with ghost cattle"
+    ],
+    "answer": 0,
+    "why": "Loan fraud covers false identity or documents, straw borrowers, auto VIN cloning, ag loans with ghost cattle, mortgage fraud, and credit washing. Check kiting is on the organized check fraud list.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-031",
+    "topic": "security",
+    "type": "tf",
+    "stem": "The straw borrower car scheme worked because the lenders involved did not share data with each other in real time.",
+    "answer": true,
+    "why": "False applications were spread across more than 20 lenders that don't share data. One lender approving a loan has no idea another approved one an hour earlier.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-032",
+    "topic": "security",
+    "type": "mc",
+    "stem": "What is VIN cloning?",
+    "options": [
+      "Putting counterfeit VIN plates copied from a similar car onto a stolen car",
+      "Using stolen identities to apply for several auto loans at once",
+      "Copying a closed dealership's website to take wire payments",
+      "Filing false identity theft claims to clean up a credit report"
+    ],
+    "answer": 0,
+    "why": "Thieves steal a car, then take the VIN from a similar make and model and install counterfeit VIN plates on the stolen car to sell it to an innocent buyer.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "VIN cloning: counterfeit VIN plates from a similar car put on a stolen car"
+  },
+  {
+    "id": "security-033",
+    "topic": "security",
+    "type": "mc",
+    "stem": "A credit repair company falsely tells the credit bureaus that its clients were victims of identity theft so legitimate late payments come off their reports. What is this called?",
+    "options": [
+      "Credit washing",
+      "Card cracking",
+      "A bust out",
+      "VIN cloning"
+    ],
+    "answer": 0,
+    "why": "Credit washing is falsely claiming identity theft to remove legitimate negative information from a credit report, exploiting provisions in the FCRA.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Credit washing: falsely claiming identity theft to remove legitimate negative credit information"
+  },
+  {
+    "id": "security-034",
+    "topic": "security",
+    "type": "mc",
+    "stem": "When responding to an FCRA block due to an identity theft report, which response confirms the disputed account does belong to your customer and reinserts the trade line?",
+    "options": [
+      "Create Rescission",
+      "Accept",
+      "Block Release",
+      "Dispute Override"
+    ],
+    "answer": 0,
+    "why": "Accept agrees the block is fraud related and the trade line is deleted. Create Rescission confirms the account belongs to the customer and reinserts the trade line so the credit history is kept.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FCRA block, Create Rescission: account is the customer's, trade line reinserted"
+  },
+  {
+    "id": "security-035",
+    "topic": "security",
+    "type": "tf",
+    "stem": "Defending complaints and lawsuits from customers who lost money to scams takes resources away from other areas of the bank.",
+    "answer": true,
+    "why": "Scam victims often try to recover through the bank with complaints to banking authorities, lawsuits, and social media complaints, and defending these takes resources from other areas.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-036",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In the Alloy 2025 State of Fraud Report's enterprise bank snapshot, what was the top fraud channel?",
+    "options": [
+      "Online banking",
+      "Mobile deposit",
+      "The branch teller line",
+      "The call center"
+    ],
+    "answer": 0,
+    "why": "The top fraud channel was online banking at 59%. The top fraud type was credit card fraud at 26%.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Top fraud channel (Alloy 2025): online banking, 59%"
+  },
+  {
+    "id": "security-037",
+    "topic": "security",
+    "type": "mc",
+    "stem": "A person kept visiting a branch wearing smart glasses and approaching different employees. Why were the smart glasses a concern?",
+    "options": [
+      "They may have been recording access controls and keystrokes",
+      "They hid his face from the security cameras",
+      "They let him read card numbers through the counter glass",
+      "They jammed the bank's alarm signals"
+    ],
+    "answer": 0,
+    "why": "The alert said the smart glasses may be recording access controls, keystrokes, and similar details while he tried to reach restricted areas.",
+    "source": {
+      "origin": "slides",
+      "ref": "Fraud deck, page 15"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-038",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In the Internal Control Strength Hierarchy, which type of control is the strongest, at the top of the pyramid?",
+    "options": [
+      "Preventive",
+      "Detective",
+      "Deterrent",
+      "Directive"
+    ],
+    "answer": 0,
+    "why": "From top to bottom: Preventive blocks unwanted actions, Detective exposes the act, Deterrent discourages it, and Directive sets behavioral expectations.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Strongest internal control type: Preventive (then Detective, Deterrent, Directive)"
+  },
+  {
+    "id": "security-039",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Warning signs and security cameras are examples of which type of internal control?",
+    "options": [
+      "Deterrent",
+      "Detective",
+      "Preventive",
+      "Directive"
+    ],
+    "answer": 0,
+    "why": "Deterrent controls discourage undesired actions, like warning signs and security cameras. Detective controls are alerts, logs, and audits.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 1"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Deterrent controls: warning signs and security cameras"
+  },
+  {
+    "id": "security-040",
+    "topic": "security",
+    "type": "mc",
+    "stem": "According to the Internal Controls deck, what remains the fundamental purpose of internal controls?",
+    "options": [
+      "Risk mitigation",
+      "Revenue growth",
+      "Regulatory reporting",
+      "Reducing staff costs"
+    ],
+    "answer": 0,
+    "why": "Risk mitigation remains the fundamental purpose of internal controls.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Fundamental purpose of internal controls: risk mitigation"
+  },
+  {
+    "id": "security-041",
+    "topic": "security",
+    "type": "mc",
+    "stem": "At a bank, one employee enters hours worked, another calculates pay, and a third issues the payments. Which internal control is this?",
+    "options": [
+      "Segregation of duties",
+      "Dual control",
+      "Authorization and approval",
+      "Reconciliation and review"
+    ],
+    "answer": 0,
+    "why": "Segregation of duties divides a process among employees so no one person has complete control, and payroll split three ways is the deck's example.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-042",
+    "topic": "security",
+    "type": "tf",
+    "stem": "Credit card statements should be reconciled monthly by the employee who made the purchases.",
+    "answer": false,
+    "why": "Credit card statements are reconciled monthly by an employee who did not make the purchases.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-043",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In an internal investigation, which area is responsible for preserving electronic evidence?",
+    "options": [
+      "Information Technology",
+      "Security",
+      "Human Resources",
+      "Public Relations"
+    ],
+    "answer": 0,
+    "why": "IT suspends or removes access to hardware, networks, and applications, reviews the risk of data theft, and preserves electronic evidence.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-044",
+    "topic": "security",
+    "type": "tf",
+    "stem": "The deck suggests having a special approval process for any SARs involving bank employees.",
+    "answer": true,
+    "why": "Under Compliance, consider having a special approval process in place for any SARs involving bank employees.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-045",
+    "topic": "security",
+    "type": "tf",
+    "stem": "Once you have hard evidence of employee wrongdoing, you should interrogate the employee rather than interview them.",
+    "answer": false,
+    "why": "Interview, not interrogate. Remain impartial and keep it confidential. If there's no immediate confession, interrogations can take place later.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-046",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In the Fraud Triangle, weak controls and lack of oversight fall under which element?",
+    "options": [
+      "Opportunity",
+      "Pressure",
+      "Rationalization",
+      "Concealment"
+    ],
+    "answer": 0,
+    "why": "The Fraud Triangle's three elements are Opportunity, Pressure, and Rationalization. Weak controls and lack of oversight are listed under Opportunity.",
+    "source": {
+      "origin": "slides",
+      "ref": "Internal Controls deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Fraud Triangle, Opportunity: weak controls, lack of oversight"
   }
 ]
