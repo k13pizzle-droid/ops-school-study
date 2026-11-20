@@ -4,44 +4,90 @@
     "topic": "court-orders",
     "type": "tf",
     "stem": "A guardian has a fiduciary duty to the ward.",
+    "answer": true,
+    "why": "The guardian has a strict fiduciary duty to the ward and must always act in the ward's best interest.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Court Orders deck, handout page 5"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "keyFact": "Guardian has a fiduciary duty to the ward: True"
   },
   {
     "id": "court-orders-002",
     "topic": "court-orders",
     "type": "mc",
     "stem": "When are banks legally obligated to follow valid court orders?",
+    "options": [
+      "Whenever the order is valid: genuine, certified, and from a court with jurisdiction",
+      "Only when the customer consents",
+      "Only when the bank is named as a defendant",
+      "Only for orders over $10,000"
+    ],
+    "answer": 0,
+    "why": "A court order carries the full force of law. Banks are legally obligated to follow valid court orders, and non-compliance brings legal and financial penalties.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Court Orders deck, handout page 3"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "When are banks legally obligated to follow valid court orders?",
+      "back": "Always: a valid court order carries the full force of law and must be obeyed"
+    },
+    "keyFact": "Valid court orders: banks are legally obligated to follow them"
   },
   {
     "id": "court-orders-003",
     "topic": "court-orders",
     "type": "mc",
     "stem": "When can a guardianship end?",
+    "options": [
+      "When the ward dies",
+      "When a minor ward reaches 18",
+      "When a court order terminates it",
+      "All of the above"
+    ],
+    "answer": 3,
+    "why": "A guardianship ends when the ward dies or a minor reaches the age of majority (18), or early by court order. The bank needs a certified copy of the terminating order before releasing funds.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Court Orders deck, handout page 6"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "When can a guardianship end?",
+      "back": "When the ward dies, when a minor reaches 18, or by court order"
+    },
+    "keyFact": "Guardianship ends: ward dies, minor turns 18, or court order"
   },
   {
     "id": "court-orders-004",
     "topic": "court-orders",
     "type": "mc",
     "stem": "When can you release funds in a minor settlement account?",
+    "options": [
+      "When the minor turns 18, or as authorized by law or court order",
+      "When the parent asks in writing",
+      "After the account has been open one year",
+      "When a bank officer approves it"
+    ],
+    "answer": 0,
+    "why": "The goal is to preserve the principal until the minor reaches 18.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Court Orders deck, handout page 8"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "When can you release funds in a minor settlement account?",
+      "back": "Not until the minor is 18, except as authorized by law or court order"
+    },
+    "keyFact": "Minor settlement funds: not until 18, except by law or court order"
   },
   {
     "id": "court-orders-005",
@@ -55,11 +101,326 @@
       "Determine if the party has jurisdiction over the bank"
     ],
     "answer": 3,
+    "why": "A levy must be properly served, identify the correct account, and have proper jurisdiction.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Court Orders deck, handout page 11"
     },
     "optionsFrom": "exam",
     "status": "ready",
     "keyFact": "Receive a levy: determine if the party has jurisdiction over the bank"
+  },
+  {
+    "id": "court-orders-006",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "A minor's settlement can be deposited on a parent's affidavit, without a court-appointed guardian, when it is",
+    "options": [
+      "$25,000 or less",
+      "$10,000 or less",
+      "$50,000 or less",
+      "$100,000 or less"
+    ],
+    "answer": 0,
+    "why": "Over $25,000, a \"friendly suit\" must be filed for court approval.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Minor settlement: $25,000 or less by affidavit; over that needs a friendly suit"
+  },
+  {
+    "id": "court-orders-007",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "A settlement for a minor that exceeds $25,000 requires",
+    "options": [
+      "A \"friendly suit\" for court approval",
+      "An affidavit from the parent",
+      "Only the bank's approval",
+      "A notarized letter from the minor's attorney"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "court-orders-008",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "A conservatorship is a type of guardianship that focuses on",
+    "options": [
+      "Managing the ward's financial resources and estate",
+      "The ward's medical decisions",
+      "The ward's schooling",
+      "Where the ward lives"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Conservatorship: guardianship focused on the ward's finances"
+  },
+  {
+    "id": "court-orders-009",
+    "topic": "court-orders",
+    "type": "tf",
+    "stem": "The bank is responsible for monitoring how a guardian spends the ward's funds.",
+    "answer": false,
+    "why": "The bank ensures transactions are made by the appointed guardian within the order's scope. It doesn't monitor specific spending, but it must flag suspicious activity.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "court-orders-010",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "To attach funds, what fee must the judgment creditor deliver with a garnishment summons?",
+    "options": [
+      "$35",
+      "$25",
+      "$50",
+      "$10"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Garnishment fee: $35, delivered with the summons"
+  },
+  {
+    "id": "court-orders-011",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "How does a levy usually differ from a garnishment?",
+    "options": [
+      "A levy is typically a one-time seizure, often from a government agency",
+      "A levy is always ongoing withholding",
+      "A levy never requires jurisdiction",
+      "A levy only applies to safe deposit boxes"
+    ],
+    "answer": 0,
+    "why": "A garnishment can involve ongoing withholding and usually comes from a lawsuit. A levy is typically one-time and often comes from a government agency, for example for unpaid taxes.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Levy: one-time seizure, often a government agency; garnishment can be ongoing"
+  },
+  {
+    "id": "court-orders-012",
+    "topic": "court-orders",
+    "type": "tf",
+    "stem": "Social Security benefits in an account are generally protected from garnishment.",
+    "answer": true,
+    "why": "Certain deposits, such as Social Security and specific veteran's benefits, are protected by federal law. Garnishing exempt funds can make the bank liable.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "court-orders-013",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "A subpoena that requires the person summoned to bring certain documents to court is a",
+    "options": [
+      "Subpoena duces tecum",
+      "Search warrant",
+      "Levy",
+      "Writ of garnishment"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Subpoena duces tecum: bring the documents"
+  },
+  {
+    "id": "court-orders-014",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "Under the state financial privacy act, a bank may release a customer's financial records to a government authority with",
+    "options": [
+      "The customer's written consent or a valid subpoena",
+      "A phone request from an agency",
+      "An email from law enforcement",
+      "Any request on agency letterhead"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "court-orders-015",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "After a subpoena for their records is served or mailed, how long does the customer have to file a motion to quash?",
+    "options": [
+      "14 days",
+      "10 days",
+      "30 days",
+      "7 days"
+    ],
+    "answer": 0,
+    "why": "Failing to file within 14 days waives the right to object. Meanwhile the bank must make a copy available to the customer and preserve the originals.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Subpoena challenge window: 14 days (motion to quash)"
+  },
+  {
+    "id": "court-orders-016",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "After a search warrant is served, the bank must be given a reasonable time to search and deliver the records, not to exceed",
+    "options": [
+      "10 calendar days",
+      "14 days",
+      "30 days",
+      "24 hours"
+    ],
+    "answer": 0,
+    "why": "Warrants may be served only on the person in charge, as designated by the bank, during normal business hours.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 18"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Search warrant: up to 10 calendar days to deliver"
+  },
+  {
+    "id": "court-orders-017",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "What is the maximum subpoena reimbursement rate for clerical or technical personnel?",
+    "options": [
+      "$22.00 per hour",
+      "$30.00 per hour",
+      "$15.00 per hour",
+      "$50.00 per hour"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 17"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Subpoena fees: $22/hr clerical, $30/hr supervisory, $0.25 per page"
+  },
+  {
+    "id": "court-orders-018",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "Reimbursement for copies made in response to a subpoena is capped at",
+    "options": [
+      "$0.25 per page",
+      "$0.10 per page",
+      "$1.00 per page",
+      "$0.50 per page"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 17"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "court-orders-019",
+    "topic": "court-orders",
+    "type": "mc",
+    "stem": "For financial exploitation investigations, a \"protected adult\" includes individuals age",
+    "options": [
+      "62 and older",
+      "55 and older",
+      "65 and older",
+      "70 and older"
+    ],
+    "answer": 0,
+    "why": "Records can be released to investigating agencies after written certification that an investigation is underway.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Protected adult: age 62+ (or vulnerable adults)"
+  },
+  {
+    "id": "court-orders-020",
+    "topic": "court-orders",
+    "type": "tf",
+    "stem": "A grand jury subpoena typically states that the customer cannot be told about it.",
+    "answer": true,
+    "why": "By contrast, the IRS Code requires the customer to be given notice of an IRS summons.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Grand jury subpoena: don't tell the customer; IRS summons: customer gets notice"
+  },
+  {
+    "id": "court-orders-021",
+    "topic": "court-orders",
+    "type": "tf",
+    "stem": "A bank should freeze an account whenever a creditor tells it a lawsuit is coming.",
+    "answer": false,
+    "why": "Only freeze when directed by a valid court order. Unjustified freezing creates wrongful dishonor liability.",
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Freezing an account: only on a valid court order (else wrongful dishonor)"
+  },
+  {
+    "id": "court-orders-022",
+    "topic": "court-orders",
+    "type": "tf",
+    "stem": "Before releasing funds to a former ward, the bank must receive a certified copy of the order terminating the guardianship.",
+    "answer": true,
+    "source": {
+      "origin": "slides",
+      "ref": "Court Orders deck, handout page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

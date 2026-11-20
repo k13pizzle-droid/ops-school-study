@@ -54,7 +54,8 @@
     "answer": false,
     "why": "They've decreased.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Security deck, page 2"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -86,5 +87,304 @@
       "back": "When completing sensitive tasks"
     },
     "keyFact": "Dual controls: when completing sensitive tasks"
+  },
+  {
+    "id": "security-005",
+    "topic": "security",
+    "type": "mc",
+    "stem": "What is casing?",
+    "options": [
+      "Entering a bank to scope out staff, cameras, and layout before planning a robbery",
+      "Installing malware that makes an ATM dispense cash with no transaction",
+      "Following a customer from the bank to their next stop to rob them",
+      "Damaging an ATM's card slot so the bank calls out a service technician"
+    ],
+    "answer": 0,
+    "why": "Casing is entering a financial institution to scope out staff placement, number of staff, camera locations, and similar details before planning a robbery.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Casing: entering a bank to scope out staff and cameras before planning a robbery"
+  },
+  {
+    "id": "security-006",
+    "topic": "security",
+    "type": "mc",
+    "stem": "An unknown person enters the branch, looks around, and leaves without conducting any business. Who should this be reported to?",
+    "options": [
+      "Your location's designated security officer",
+      "The bank's marketing department",
+      "The branch's head teller only",
+      "No one, unless they come back a second time"
+    ],
+    "answer": 0,
+    "why": "Any unknown person who enters and leaves without conducting business should be reported to your location's designated security officer.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-007",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Per the 2023 FBI Bank Crimes Statistics Report, on which day of the week did bank robberies most often occur?",
+    "options": [
+      "Friday",
+      "Monday",
+      "Wednesday",
+      "Saturday"
+    ],
+    "answer": 0,
+    "why": "The 2023 FBI report listed Friday as the day, 1pm to 3pm as the time, and a demand note as the MO.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 2"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Most common robbery day (2023 FBI report): Friday"
+  },
+  {
+    "id": "security-008",
+    "topic": "security",
+    "type": "mc",
+    "stem": "When using a cash recycler or dispenser, how long should it take a teller to remember or find the distress code?",
+    "options": [
+      "5 to 10 seconds",
+      "15 to 20 seconds",
+      "30 to 60 seconds",
+      "Under 2 minutes"
+    ],
+    "answer": 0,
+    "why": "The deck says finding or remembering the distress code should take 5 to 10 seconds, and tellers should practice using it.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Distress code recall time: 5 to 10 seconds"
+  },
+  {
+    "id": "security-009",
+    "topic": "security",
+    "type": "mc",
+    "stem": "How much cash should a recycler or dispenser release when the distress code is entered?",
+    "options": [
+      "Less than what someone would get at a nearby retail store",
+      "The full amount the robber demands",
+      "The machine's entire cash supply",
+      "Exactly the teller drawer limit"
+    ],
+    "answer": 0,
+    "why": "The bank decides the distress amount, and it should be less than what someone would get at a nearby retail store.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Distress dispense amount: less than a nearby retail store would yield"
+  },
+  {
+    "id": "security-010",
+    "topic": "security",
+    "type": "tf",
+    "stem": "After a distress dispense code is entered, the teller should lock the machine.",
+    "answer": false,
+    "why": "The deck says do not lock the machine after a distress dispense code is entered.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-011",
+    "topic": "security",
+    "type": "mc",
+    "stem": "In Cooper's Color Code, which level means prepared, alert, and relaxed, with good situational awareness?",
+    "options": [
+      "Yellow",
+      "White",
+      "Orange",
+      "Red"
+    ],
+    "answer": 0,
+    "why": "White is unprepared, Yellow is prepared, alert, and relaxed, Orange is alert to probable danger, Red is action mode, and Black is panic.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Cooper's Color Code, Yellow: prepared, alert, and relaxed"
+  },
+  {
+    "id": "security-012",
+    "topic": "security",
+    "type": "tf",
+    "stem": "During a robbery, you should assume the robber has a weapon even if one isn't visible.",
+    "answer": true,
+    "why": "The robbery steps say to assume the robber has a weapon even if one isn't visible.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-013",
+    "topic": "security",
+    "type": "tf",
+    "stem": "If a robber insists, an employee should leave the bank with the suspect to keep others safe.",
+    "answer": false,
+    "why": "No matter what, do not leave with the suspect. The deck says to fake a seizure, faint, or urinate on yourself, but do not leave.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-014",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Which of these is NOT on the list of steps once the robbery suspect is out the door?",
+    "options": [
+      "Gather the witnesses together to compare what they saw",
+      "Lock the doors so the suspect can't re-enter",
+      "Do not touch notes, doors, or counters the suspect touched",
+      "Direct all media inquiries to the bank's designated officer"
+    ],
+    "answer": 0,
+    "why": "The deck says to separate all witnesses and not discuss details with others.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-015",
+    "topic": "security",
+    "type": "mc",
+    "stem": "About how long does a hook and chain ATM theft take?",
+    "options": [
+      "Less than 2 minutes",
+      "About 10 minutes",
+      "About 30 minutes",
+      "More than an hour"
+    ],
+    "answer": 0,
+    "why": "Hook and chain thefts use a stolen truck and a large chain with a hook, and take less than 2 minutes, which reduces the risk of a quick alarm response.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Hook and chain ATM theft: under 2 minutes"
+  },
+  {
+    "id": "security-016",
+    "topic": "security",
+    "type": "mc",
+    "stem": "What is jackpotting?",
+    "options": [
+      "Installing malware that tells an ATM to dispense funds with no transaction",
+      "Using a truck and a chain with a hook to pull open an ATM",
+      "Vandalizing a card slot to lure a service technician to the ATM",
+      "Using a grinder to cut the hinges off an ATM's door"
+    ],
+    "answer": 0,
+    "why": "Jackpotting is the installation of malware that instructs the machine to dispense funds with no transaction.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Jackpotting: malware makes an ATM dispense funds with no transaction"
+  },
+  {
+    "id": "security-017",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Someone follows a customer from the bank to their home and robs them at gunpoint. What is this called?",
+    "options": [
+      "Jugging",
+      "Casing",
+      "Jackpotting",
+      "Technician robbery"
+    ],
+    "answer": 0,
+    "why": "Jugging is following customers leaving the bank or casino to their next stop and robbing them at gunpoint.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Jugging: following a customer from the bank to rob them at their next stop"
+  },
+  {
+    "id": "security-018",
+    "topic": "security",
+    "type": "tf",
+    "stem": "A service technician who is not a bank or contracted service employee should be escorted at all times.",
+    "answer": true,
+    "why": "Technicians should be identified to all staff, and one who isn't a bank or contracted service employee should be escorted at all times.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-019",
+    "topic": "security",
+    "type": "tf",
+    "stem": "A threat of violence received only by email, text, or social media can be treated as less serious than one made in person.",
+    "answer": false,
+    "why": "Never trivialize a threat. React as if it will be acted upon even if it's received electronically.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "security-020",
+    "topic": "security",
+    "type": "mc",
+    "stem": "Under Run, Hide, Fight, when should you fight an active shooter?",
+    "options": [
+      "As a last resort, and if your life is in danger",
+      "As soon as the shooter enters your area",
+      "Whenever others around you agree to it",
+      "Before trying to evacuate or hide"
+    ],
+    "answer": 0,
+    "why": "Run if there's an escape path, hide if evacuation isn't possible, and fight only as a last resort when your life is in danger.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Security deck, page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Run, Hide, Fight, when to fight: last resort, if your life is in danger"
   }
 ]

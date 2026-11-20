@@ -4,43 +4,666 @@
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "Regulation (Reg) E applies to what types of accounts?",
+    "options": [
+      "Consumer accounts",
+      "Commercial accounts",
+      "Both consumer and commercial accounts",
+      "Only savings accounts"
+    ],
+    "answer": 0,
+    "why": "Reg E is a consumer protection regulation covering consumer transactions: ATMs, POS debit cards, certain government benefit accounts, direct deposits, gift, payroll and prepaid cards, and foreign remittance transfers.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 33"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Regulation (Reg) E applies to what types of accounts?",
+      "back": "Consumer accounts (it's a consumer protection regulation)"
+    },
+    "keyFact": "Reg E: consumer accounts only"
   },
   {
     "id": "ops-compliance-002",
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "What is the purpose of FDIC signage and advertising requirements?",
+    "options": [
+      "To maintain public confidence in the banking system and show which products are FDIC-insured deposits",
+      "To advertise the bank's interest rates",
+      "To list the bank's branch hours",
+      "To meet the bank's CRA lending goals"
+    ],
+    "answer": 0,
+    "why": "The FDIC's mission includes maintaining stability and public confidence by insuring deposits. Non-deposit signage separates insured deposits from non-deposit products. Sign and advertising requirements date back to the Banking Act of 1935.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 18"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "What is the purpose of FDIC signage and advertising requirements?",
+      "back": "To maintain public confidence in the banking system, and to separate insured deposits from non-deposit products"
+    },
+    "keyFact": "FDIC signs and advertising: maintain public confidence; separate insured deposits from non-deposit products"
   },
   {
     "id": "ops-compliance-003",
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "Regulation (Reg) CC applies to what types of accounts?",
+    "options": [
+      "Both consumer and commercial accounts",
+      "Consumer accounts only",
+      "Commercial accounts only",
+      "Only accounts over $250,000"
+    ],
+    "answer": 0,
+    "why": "Unlike many regulations, Reg CC applies to both consumer and commercial accounts.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 4"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Regulation (Reg) CC applies to what types of accounts?",
+      "back": "Both consumer and commercial accounts"
+    },
+    "keyFact": "Reg CC: consumer AND commercial accounts"
   },
   {
     "id": "ops-compliance-004",
     "topic": "ops-compliance",
     "type": "mc",
     "stem": "In general, what does Regulation (Reg) CC allow?",
+    "options": [
+      "Placing holds on deposited funds, within the funds-availability rules",
+      "Charging overdraft fees without notice",
+      "Closing an account without notice",
+      "Skipping CTRs on check deposits"
+    ],
+    "answer": 0,
+    "why": "Reg CC (Funds Availability) lets banks protect themselves from check fraud losses by placing holds on funds.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Regulatory Compliance Update deck, slide 4"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "In general, what does Regulation (Reg) CC allow?",
+      "back": "Placing holds on deposited funds (funds availability), e.g. to protect against check fraud"
+    },
+    "keyFact": "Reg CC allows: holds on deposited funds"
+  },
+  {
+    "id": "ops-compliance-005",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Effective July 1, 2025, how much of a deposit of non-\"next-day\" checks must be made available the next day under Reg CC?",
+    "options": [
+      "Up to the first $275",
+      "Up to the first $225",
+      "Up to the first $550",
+      "Up to the first $450"
+    ],
+    "answer": 0,
+    "why": "The next-day minimum availability amount rose from $225 to $275 effective July 1, 2025.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC next-day minimum (eff. 7/1/2025): first $275 of non-next-day checks"
+  },
+  {
+    "id": "ops-compliance-006",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Banks had to update their Reg CC Funds Availability Disclosures for the new inflation-adjusted amounts by what date?",
+    "options": [
+      "July 31, 2025",
+      "July 1, 2025",
+      "May 1, 2025",
+      "July 1, 2030"
+    ],
+    "answer": 0,
+    "why": "The new amounts took effect July 1, 2025, and the updated Funds Availability Disclosures were required by 7/31/25.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC Funds Availability Disclosures updated by: 7/31/2025"
+  },
+  {
+    "id": "ops-compliance-007",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Under Reg CC, a Case by Case hold allows a bank to hold checks for how long?",
+    "options": [
+      "2 business days",
+      "5 business days",
+      "7 business days",
+      "9 business days"
+    ],
+    "answer": 0,
+    "why": "Case by Case holds allow a 2 business day hold, and can be used with no reason given on the hold notice.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC Case by Case hold: 2 business days"
+  },
+  {
+    "id": "ops-compliance-008",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "A customer opened a checking account 12 days ago. Under Reg CC's new customer exception, the remaining amount from next-day items beyond the first $6,725 must be available by which business day?",
+    "options": [
+      "The 9th business day",
+      "The 7th business day",
+      "The 2nd business day",
+      "The 30th business day"
+    ],
+    "answer": 0,
+    "why": "For new customers (open less than 30 days), the remaining amount from next-day items must be available by the 9th business day.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 16"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC new customer hold: up to 9 business days"
+  },
+  {
+    "id": "ops-compliance-009",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "A customer deposits a $10,000 check. Using the Reg CC large deposit exception, what may the bank do?",
+    "options": [
+      "Make the first $6,725 available per its policy and hold the rest up to 7 business days",
+      "Make the first $5,525 available per its policy and hold the rest up to 7 business days",
+      "Make the first $6,725 available per its policy and hold the rest up to 9 business days",
+      "Hold the entire $10,000 for up to 7 business days with no amount released"
+    ],
+    "answer": 0,
+    "why": "Deposits greater than $6,725 qualify; the first $6,725 follows the availability policy (usually next day) and the remainder can be held up to 7 business days.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC large deposit exception: over $6,725 (eff. 7/1/2025); remainder held up to 7 business days"
+  },
+  {
+    "id": "ops-compliance-010",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "For Reg CC's new customer exception, a customer is considered new if the account has been open for less than how long?",
+    "options": [
+      "30 days",
+      "60 days",
+      "90 days",
+      "Six months"
+    ],
+    "answer": 0,
+    "why": "The New Customers exception applies to accounts open for less than 30 days.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 16"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC new customer: account open less than 30 days"
+  },
+  {
+    "id": "ops-compliance-011",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "If a bank's reason for doubting a check's collectibility is confidential, it must state that fact on the hold notice and document the confidential reason in its records.",
+    "answer": true,
+    "why": "The reason for the belief normally goes on the customer's notice; if it's confidential, the bank states that fact on the notice and documents the reason in its records.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-012",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "Under Reg CC, an account can be considered repeatedly overdrawn if, on two or more banking days during the previous six months, its balance was negative by $6,725 or more.",
+    "answer": true,
+    "why": "That is one of the two tests. The other is a negative balance of any amount on six or more banking days during the previous six months.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC repeatedly overdrawn: 6+ negative days in 6 months, or 2+ days negative $6,725 or more"
+  },
+  {
+    "id": "ops-compliance-013",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Which of these may NOT be used as the basis for a Reg CC hold for reasonable cause to doubt collectibility?",
+    "options": [
+      "The check is of a particular class or deposited by a particular class of person",
+      "The check is postdated or dated more than six months earlier",
+      "The paying institution has said it will not honor the check",
+      "Facts giving a reasonable person a well-grounded belief the check is uncollectible"
+    ],
+    "answer": 0,
+    "why": "The belief that a check is uncollectible shall NOT be based on the check being of a particular class or deposited by a particular class of person.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-014",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "A Reg CC hold decided after the deposit was made, or on a deposit not made in person, must be disclosed to the customer no later than when?",
+    "options": [
+      "The first business day after the deposit",
+      "The same day the deposit is made",
+      "The second business day after the deposit",
+      "The seventh business day after the deposit"
+    ],
+    "answer": 0,
+    "why": "Holds are disclosed at the time of deposit unless the deposit isn't made in person or the decision comes after the deposit; then no later than the first business day after deposit.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg CC hold notice (not in person or decided later): by the first business day after deposit"
+  },
+  {
+    "id": "ops-compliance-015",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "The FDIC delayed the mandatory compliance date for 12 CFR 328.4 and 328.5 (digital channels and ATMs) to what date?",
+    "options": [
+      "April 1, 2027",
+      "May 1, 2025",
+      "July 1, 2025",
+      "December 31, 2026"
+    ],
+    "answer": 0,
+    "why": "The December 2023 final rule had a mandatory compliance date of May 1, 2025, but 328.4 and 328.5 were delayed to April 1, 2027.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FDIC 328.4 and 328.5 (digital and ATM signs): April 1, 2027"
+  },
+  {
+    "id": "ops-compliance-016",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "What colors is the new FDIC official digital sign for bank websites, apps, and ATMs?",
+    "options": [
+      "Navy blue and black",
+      "Black and gold",
+      "Navy blue and gold",
+      "Red, white, and blue"
+    ],
+    "answer": 0,
+    "why": "The traditional physical official sign is black and gold; the new official digital sign is navy blue and black.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FDIC official digital sign: navy blue and black (physical sign is black and gold)"
+  },
+  {
+    "id": "ops-compliance-017",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "The FDIC says the official digital sign can even be placed in a page's footer, as long as its placement is still clear, continuous, and conspicuous.",
+    "answer": true,
+    "why": "The FDIC's placement examples are not absolute mandates; the sign can be in the footer if it stays clear, continuous, and conspicuous.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 25"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-018",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "A bank's ordinary homepage automatically needs the non-deposit disclosure if it has an \"Investments\" or \"Wealth Management\" link.",
+    "answer": false,
+    "why": "The requirement focuses on pages primarily dedicated to non-deposit products. A homepage doesn't need it merely because it has an Investments link.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 29"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-019",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "An ATM placed in service after April 1, 2027 lets customers transact with non-deposit products. What FDIC signage does it need?",
+    "options": [
+      "The FDIC digital sign on the initial screen",
+      "A physical FDIC sign in place of the digital sign",
+      "No FDIC sign, only the non-deposit disclosure",
+      "The FDIC digital sign on the printed receipt"
+    ],
+    "answer": 0,
+    "why": "An ATM placed in service after 4/1/2027 that permits non-deposit transactions requires the FDIC digital sign on the initial screen.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 32"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-020",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "Under Reg E, a bank may wait to begin investigating an unauthorized EFT until the consumer files a police report or disputes the charge with the merchant.",
+    "answer": false,
+    "why": "The Official Staff Commentary states an institution may not delay its investigation pending receipt of information from the consumer.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 34"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-021",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "When the alleged error is an unauthorized EFT, the burden of proof is on the consumer to show the transaction was not authorized.",
+    "answer": false,
+    "why": "The EFTA places the burden of proof on the financial institution to establish that the transaction was authorized.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 35"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-022",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Generally, a bank must finish a Reg E error investigation within how long of receiving the error notice?",
+    "options": [
+      "10 business days",
+      "2 business days",
+      "45 calendar days",
+      "90 calendar days"
+    ],
+    "answer": 0,
+    "why": "The general rule is 10 business days; it can be extended to 45 calendar days if conditions are met, and in certain cases to 90 days.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 36"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E investigation: 10 business days, extendable to 45 calendar days (90 in certain cases)"
+  },
+  {
+    "id": "ops-compliance-023",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "To extend a Reg E investigation to 45 calendar days, the bank must tell the consumer the amount and date of the provisional credit within how long of the crediting?",
+    "options": [
+      "Two business days",
+      "One business day",
+      "Three business days",
+      "Five business days"
+    ],
+    "answer": 0,
+    "why": "The bank must provisionally credit within 10 business days, inform the consumer within two business days of crediting, and allow full use of the funds.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 36"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E provisional credit notice: within 2 business days of crediting"
+  },
+  {
+    "id": "ops-compliance-024",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "Which of these errors qualifies for extending a Reg E investigation from 45 to 90 days?",
+    "options": [
+      "One that resulted from a point-of-sale debit card transaction",
+      "One that involved a withdrawal at the bank's own ATM",
+      "One that occurred within 60 days after the account was opened",
+      "One that involved a domestic online bill payment"
+    ],
+    "answer": 0,
+    "why": "The 90-day extension covers foreign-initiated EFTs, point-of-sale debit card transactions, and errors within 30 calendar days after the first deposit into the account.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 37"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E 90-day extension: foreign-initiated, POS debit, or within 30 days of first deposit"
+  },
+  {
+    "id": "ops-compliance-025",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "After completing a Reg E investigation, the bank must report the results to the consumer within three business days.",
+    "answer": true,
+    "why": "The bank must correct an error within one business day of determining it occurred and report the results within three business days after completing the investigation.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 38"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E after investigation: correct within 1 business day; report within 3 business days"
+  },
+  {
+    "id": "ops-compliance-026",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "When a bank debits a Reg E provisional credit after finding no error, for how long must it honor the consumer's checks and preauthorized transfers without charging overdraft fees?",
+    "options": [
+      "Five business days after the notification",
+      "Two business days after the notification",
+      "Ten business days after the notification",
+      "Three business days after the notification"
+    ],
+    "answer": 0,
+    "why": "The bank honors those items without overdraft fees for five business days after the notification, if they would have been paid had the provisional credit not been debited.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 39"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E debit of provisional credit: honor items without OD fees for 5 business days"
+  },
+  {
+    "id": "ops-compliance-027",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "A consumer reports a stolen debit card one business day after learning of the theft. What is the consumer's maximum liability under Reg E?",
+    "options": [
+      "The lesser of $50 or the total unauthorized transfers",
+      "The lesser of $500 or the total unauthorized transfers",
+      "No liability",
+      "Unlimited liability until the bank is notified"
+    ],
+    "answer": 0,
+    "why": "Notice within two business days after learning of the loss or theft caps liability at the lesser of $50 or the total amount of unauthorized transfers.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 41"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E lost card, notice within 2 business days: lesser of $50 or total"
+  },
+  {
+    "id": "ops-compliance-028",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "A consumer reports a lost debit card five business days after learning of the loss, well within 60 days of the statement. What is the consumer's maximum liability?",
+    "options": [
+      "$500",
+      "$50",
+      "No liability",
+      "Unlimited"
+    ],
+    "answer": 0,
+    "why": "Notice after two business days but within 60 calendar days of the statement caps liability at the lesser of $500 or the sum of the first-two-day amount (up to $50) plus later transfers before notice.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 41"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E lost card, notice after 2 business days (within 60 days): up to $500"
+  },
+  {
+    "id": "ops-compliance-029",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "An unauthorized transfer that did NOT involve a lost or stolen access device is reported within 60 calendar days after the statement on which it first appears. What is the consumer's liability?",
+    "options": [
+      "No liability",
+      "The lesser of $50 or the total",
+      "The lesser of $500 or the total",
+      "Unlimited liability"
+    ],
+    "answer": 0,
+    "why": "Unauthorized transfers not involving loss or theft of an access device reported within 60 calendar days of the statement carry no consumer liability.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 41"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reg E no lost device, notice within 60 days of statement: no liability"
+  },
+  {
+    "id": "ops-compliance-030",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "In July 2025, the OCC, Federal Reserve Board, and FDIC rescinded the 2023 CRA final rule and replaced it with the prior CRA regulations originally adopted in what year?",
+    "options": [
+      "1995",
+      "1935",
+      "2005",
+      "2023"
+    ],
+    "answer": 0,
+    "why": "The agencies went back to the CRA regulations originally adopted in 1995, with certain technical amendments.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 42"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CRA July 2025: 2023 rule rescinded; back to the 1995 regulations"
+  },
+  {
+    "id": "ops-compliance-031",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "For 2026, a small bank under the existing CRA framework has assets of less than what amount as of December 31 of either of the prior two calendar years?",
+    "options": [
+      "$1.649 billion",
+      "$1.609 billion",
+      "$1 billion",
+      "$10 billion"
+    ],
+    "answer": 0,
+    "why": "The 2026 small bank threshold is less than $1.649 billion, up from $1.609 billion in 2025. The $1 billion and $10 billion figures are only in the OCC/FDIC proposal.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 46"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CRA 2026 small bank: less than $1.649 billion"
+  },
+  {
+    "id": "ops-compliance-032",
+    "topic": "ops-compliance",
+    "type": "mc",
+    "stem": "For 2026, what is the lower asset threshold for an intermediate small bank under the existing CRA framework?",
+    "options": [
+      "$412 million",
+      "$402 million",
+      "$1 billion",
+      "$1.649 billion"
+    ],
+    "answer": 0,
+    "why": "An intermediate small bank has at least $412 million as of December 31 of both prior calendar years. The 2025 lower threshold was $402 million.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 46"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CRA 2026 intermediate small bank: at least $412 million"
+  },
+  {
+    "id": "ops-compliance-033",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "The proposed CRA categories of small bank (under $1 billion), intermediate bank ($1 to $10 billion), and large bank (over $10 billion) are currently in effect.",
+    "answer": false,
+    "why": "Those categories are only in the OCC/FDIC proposal and are not currently effective. Banks should use the current 2026 $412 million/$1.649 billion thresholds and not implement the proposal yet.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 46"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "ops-compliance-034",
+    "topic": "ops-compliance",
+    "type": "tf",
+    "stem": "Under the current status of Section 1033 open banking, the April 2026 compliance deadline is enforceable and banks can stop monitoring the rule.",
+    "answer": false,
+    "why": "The April 2026 deadline is not currently enforceable, the original 2024 rule is under reconsideration, and banks should not stop monitoring.",
+    "source": {
+      "origin": "slides",
+      "ref": "Regulatory Compliance Update deck, slide 49"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

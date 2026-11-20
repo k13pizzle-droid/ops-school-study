@@ -4,32 +4,420 @@
     "topic": "hr",
     "type": "tf",
     "stem": "You can use FMLA if you are adopting a child.",
+    "answer": true,
+    "why": "Placement of a child for adoption or foster care is an FMLA qualifying event (up to 12 weeks), completed within 12 months of the placement.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Human Resources deck, slide 8"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Can you use FMLA if you are adopting a child?",
+      "back": "Yes. Adoption or foster care placement is a qualifying event."
+    },
+    "keyFact": "FMLA and adoption: yes, a qualifying event"
   },
   {
     "id": "hr-002",
     "topic": "hr",
     "type": "tf",
     "stem": "FMLA is optional if the employee qualifies.",
+    "answer": false,
+    "why": "FMLA is not discretionary. Once the employer knows leave is for an FMLA reason, it must designate it as FMLA leave, even without the employee's cooperation (\"forced designation\").",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Human Resources deck, slides 7 and 12"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Is FMLA optional if the employee qualifies?",
+      "back": "No. FMLA is not discretionary; the employer must designate qualifying leave."
+    },
+    "keyFact": "FMLA optional for a qualifying employee: No (not discretionary; forced designation)"
   },
   {
     "id": "hr-003",
     "topic": "hr",
     "type": "tf",
     "stem": "Harassment can be non-verbal.",
+    "answer": true,
+    "why": "Harassment may be physical, verbal, or non-verbal. Non-verbal examples include cartoons, posters, photographs, clothing, bumper stickers, and gestures.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Human Resources deck, slides 30 and 32"
     },
     "optionsFrom": "authored",
-    "status": "needs-answer"
+    "status": "ready",
+    "flashcard": {
+      "front": "Can harassment be non-verbal?",
+      "back": "Yes. It may be physical, verbal, or non-verbal (cartoons, posters, gestures, etc.)."
+    },
+    "keyFact": "Harassment: physical, verbal, or non-verbal"
+  },
+  {
+    "id": "hr-004",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "Generally, FMLA requires an employer to provide eligible employees up to how many weeks of leave?",
+    "options": [
+      "6 weeks",
+      "12 weeks",
+      "16 weeks",
+      "26 weeks"
+    ],
+    "answer": 1,
+    "why": "FMLA generally provides eligible employees up to 12 weeks of unpaid, job-protected leave in a rolling twelve-month period.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FMLA leave: up to 12 weeks, unpaid, job-protected, rolling 12-month period"
+  },
+  {
+    "id": "hr-005",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "To be eligible for FMLA, an employee must have worked how many hours during the prior twelve months?",
+    "options": [
+      "1,000 hours",
+      "1,250 hours",
+      "1,500 hours",
+      "2,080 hours"
+    ],
+    "answer": 1,
+    "why": "Eligibility depends on at least 12 months worked, 1,250 hours worked during the prior twelve months, and the reason for leave.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FMLA hours requirement: 1,250 hours in the prior twelve months"
+  },
+  {
+    "id": "hr-006",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "To be eligible for FMLA, an employee must have worked 12 consecutive months.",
+    "answer": false,
+    "why": "The employee needs at least 12 months worked, but not 12 consecutive months.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "FMLA months requirement: at least 12 months worked, not consecutive"
+  },
+  {
+    "id": "hr-007",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "Under the FMLA definition of a \"serious health condition,\" incapacity with continuing treatment by a health care provider must last more than how many days?",
+    "options": [
+      "One day",
+      "Three days",
+      "Five days",
+      "Seven days"
+    ],
+    "answer": 1,
+    "why": "A serious health condition includes incapacity for more than three days with continuing treatment by a health care provider.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Serious health condition incapacity: more than three days with continuing treatment"
+  },
+  {
+    "id": "hr-008",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "An employee needs surgery to reset a broken limb. Under the \"serious health condition\" definitions, this might fit which category?",
+    "options": [
+      "Restorative surgery after an accident or injury",
+      "Chronic serious health condition",
+      "Permanent or long-term incapacity",
+      "Incapacity relating to pregnancy or prenatal care"
+    ],
+    "answer": 0,
+    "why": "Under conditions requiring multiple treatments, surgery to reset a broken limb or repair a torn ligament might fit restorative surgery after an accident or injury.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-009",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "Calling in \"sick\" without saying more is enough for the absence to qualify for Family and Medical Leave.",
+    "answer": false,
+    "why": "Calling in sick without saying more is insufficient for the absence to qualify for FMLA.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-010",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "If an employee gives unequivocal notice of intent not to return to work during FMLA leave, the employee is deemed to have voluntarily resigned at that time.",
+    "answer": true,
+    "why": "Unequivocal notice of intent not to return during FMLA leave means the employee is deemed to have voluntarily resigned at that time.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-011",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "How much notice of impending uniformed service should an employer generally expect from an employee?",
+    "options": [
+      "30 days or when orders are received, whichever is shorter",
+      "30 days or when orders are received, whichever is longer",
+      "14 days or when orders are received, whichever is shorter",
+      "60 days or when orders are received, whichever is longer"
+    ],
+    "answer": 0,
+    "why": "Generally expect thirty days notice or notice at the time the employee receives orders, whichever is shorter. Notice should include a copy of the orders.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Uniformed services notice: 30 days or at receipt of orders, whichever is shorter"
+  },
+  {
+    "id": "hr-012",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "Military (uniformed services) leave is paid leave.",
+    "answer": false,
+    "why": "Military leave is unpaid.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Military leave: unpaid"
+  },
+  {
+    "id": "hr-013",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "Reemployment rights for returning service members are guaranteed up to a cumulative maximum of how many years of service?",
+    "options": [
+      "Two years",
+      "Three years",
+      "Five years",
+      "Ten years"
+    ],
+    "answer": 2,
+    "why": "Reemployment rights are guaranteed up to a cumulative maximum of five years of service, and in some instances that period can be extended.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 15"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Reemployment rights: up to a cumulative 5 years of service"
+  },
+  {
+    "id": "hr-014",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "A service member returns after years away on active duty. Reemployment must be prompt, which here means taking no more than:",
+    "options": [
+      "The next working day",
+      "Two weeks",
+      "30 days",
+      "90 days"
+    ],
+    "answer": 1,
+    "why": "After years of active duty the employer may take more time, but not more than two weeks. After one weekend of Guard training, the employee must be back the next working day.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 15"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Prompt reemployment: next working day after a weekend; no more than 2 weeks after years of active duty"
+  },
+  {
+    "id": "hr-015",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "Under the \"escalator principle,\" a returning service member is returned to:",
+    "options": [
+      "The position he or she would have held had he or she not been absent",
+      "The position he or she held at the time service began",
+      "Any open position at the same rate of pay",
+      "A position chosen by Human Resources"
+    ],
+    "answer": 0,
+    "why": "The service member is not returned to the position held when service began, but to the position he or she would have held without the absence, including bonuses, merit increases, shifts, and seniority.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 16"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Escalator principle: returned to the position he or she would have held had there been no absence"
+  },
+  {
+    "id": "hr-016",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "An eligible employee may take up to how many weeks of military caregiver leave to care for a service member with a serious injury?",
+    "options": [
+      "12 weeks",
+      "16 weeks",
+      "26 weeks",
+      "52 weeks"
+    ],
+    "answer": 2,
+    "why": "Military caregiver leave is up to twenty-six weeks, and combined Family and Medical and Military Caregiver leave may not exceed 26 weeks in a rolling 12-month period.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 17"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Military caregiver leave: up to 26 weeks (combined with FMLA, no more than 26 weeks in a rolling 12 months)"
+  },
+  {
+    "id": "hr-017",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "To be a disability, an impairment only has to limit one major life activity.",
+    "answer": true,
+    "why": "The slide states that to be a disability, an impairment only has to limit 1 major life activity.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Disability: impairment need only limit 1 major life activity"
+  },
+  {
+    "id": "hr-018",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "Being regarded as having a \"transitory\" impairment does not qualify as a disability. A transitory impairment is one lasting:",
+    "options": [
+      "30 days or less",
+      "3 months or less",
+      "6 months or less",
+      "12 months or less"
+    ],
+    "answer": 2,
+    "why": "Being regarded as having a transitory impairment, one lasting 6 months or less, does not qualify.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Transitory impairment: lasting 6 months or less"
+  },
+  {
+    "id": "hr-019",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "Which of these is NOT a reasonable accommodation?",
+    "options": [
+      "Creating a new job for the employee",
+      "Adaptive computer equipment",
+      "Flexible work schedule",
+      "Modified work station"
+    ],
+    "answer": 0,
+    "why": "Creating a new job or allowing an employee to perform \"odd jobs\" around the department are not reasonable accommodations.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 21"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-020",
+    "topic": "hr",
+    "type": "mc",
+    "stem": "The ultimate decision of whether a particular accommodation request is reasonable is left to the sound discretion of:",
+    "options": [
+      "The direct supervisor",
+      "Human Resources",
+      "The employee's medical provider",
+      "The EEOC"
+    ],
+    "answer": 0,
+    "why": "Per the slide, the ultimate decision on whether an accommodation request is reasonable is left to the sound discretion of the direct supervisor.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 22"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-021",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "A supervisor's romantic relationship with a subordinate may be considered harassment only if it is not consensual.",
+    "answer": false,
+    "why": "A supervisor engaging in a romantic relationship with a subordinate may be considered harassment whether consensual or not.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 33"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-022",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "Failure to promptly investigate and correct known or suspected harassment waives certain defenses for the employer.",
+    "answer": true,
+    "why": "All allegations should be investigated; failing to promptly investigate and correct known or suspected harassment waives certain defenses for your employer.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 36"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "hr-023",
+    "topic": "hr",
+    "type": "tf",
+    "stem": "Employees should not provide any employment references, positive or negative, regarding current or former employees.",
+    "answer": true,
+    "why": "One of the deck's nuggets: do not provide any employment references, positive or negative, regarding current or former employees.",
+    "source": {
+      "origin": "slides",
+      "ref": "Human Resources deck, slide 39"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

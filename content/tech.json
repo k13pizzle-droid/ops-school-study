@@ -11,8 +11,10 @@
       "A routine monthly statement from a known vendor"
     ],
     "answer": 0,
+    "why": "Treat any change to payment instructions as suspect, whether it comes from a customer or a coworker.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Information Security deck, slide 33"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -34,8 +36,10 @@
       "After the customer confirms the loss"
     ],
     "answer": 0,
+    "why": "Report in minutes, not days. The first hour decides if the money comes back.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Information Security deck, slide 31"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -80,8 +84,10 @@
       "The receiving bank's general customer service line"
     ],
     "answer": 0,
+    "why": "Call back on a number from your own records, never one in the request.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Information Security deck, slide 30"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -90,5 +96,369 @@
       "back": "The customer on the account, using the contact info in our system"
     },
     "keyFact": "Verify wire instructions: call the customer using contact info in our system"
+  },
+  {
+    "id": "tech-005",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "Examiners mainly check that security procedures are written down.",
+    "answer": false,
+    "why": "Examiners test whether procedures are actually followed and documented, not just written down. Everyone in operations is a control.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-006",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "When attacks were targeted, what purpose did typos in phishing emails serve?",
+    "options": [
+      "They were a filter that weeded out skeptical victims",
+      "They were a sign the attacker lacked skill",
+      "They helped the email get past spam filters",
+      "They made the email look like it came from a vendor"
+    ],
+    "answer": 0,
+    "why": "Typos were a filter, not incompetence. They weeded out skeptical victims, who weren't worth the manpower to chase.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-007",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Why does every employee now get a convincing phishing email with no typos?",
+    "options": [
+      "Attacking at scale is now cheap",
+      "Attacks have become smarter",
+      "Banks have stopped patching",
+      "Phishing is now legal in some places"
+    ],
+    "answer": 0,
+    "why": "The triage step is gone, not because attacks got smarter, but because attacking at scale is now cheap.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-008",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "Today, vendor oversight means just a contract and a SOC report.",
+    "answer": false,
+    "why": "That was then. Now it means explaining, in plain language, what your vendors are doing with your data.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-009",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "In May 2026, the FBI warned of Kali365. What is it?",
+    "options": [
+      "AiTM phishing sold as a subscription",
+      "A deepfake voice-cloning app",
+      "A new strain of ATM malware",
+      "A free password-cracking tool"
+    ],
+    "answer": 0,
+    "why": "The FBI warned that Kali365 is AiTM phishing sold as a subscription: a technique anyone can rent.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 19"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Kali365: AiTM phishing sold as a subscription"
+  },
+  {
+    "id": "tech-010",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Why doesn't MFA alone stop AiTM phishing?",
+    "options": [
+      "The attacker steals the session token right after you pass the MFA check",
+      "The attacker guesses the MFA code before you enter it",
+      "MFA only protects logins made from inside the bank",
+      "The attacker turns off MFA from the phishing page"
+    ],
+    "answer": 0,
+    "why": "The session token is like a wristband at an event. Whoever holds it is treated as you, with no password and no MFA prompt.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 20"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Session token: whoever holds it is treated as you, no password or MFA needed"
+  },
+  {
+    "id": "tech-011",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Microsoft observed payment fraud starting how soon after a session was stolen?",
+    "options": [
+      "As little as five minutes",
+      "As little as five hours",
+      "About two days",
+      "About two weeks"
+    ],
+    "answer": 0,
+    "why": "Minutes, not days: Microsoft saw payment fraud start as little as five minutes after a session was stolen.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 22"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Payment fraud after session theft: as little as 5 minutes"
+  },
+  {
+    "id": "tech-012",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "In these campaigns, the fraudulent email that reaches the bank usually comes from a real vendor, customer, or title company, from their real mailbox.",
+    "answer": true,
+    "why": "Trusted by design: each compromised mailbox becomes the sender for the next round.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 23"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-013",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "What did a Kali365 subscription cost, per the FBI's May 2026 warning?",
+    "options": [
+      "$250 a month",
+      "$350 a month",
+      "$500 a month",
+      "$25 a month"
+    ],
+    "answer": 0,
+    "why": "Kali365 ran $250 a month, with AI-written lures and token capture. A month of access to a separate AiTM kit cost $350.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 24"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Kali365 subscription: $250/mo"
+  },
+  {
+    "id": "tech-014",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "You shouldn't sign in from an email link, even one from someone you know.",
+    "answer": true,
+    "why": "In the Day 1 hook, a familiar sender's link led to an AiTM proxy that captured the session token.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 27"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-015",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "In the wire fraud walkthrough, how did the attacker keep the lender from noticing during the two weeks of watching?",
+    "options": [
+      "Inbox rules moved emails mentioning \"wire\" or \"confirm\" to a folder she never opened",
+      "The attacker deleted her entire inbox every night",
+      "The attacker changed her password so she was locked out",
+      "The attacker forwarded her mail to a fake help desk"
+    ],
+    "answer": 0,
+    "why": "Inbox rules moved anything mentioning \"wire,\" \"confirm,\" or the customer's name into a folder she never opens. The only signals were an unfamiliar sign-in and a new inbox rule in the logs.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 28"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-016",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "What should you do with an MFA prompt or sign-in alert you didn't start?",
+    "options": [
+      "Report it",
+      "Approve it to clear it",
+      "Ignore it if nothing else looks wrong",
+      "Wait to see if it happens again"
+    ],
+    "answer": 0,
+    "why": "Report sign-in alerts and MFA prompts you didn't start. Don't dismiss them.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 28"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-017",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Which combination does the deck call the red flag in a wire request?",
+    "options": [
+      "New instructions, urgency, and a reason not to verify",
+      "A new customer, a large amount, and a foreign bank",
+      "A typo, an unknown sender, and an attachment",
+      "An internal sender, a known thread, and a letterhead"
+    ],
+    "answer": 0,
+    "why": "Red flag: new instructions plus urgency plus a reason not to verify. Stop and verify.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 29"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Wire request red flag: new instructions + urgency + a reason not to verify"
+  },
+  {
+    "id": "tech-018",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "A second wire approver may sign off based on the first approver's callback.",
+    "answer": false,
+    "why": "In the walkthrough, the second approver relied on the first. Two approvals need two independent checks.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 32"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-019",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "After a wire fraud, what decides whether the money comes back?",
+    "options": [
+      "The first hour",
+      "The first business day",
+      "The first two days",
+      "The first week"
+    ],
+    "answer": 0,
+    "why": "Report in minutes, not days. The first hour decides if the money comes back.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 31"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Wire fraud recovery: the first hour decides"
+  },
+  {
+    "id": "tech-020",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Which of these is NOT part of the rehearsed playbook for the discovery step?",
+    "options": [
+      "Alerts on impossible travel",
+      "A recall request",
+      "An IC3 report",
+      "Notifying the insurer"
+    ],
+    "answer": 0,
+    "why": "The playbook is a recall request, IC3 report, insurer, and customer, started in minutes. Impossible-travel alerts are the control for the watch step.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 32"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-021",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Which control breaks the watch step, when the attacker is quietly reading mail?",
+    "options": [
+      "Alerts on impossible travel",
+      "Phishing-resistant MFA and conditional access",
+      "Calling back on a number from the bank's own records",
+      "A rehearsed recall and IC3 playbook"
+    ],
+    "answer": 0,
+    "why": "The where-it-breaks table pairs the watch step with alerts on impossible travel.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 32"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-022",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "In the deck's where-it-breaks table, the callback step is the operations staff's job rather than mostly IT's.",
+    "answer": true,
+    "why": "Rows 1 and 2 (hook and watch) are mostly IT's job. Rows 3, 4, and 5 (ask, callback, discovery) are yours.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 32"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-023",
+    "topic": "tech",
+    "type": "mc",
+    "stem": "Under the five habits, what is the red flag when you feel rushed?",
+    "options": [
+      "Pressure to skip a step",
+      "A request sent after hours",
+      "An email with an attachment",
+      "A sender you haven't met"
+    ],
+    "answer": 0,
+    "why": "When you feel rushed, slow down. Pressure to skip a step is the red flag.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 33"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "tech-024",
+    "topic": "tech",
+    "type": "tf",
+    "stem": "If you're not sure a wire is fraudulent, wait until you're certain before reporting so you don't raise a false alarm.",
+    "answer": false,
+    "why": "Report fast, even if you're not sure. A false alarm costs minutes; a late report can cost the wire.",
+    "source": {
+      "origin": "slides",
+      "ref": "Information Security deck, slide 33"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

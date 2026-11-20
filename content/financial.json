@@ -7,7 +7,8 @@
     "answer": true,
     "why": "Accounting is the scoreboard, not the quarterback.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 3"
     },
     "optionsFrom": "exam",
     "status": "ready",
@@ -25,8 +26,10 @@
       "Assets = Liabilities − Equity"
     ],
     "answer": 0,
+    "why": "In the car example, the $50,000 purchase price (asset) equals the $30,000 loan (liability) plus your $20,000 investment (equity).",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 4"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -46,7 +49,8 @@
     "answer": 2,
     "why": "Accrued interest receivable is something we will be paid, so it's an asset.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 5"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -64,8 +68,10 @@
       "Net income ÷ Total loans"
     ],
     "answer": 0,
+    "why": "Return on equity is a performance ratio: net income divided by equity.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 13"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -83,8 +89,10 @@
       "Fully loaded cost of funds"
     ],
     "answer": 0,
+    "why": "The risk/capital ratios slide lists the Tier 1 capital ratio and loans (after ACL) to total assets.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 14"
     },
     "optionsFrom": "exam",
     "status": "ready",
@@ -98,7 +106,8 @@
     "answer": false,
     "why": "It's Tier 1 Capital ÷ Average Total Assets.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 14"
     },
     "optionsFrom": "exam",
     "status": "ready",
@@ -121,7 +130,8 @@
     ],
     "answer": 0,
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Bank Financial Analysis deck, page 16"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -130,5 +140,368 @@
       "back": "Create value for stakeholders"
     },
     "keyFact": "Ultimate goal of any business: create value for stakeholders"
+  },
+  {
+    "id": "financial-008",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which organization maintains US GAAP?",
+    "options": [
+      "Financial Accounting Standards Board",
+      "Federal Deposit Insurance Corporation",
+      "Federal Financial Institutions Examination Council",
+      "Federal Reserve Board"
+    ],
+    "answer": 0,
+    "why": "The slide says the Financial Accounting Standards Board maintains US GAAP.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "US GAAP maintained by: Financial Accounting Standards Board"
+  },
+  {
+    "id": "financial-009",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "Under cash basis accounting, records are only updated when cash is received or cash is paid out.",
+    "answer": true,
+    "why": "Cash basis is used primarily by small businesses and does not recognize accrued interest owed to or from the business.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Cash basis: records updated only when cash is received or paid out"
+  },
+  {
+    "id": "financial-010",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "Cash basis accounting is required by GAAP.",
+    "answer": false,
+    "why": "Accrual basis is required by GAAP. It updates records when the transaction occurs, regardless of when cash is received or paid out, and requires accrual for interest due to and from the bank.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 4"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Required by GAAP: accrual basis"
+  },
+  {
+    "id": "financial-011",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "A client deposits $50 in their bank account. What is the entry?",
+    "options": [
+      "Debit Cash (asset) $50, credit Deposit (liability) $50",
+      "Debit Deposit (liability) $50, credit Cash (asset) $50",
+      "Debit Cash (asset) $50, credit Interest Income $50",
+      "Debit Loan (asset) $50, credit Cash (asset) $50"
+    ],
+    "answer": 0,
+    "why": "The deposit adds cash, an asset, and creates a deposit, which is a liability the bank owes the client.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "financial-012",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "The bank makes a $5,000 loan to a customer. What is the entry?",
+    "options": [
+      "Debit Consumer Loan (asset) $5,000, credit Cash (asset) $5,000",
+      "Debit Cash (asset) $5,000, credit Consumer Loan (asset) $5,000",
+      "Debit Consumer Loan (asset) $5,000, credit Deposit (liability) $5,000",
+      "Debit Interest Expense $5,000, credit Payables (liability) $5,000"
+    ],
+    "answer": 0,
+    "why": "The loan is a new asset paid for with cash, so one asset goes up and another goes down.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "financial-013",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which of these is NOT listed as a bank asset?",
+    "options": [
+      "Unearned revenue",
+      "Other real estate owned (OREO)",
+      "Due from bank",
+      "Prepaid asset"
+    ],
+    "answer": 0,
+    "why": "Unearned revenue is on the liabilities list. OREO, due from bank, and prepaid assets are all on the assets list.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "financial-014",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which of these is NOT an equity account?",
+    "options": [
+      "Accounts payable",
+      "Retained earnings",
+      "Paid in capital",
+      "Preferred stock"
+    ],
+    "answer": 0,
+    "why": "The equity slide lists common stock, preferred stock, paid in capital, and retained earnings. Accounts payable is a liability.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Equity accounts: common stock, preferred stock, paid in capital, retained earnings"
+  },
+  {
+    "id": "financial-015",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "The income statement is described as a \"snapshot in time.\"",
+    "answer": false,
+    "why": "The balance sheet is the \"snapshot in time\" showing financial condition as of a specific point. The income statement is the \"period in time\" showing performance over a period.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Balance sheet vs. income statement: snapshot in time vs. period in time"
+  },
+  {
+    "id": "financial-016",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "How is retained earnings calculated?",
+    "options": [
+      "Beginning retained earnings + net income − dividends",
+      "Beginning retained earnings + dividends − net income",
+      "Total revenues − total expenses − dividends",
+      "Common stock + paid in capital + net income"
+    ],
+    "answer": 0,
+    "why": "Retained earnings is the cumulative net income earned since inception that has not been paid out as dividends.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Retained earnings: beginning retained earnings + net income − dividends"
+  },
+  {
+    "id": "financial-017",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which of these is non-interest income?",
+    "options": [
+      "Interchange",
+      "Fed funds sold",
+      "Investments",
+      "Loans"
+    ],
+    "answer": 0,
+    "why": "Non-interest income includes deposit service charges, BOLI, and interchange. Loans, investments, and fed funds sold produce interest income.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "financial-018",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "Which of these is NOT a non-interest expense?",
+    "options": [
+      "CD interest",
+      "Personnel",
+      "Occupancy",
+      "Technology"
+    ],
+    "answer": 0,
+    "why": "CD interest is interest expense, along with savings, money market, and borrowings. Non-interest expense covers personnel, occupancy, technology, travel, regulatory, and legal.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "financial-019",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "How is net interest margin calculated?",
+    "options": [
+      "(Interest income − interest expense) ÷ average earning assets",
+      "(Interest income − interest expense) ÷ total deposits",
+      "Net income ÷ average earning assets",
+      "Total interest expense ÷ total funding"
+    ],
+    "answer": 0,
+    "why": "Net interest margin is net interest income divided by average earning assets.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Net interest margin: (interest income − interest expense) ÷ average earning assets"
+  },
+  {
+    "id": "financial-020",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "How is return on assets (ROA) calculated?",
+    "options": [
+      "Net income ÷ average total assets",
+      "Net income ÷ equity",
+      "Net interest income ÷ average earning assets",
+      "Total loans ÷ total assets"
+    ],
+    "answer": 0,
+    "why": "ROA is a performance ratio: net income divided by average total assets.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "ROA: net income ÷ average total assets"
+  },
+  {
+    "id": "financial-021",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "What is the goal for return on assets given in the deck?",
+    "options": [
+      "1% or higher",
+      "3% or higher",
+      "0.5% or higher",
+      "2% or higher"
+    ],
+    "answer": 0,
+    "why": "The worked example came to .73% ($21,072 ÷ $2,874,626), under the goal of 1% or higher.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "ROA goal: 1% or higher"
+  },
+  {
+    "id": "financial-022",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "The deck's goal for net interest margin is 1% or higher.",
+    "answer": false,
+    "why": "The goal for net interest margin is 3% or higher. The worked example came to 2.61%. The 1% goal is for return on assets.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Net interest margin goal: 3% or higher"
+  },
+  {
+    "id": "financial-023",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "How is the fully loaded cost of funds calculated?",
+    "options": [
+      "Total interest expense ÷ total funding (deposits and borrowings)",
+      "Total interest expense ÷ total deposits only",
+      "Total interest expense ÷ average earning assets",
+      "Total interest expense ÷ total assets"
+    ],
+    "answer": 0,
+    "why": "Fully loaded cost of funds is a profitability ratio, and total funding includes both deposits and borrowing.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Fully loaded cost of funds: total interest expense ÷ total funding (deposits and borrowing)"
+  },
+  {
+    "id": "financial-024",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "What is the standard range for the loan to deposit ratio given in the deck?",
+    "options": [
+      "80% to 90%",
+      "70% to 80%",
+      "90% to 100%",
+      "60% to 70%"
+    ],
+    "answer": 0,
+    "why": "Loan to deposit ratio is total loans ÷ total deposits. The worked example came to 83%.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Loan to deposit ratio: total loans ÷ total deposits, standard 80% to 90%"
+  },
+  {
+    "id": "financial-025",
+    "topic": "financial",
+    "type": "tf",
+    "stem": "The loan to deposit ratio and wholesale funding to assets are classified as funding ratios.",
+    "answer": true,
+    "why": "The funding ratios slide lists loan to deposit ratio (total loans ÷ total deposits) and wholesale funding ÷ total assets.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "financial-026",
+    "topic": "financial",
+    "type": "mc",
+    "stem": "How often is the Call Report (Consolidated Report of Condition and Income) filed?",
+    "options": [
+      "Quarterly",
+      "Monthly",
+      "Semiannually",
+      "Annually"
+    ],
+    "answer": 0,
+    "why": "It is a quarterly report of a bank's balance sheet, income, and selected off-balance sheet items, filed with federal regulators.",
+    "source": {
+      "origin": "slides",
+      "ref": "Bank Financial Analysis deck, page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Call Report: quarterly"
   }
 ]
