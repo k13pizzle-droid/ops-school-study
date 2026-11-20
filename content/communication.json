@@ -7,7 +7,8 @@
     "answer": false,
     "why": "Jeremy's rule is fewer words.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Effective Written Communication deck, page 7"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -52,8 +53,10 @@
       "APA Style"
     ],
     "answer": 0,
+    "why": "The deck lists AP Style for news releases and says to keep AP style for blogs and social media too.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Effective Written Communication deck, page 11"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -75,8 +78,10 @@
       "The hierarchy pyramid"
     ],
     "answer": 0,
+    "why": "Inverted pyramid writing puts crucial information at the beginning, since readers could stop reading at any time.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Effective Written Communication deck, page 12"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -85,5 +90,216 @@
       "back": "The inverted pyramid"
     },
     "keyFact": "Journalists' pyramid: inverted pyramid"
+  },
+  {
+    "id": "communication-005",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "Per the Harvard Business Review figure in the deck, what share of businesspeople surveyed said poorly written materials waste workers' time?",
+    "options": [
+      "61%",
+      "71%",
+      "81%",
+      "91%"
+    ],
+    "answer": 2,
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Businesspeople saying poor writing wastes time (HBR): 81%"
+  },
+  {
+    "id": "communication-006",
+    "topic": "communication",
+    "type": "tf",
+    "stem": "The deck cites Harvard Business Review as saying fuzzy writing allows fuzzy thinking.",
+    "answer": true,
+    "why": "The HBR points are that clarity builds trust, fuzzy writing allows fuzzy thinking, and a culture of clear writing makes managers more productive.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-007",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "What does the deck call the two biggest enemies of being concise?",
+    "options": [
+      "\"in order to\" and \"that\"",
+      "\"very\" and \"really\"",
+      "\"which\" and \"that\"",
+      "\"in order to\" and \"very\""
+    ],
+    "answer": 0,
+    "why": "The example drops both: \"The banking department said there are numerous regulations coming down the pike to help consumers.\"",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Two biggest enemies of concise writing: \"in order to\" and \"that\""
+  },
+  {
+    "id": "communication-008",
+    "topic": "communication",
+    "type": "tf",
+    "stem": "Gerunds are verbs, so they can replace verbs in a sentence.",
+    "answer": false,
+    "why": "Gerunds (words ending in -ing) are not verbs and cannot replace verbs. They are also an indicator of weak writing.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-009",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "Which of these sentences is written in active voice?",
+    "options": [
+      "The dog chased the cat.",
+      "The cat was chased by the dog.",
+      "The cat was being chased by the dog.",
+      "The cat had been chased by the dog."
+    ],
+    "answer": 0,
+    "why": "The deck rewrites \"The cat was chased by the dog\" as \"The dog chased the cat.\"",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-010",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "When writing to customers or elected officials, you should avoid writing more than how many words?",
+    "options": [
+      "200-300",
+      "400-600",
+      "800-1,000",
+      "1,000-1,500"
+    ],
+    "answer": 1,
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Letters to customers/elected officials: avoid more than 400-600 words"
+  },
+  {
+    "id": "communication-011",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "Which of these is NOT part of the deck's anatomy of a tweet?",
+    "options": [
+      "Question",
+      "Call to action",
+      "Link to more info",
+      "A direct quote"
+    ],
+    "answer": 3,
+    "why": "A tweet is a question, a solution, a call to action, and a link to more info. A direct quote belongs to the news release list.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-012",
+    "topic": "communication",
+    "type": "tf",
+    "stem": "Blogs are written for already-interested audiences.",
+    "answer": true,
+    "why": "Blogs should be kept relatively short, are written for already-interested audiences, and should keep AP style.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-013",
+    "topic": "communication",
+    "type": "tf",
+    "stem": "When writing to customers or elected officials, save your opinion or reason for writing for the end.",
+    "answer": false,
+    "why": "State your opinion or reason for writing early, after a catchy introduction that sets the tone.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-014",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "Before writing, ask what your audience should know or think after reading. If the answer isn't immediately clear, what does the deck say?",
+    "options": [
+      "You're moving too quickly",
+      "You should call instead of writing",
+      "Your audience is too broad",
+      "Your message needs a stronger subject line"
+    ],
+    "answer": 0,
+    "why": "Don't work out your thoughts while writing. If the answer isn't immediately clear, you're moving too quickly.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-015",
+    "topic": "communication",
+    "type": "tf",
+    "stem": "The deck advises that comedy usually plays well in written communication.",
+    "answer": false,
+    "why": "Comedy usually doesn't play well, and there is no \"sarcasm font.\" Use active voice and be concise.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "communication-016",
+    "topic": "communication",
+    "type": "mc",
+    "stem": "According to the deck, what gives a press release a better chance of being picked up?",
+    "options": [
+      "Being closer to media style and writing format",
+      "Using the bank's own internal terms",
+      "Including more adjectives and adverbs",
+      "Running longer than a full page"
+    ],
+    "answer": 0,
+    "why": "The closer the press release is to media style and writing format, the better chance it is picked up.",
+    "source": {
+      "origin": "slides",
+      "ref": "Effective Written Communication deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]

@@ -11,8 +11,10 @@
       "Only needed for the annual audit"
     ],
     "answer": 0,
+    "why": "The deck's closing point on vendor management is \"Documentation is Key\": document every item reviewed, using a template.",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Vendor Management deck, page 14"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -28,9 +30,10 @@
     "type": "tf",
     "stem": "You are required to do a review of all vendors and rank them in order of performance.",
     "answer": true,
-    "why": "The instructor said this one is a freebie on the exam.",
+    "why": "The instructor said this one is a freebie on the exam. The slide's own wording: review all vendors and rank them according to their importance to the bank (the initial review ranks them based on risk).",
     "source": {
-      "origin": "review"
+      "origin": "review",
+      "ref": "Vendor Management deck, page 4"
     },
     "optionsFrom": "authored",
     "status": "ready",
@@ -39,5 +42,295 @@
       "back": "True"
     },
     "keyFact": "Review all vendors and rank by performance: True (freebie on the exam)"
+  },
+  {
+    "id": "vendor-003",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Per the FDIC FIL 44-2008 excerpt, how often should the board review significant third-party arrangements, at a minimum?",
+    "options": [
+      "At least annually",
+      "At least quarterly",
+      "At least every two years",
+      "At least monthly"
+    ],
+    "answer": 0,
+    "why": "The board should initially approve, oversee, and review significant third-party arrangements at least annually.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 6"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Board review of significant third-party arrangements: at least annually"
+  },
+  {
+    "id": "vendor-004",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "A bank's use of third parties reduces the responsibility of its board and senior management for how the activity is performed.",
+    "answer": false,
+    "why": "Per the OCC, using third parties does not diminish the board's and senior management's responsibility to ensure the activity is safe, sound, and compliant.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-005",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Which of these is NOT a stage of the risk-management life cycle shown in the 2024 community bank guide?",
+    "options": [
+      "Due diligence and third-party selection",
+      "Contract negotiation",
+      "Ongoing monitoring",
+      "Incentive compensation review"
+    ],
+    "answer": 3,
+    "why": "The stages are planning, due diligence and third-party selection, contract negotiation, ongoing monitoring, and termination.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-006",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "Exit strategy is one of the items that needs to be addressed in a bank's Vendor Management Policy.",
+    "answer": true,
+    "why": "The policy list includes risk assessment, due diligence, contract provisions, incentive compensation review, oversight and monitoring, business continuity, exit strategy, and additional risk considerations.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 8"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-007",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "The initial review of a potential vendor must include documentation and a ranking based on what?",
+    "options": [
+      "Risk",
+      "Cost",
+      "Contract length",
+      "Vendor size"
+    ],
+    "answer": 0,
+    "why": "The initial review must include the ranking (based upon risk) and documentation of the potential vendor.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 9"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Initial vendor review ranking: based upon risk"
+  },
+  {
+    "id": "vendor-008",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Which four-level vendor ranking system does the deck give as an example?",
+    "options": [
+      "Low, Medium, High, Severe",
+      "Low, Moderate, High, Critical",
+      "Minimal, Low, High, Critical",
+      "Low, Moderate, Elevated, Severe"
+    ],
+    "answer": 1,
+    "why": "The deck lists 1, 2, 3 / Low, Medium, High, and a four-level Low, Moderate, High, Critical system.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Four-level vendor ranking: Low, Moderate, High, Critical"
+  },
+  {
+    "id": "vendor-009",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "How many potential considerations are outlined in the Third Party Risk Management guidelines?",
+    "options": [
+      "11",
+      "12",
+      "20",
+      "25"
+    ],
+    "answer": 2,
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 10"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Potential considerations in Third Party Risk Management guidelines: 20"
+  },
+  {
+    "id": "vendor-010",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "In the sample letter to the board, vendors are rated from 1 to 5, with 5 being the most critical.",
+    "answer": false,
+    "why": "The sample letter rates vendors 1 to 5 with 1 being the most critical.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 16"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Sample board letter vendor ratings: 1 to 5, with 1 the most critical"
+  },
+  {
+    "id": "vendor-011",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "In the deck's exercise, a 5-year contract starts at $65,000 a year with an uncapped CPI increase, assuming 4% CPI. What would you pay in the last year?",
+    "options": [
+      "$78,000.00",
+      "$79,082.44",
+      "$67,600.00",
+      "$91,000.00"
+    ],
+    "answer": 1,
+    "why": "The deck shows $79,082.44 in the last year, an increase of $14,082.44 from year 1 to year 5.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 17"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "CPI exercise ($65,000, 4%, 5 years): $79,082.44 in the last year"
+  },
+  {
+    "id": "vendor-012",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Which of these is NOT on the deck's list of documents to review during ongoing vendor monitoring?",
+    "options": [
+      "Insurance documents",
+      "Red Flag / ID theft policies",
+      "Financial statements",
+      "Cost to end the relationship"
+    ],
+    "answer": 3,
+    "why": "The list includes SOC reports, federal examinations, audits, insurance documents, Red Flag/ID theft policies, email security, financial statements, and social media.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 12"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-013",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Which of these does the deck list as a consideration when terminating a vendor relationship?",
+    "options": [
+      "Secure transfer of data",
+      "Vendor uptime",
+      "Minimum operating systems",
+      "Membership in a user group"
+    ],
+    "answer": 0,
+    "why": "Termination considerations are the cost to end the relationship, replacing the services, vendor access to confidential information and non-disclosure, and secure transfer of data.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 14"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-014",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "Most vendors will place requirements on the bank, such as PC security and minimum operating systems.",
+    "answer": true,
+    "why": "Bank requirements from vendors include PC security, minimum operating systems, bank employee requirements, and notification standards.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 13"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-015",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Among outsourced services, the deck pairs cleaning crews with which concern?",
+    "options": [
+      "Pricing changes",
+      "Hard drives and repair techs",
+      "Confidentiality",
+      "Notification standards"
+    ],
+    "answer": 2,
+    "why": "The deck lists check vendors with pricing changes, cleaning crews with confidentiality, and office equipment/ATMs with hard drives and repair techs.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 3"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
+  },
+  {
+    "id": "vendor-016",
+    "topic": "vendor",
+    "type": "mc",
+    "stem": "Which agencies issued \"Third-Party Risk Management – A Guide for Community Banks\" in May 2024?",
+    "options": [
+      "Federal Reserve, FDIC, and OCC",
+      "Federal Reserve, FDIC, and CFPB",
+      "OCC, NCUA, and FDIC",
+      "FFIEC, CFPB, and OCC"
+    ],
+    "answer": 0,
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 7"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Community bank third-party guide (May 2024): Federal Reserve, FDIC, and OCC"
+  },
+  {
+    "id": "vendor-017",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "The OCC defines a third-party relationship as a business arrangement between a bank and another entity only when it is set out in a written contract.",
+    "answer": false,
+    "why": "A third-party relationship is any business arrangement between a bank and another entity, by contract or otherwise.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 5"
+    },
+    "optionsFrom": "authored",
+    "status": "ready",
+    "keyFact": "Third-party relationship (OCC): any business arrangement between a bank and another entity, by contract or otherwise"
+  },
+  {
+    "id": "vendor-018",
+    "topic": "vendor",
+    "type": "tf",
+    "stem": "Changes to a vendor's corporate culture are one of the things to consider during ongoing vendor review.",
+    "answer": true,
+    "why": "Ongoing review considerations include performance, financial soundness, compliance, audits, uptime, reliability, BCP testing, data breaches, reporting, changing bank needs, and changes to the vendor's corporate culture.",
+    "source": {
+      "origin": "slides",
+      "ref": "Vendor Management deck, page 11"
+    },
+    "optionsFrom": "authored",
+    "status": "ready"
   }
 ]
