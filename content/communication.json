@@ -24,12 +24,13 @@
     "type": "mc",
     "stem": "Why is it important to use correct grammar?",
     "options": [
-      "It enhances clarity and precision in writing and speech",
+      "So you don't make a fool of yourself",
       "It makes writing longer and more formal",
       "It's only required in legal documents",
       "It keeps emails short enough to read on a phone"
     ],
     "answer": 0,
+    "why": "Correct grammar enhances clarity and precision in writing and speech.",
     "source": {
       "origin": "review"
     },
@@ -37,9 +38,9 @@
     "status": "ready",
     "flashcard": {
       "front": "Why is it important to use correct grammar?",
-      "back": "It enhances clarity and precision in writing and speech"
+      "back": "So you don't make a fool of yourself (it keeps writing clear and precise)"
     },
-    "keyFact": "Correct grammar: enhances clarity and precision in writing and speech"
+    "keyFact": "Correct grammar: so you don't make a fool of yourself (clarity and precision)"
   },
   {
     "id": "communication-003",

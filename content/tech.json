@@ -5,7 +5,7 @@
     "type": "mc",
     "stem": "What is a strong warning sign of a business email compromise?",
     "options": [
-      "A request to change payment or wire instructions",
+      "An unexpected change or urgent instruction, like new payment or wire instructions",
       "An email asking you to confirm a meeting time",
       "An invoice sent on the vendor's usual billing date",
       "A routine monthly statement from a known vendor"
@@ -20,9 +20,9 @@
     "status": "ready",
     "flashcard": {
       "front": "What is a strong warning sign of a business email compromise?",
-      "back": "A request to change payment or wire instructions"
+      "back": "An unexpected change or urgent instruction (e.g., new payment or wire instructions)"
     },
-    "keyFact": "BEC warning sign: request to change payment or wire instructions"
+    "keyFact": "BEC warning sign: unexpected change or urgent instruction (new wire instructions)"
   },
   {
     "id": "tech-002",

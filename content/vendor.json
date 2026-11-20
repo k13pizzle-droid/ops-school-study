@@ -28,9 +28,9 @@
     "id": "vendor-002",
     "topic": "vendor",
     "type": "tf",
-    "stem": "You are required to do a review of all vendors and rank them in order of performance.",
+    "stem": "You are required to do a review of all vendors and rank them in order of importance.",
     "answer": true,
-    "why": "The instructor said this one is a freebie on the exam. The slide's own wording: review all vendors and rank them according to their importance to the bank (the initial review ranks them based on risk).",
+    "why": "The slide: review all vendors and rank them according to their importance to the bank. The instructor said this one is a freebie on the exam.",
     "source": {
       "origin": "review",
       "ref": "Vendor Management deck, page 4"
@@ -38,10 +38,10 @@
     "optionsFrom": "authored",
     "status": "ready",
     "flashcard": {
-      "front": "Are you required to do a review of all vendors and rank them in order of performance? True/False",
+      "front": "Are you required to do a review of all vendors and rank them in order of importance?",
       "back": "True"
     },
-    "keyFact": "Review all vendors and rank by performance: True (freebie on the exam)"
+    "keyFact": "Review all vendors and rank by importance: True (freebie on the exam)"
   },
   {
     "id": "vendor-003",
